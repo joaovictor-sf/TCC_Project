@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace TCC_WPF.Model
 {
-    class UserData
+    class InactivityLog
     {
         public int Id { get; set; }
-        public string AppName { get; set; }
-        public string WindowTitle { get; set; }
-        public TimeSpan CpuTime { get; set; }
-        public DateTime StartTime { get; set; }
         public DateTime Timestamp { get; set; }
+        public TimeSpan TotalInactivity { get; set; }
+        public TimeSpan MaxInactivity { get; set; }
     }
 }

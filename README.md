@@ -14,8 +14,11 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 		- O usuario poderá alterar a senha
 		- O RH será responsável por criar os usuarios e enviar o id e senha para os funcionarios
 		- [TALVEZ] O sistema envie um email para o usuario com o id e senha
+		- [TALVEZ] Criar o sistema de cadastro de usuarios em uma aplicação separada(Web ou Desktop). O que tornará o sistema em um sistema orientado a microserviços(Eu acho)
 - [ ] Melhorar UI
 - [ ] Melhorar a formadação dos dados
+	- [ ] Melhorar a formatação dos dados de tempo de ProcessLog
+	- [ ] Melhorar a formatação dos dados de tempo de InactivityLog
 - [x] Criar executavel <!-- C:source\repos\TCC_WPF\TCC_WPF\bin\Release\net8.0-windows -->
 - [ ] Criar o icone do sistema
 - [ ] Adicionar o icone do sistema
@@ -29,5 +32,6 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [ ] Testar a aplicação em outros computadores
 - [ ] Testar a aplicação em outros sistemas operacionais
 - [x] Monitorar a inatividade do usuario
-- [ ] Enviar os dados de inatividade para o banco
-- [ ] Testar o sistema de inatividade
+- [x] Enviar os dados de inatividade para o banco
+- [x] Testar o sistema de inatividade
+- [ ] Organizar o sistema para seguir o padrão MVVM

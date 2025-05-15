@@ -5,7 +5,9 @@ namespace TCC_WPF.Infra
 {
     class AppDbContext : DbContext {
 
-        public DbSet<UserData> UserDatas { get; set; }
+        public DbSet<ProcessLog> ProcessLogs { get; set; }
+        public DbSet<InactivityLog> InactivityLogs { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             // Exemplo de string de conexão PostgreSQL
