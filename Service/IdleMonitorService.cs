@@ -1,5 +1,4 @@
 ﻿using System.Runtime.InteropServices;
-using System.Timers;
 using System.Windows.Threading;
 using TCC_MVVM.Model;
 
