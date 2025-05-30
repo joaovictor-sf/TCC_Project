@@ -15,6 +15,7 @@ namespace TCC_MVVM.ViewModel
         private readonly ProcessMonitorService _processMonitorService;
         private readonly IdleMonitorService _idleMonitorService;
         private bool _isMonitoring;
+        private readonly UserModel _usuarioLogado;
 
         public ICommand StartCommand { get; }
         public ICommand StopCommand { get; }
@@ -39,6 +40,20 @@ namespace TCC_MVVM.ViewModel
 
         public bool IsNotMonitoring => !IsMonitoring;
 
+        public MainWindowViewModel(UserModel usuario) {
+            _usuarioLogado = usuario;
+
+            _processMonitorService = new ProcessMonitorService(TimeSpan.FromSeconds(5));
+
+            _idleMonitorService = new IdleMonitorService();
+
+            _processMonitorService.MonitoringStopped += SaveLogsToDatabase;
+            //_processMonitorService.MonitoringStopped += SaveLogsToFile;
+
+            StartCommand = new RelayCommand(() => IsMonitoring = true, () => !IsMonitoring);
+            StopCommand = new RelayCommand(() => IsMonitoring = false, () => IsMonitoring);
+        }
+
         public MainWindowViewModel() {
             _processMonitorService = new ProcessMonitorService(TimeSpan.FromSeconds(5));
 
@@ -53,6 +68,9 @@ namespace TCC_MVVM.ViewModel
 
         private void SaveLogsToDatabase(List<ProcessLog> summary) {
             using var context = new AppDbContext();
+            foreach (var log in summary) {
+                log.UserId = _usuarioLogado.Id;
+            }
             context.ProcessLogs.AddRange(summary);
             context.SaveChanges();
         }
@@ -60,6 +78,7 @@ namespace TCC_MVVM.ViewModel
         private void SaveInactivityLogToDatabase() {
             using var context = new AppDbContext();
             var inactivityLog = _idleMonitorService.GenerateLog();
+            inactivityLog.UserId = _usuarioLogado.Id;
             context.InactivityLogs.Add(inactivityLog);
             context.SaveChanges();
         }

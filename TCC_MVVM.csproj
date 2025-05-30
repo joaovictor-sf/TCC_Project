@@ -9,10 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="View\" />
+    <None Remove="Images\campus.jpg" />
+    <None Remove="Images\key-icon.png" />
+    <None Remove="Images\Logotipo.png" />
+    <None Remove="Images\user-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -20,6 +24,13 @@
     </PackageReference>
     <PackageReference Include="Npgsql" Version="9.0.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\campus.jpg" />
+    <Resource Include="Images\key-icon.png" />
+    <Resource Include="Images\Logotipo.png" />
+    <Resource Include="Images\user-icon.png" />
   </ItemGroup>
 
 </Project>

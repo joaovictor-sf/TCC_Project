@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using TCC_MVVM.Infra;
@@ -11,9 +12,11 @@ using TCC_MVVM.Infra;
 namespace TCC_MVVM.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250528200456_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,9 +45,14 @@ namespace TCC_MVVM.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("UserModelId")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserModelId");
 
                     b.ToTable("InactivityLogs");
                 });
@@ -73,6 +81,9 @@ namespace TCC_MVVM.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("UserModelId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("WindowTitle")
                         .IsRequired()
                         .HasColumnType("text");
@@ -80,6 +91,8 @@ namespace TCC_MVVM.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserModelId");
 
                     b.ToTable("ProcessLogs");
                 });
@@ -145,10 +158,14 @@ namespace TCC_MVVM.Migrations
             modelBuilder.Entity("TCC_MVVM.Model.InactivityLog", b =>
                 {
                     b.HasOne("TCC_MVVM.Model.UserModel", "User")
-                        .WithMany("InactivityLogs")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("TCC_MVVM.Model.UserModel", null)
+                        .WithMany("InactivityLogs")
+                        .HasForeignKey("UserModelId");
 
                     b.Navigation("User");
                 });
@@ -156,10 +173,14 @@ namespace TCC_MVVM.Migrations
             modelBuilder.Entity("TCC_MVVM.Model.ProcessLog", b =>
                 {
                     b.HasOne("TCC_MVVM.Model.UserModel", "User")
-                        .WithMany("ProcessLogs")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("TCC_MVVM.Model.UserModel", null)
+                        .WithMany("ProcessLogs")
+                        .HasForeignKey("UserModelId");
 
                     b.Navigation("User");
                 });
