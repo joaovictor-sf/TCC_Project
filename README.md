@@ -27,7 +27,7 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 	- [x] Inatividade
 	- [ ] Envio de screenshots
 - [x] Adicionar a função de editar
-- [ ] Adicionar de deminir usuários
+- [x] Adicionar de deminir usuários
 - [ ] Criar função de criar nova senha após o primeiro login do usuario
 - [ ] Enviar senha por email
 - [ ] Remover as MensageBoxs após o fim dos testes

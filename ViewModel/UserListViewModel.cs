@@ -24,6 +24,7 @@ namespace TCC_MVVM.ViewModel
         public ICommand CloseCommand { get; }
         public ICommand AddCommand { get; }
         public ICommand EditCommand { get; }
+        public ICommand DeleteCommand { get; }
 
         public Action? MinimizeWindow { get; set; }
         public Action? CloseWindow { get; set; }
@@ -35,6 +36,7 @@ namespace TCC_MVVM.ViewModel
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
             AddCommand = new RelayCommand(_ => OpenCadastroModal());
             EditCommand = new RelayCommand(_ => OpenEditModal(), _ => SelectedUser != null);
+            DeleteCommand = new RelayCommand(_ => DemitirUsuario(), _ => SelectedUser != null);
         }
 
         private void OpenCadastroModal() {
@@ -65,6 +67,30 @@ namespace TCC_MVVM.ViewModel
 
             editView.ShowDialog();
             RefreshUserList();
+        }
+
+        private void DemitirUsuario() {
+            if (SelectedUser == null) return;
+
+            var confirm = MessageBox.Show(
+                $"Deseja realmente demitir o usuário {SelectedUser.Name} {SelectedUser.LastName}?",
+                "Confirmar demissão",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning);
+
+            if (confirm != MessageBoxResult.Yes) return;
+
+            try {
+                using var db = new AppDbContext();
+                var usuario = db.Users.FirstOrDefault(u => u.Id == SelectedUser.Id);
+                if (usuario != null) {
+                    usuario.IsActive = false;
+                    db.SaveChanges();
+                    RefreshUserList();
+                }
+            } catch (Exception ex) {
+                MessageBox.Show($"Erro ao demitir o usuário: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private List<UserModel> GetAllUsers() {
