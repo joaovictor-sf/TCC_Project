@@ -128,13 +128,216 @@
 
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="70"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+
+                    <Grid.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="Margin" Value="5, 10, 5, 0"/>
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40"
+                                                CornerRadius="20"
+                                                Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                        <!-- Estilo para DataGrid -->
+                        <Style TargetType="DataGrid">
+                            <Setter Property="Background" Value="#1b1448"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="RowBackground" Value="#060531"/>
+                            <Setter Property="AlternatingRowBackground" Value="#18123a"/>
+                            <Setter Property="BorderBrush" Value="#303860"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="HorizontalGridLinesBrush" Value="#303860"/>
+                            <Setter Property="VerticalGridLinesBrush" Value="#303860"/>
+                            <Setter Property="ColumnHeaderStyle">
+                                <Setter.Value>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="Background" Value="#303860"/>
+                                        <Setter Property="Foreground" Value="#FFD700"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="FontSize" Value="14"/>
+                                        <Setter Property="FontFamily" Value="Montserrat"/>
+                                        <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                                        <Setter Property="BorderBrush" Value="#b69a50"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="DataGridColumnHeader">
+                                                    <Border x:Name="headerBorder"
+                                                            Background="{TemplateBinding Background}"
+                                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                                            Padding="0,8,0,8">
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="20"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <ContentPresenter Grid.Column="0"
+                                                                              VerticalAlignment="Center"
+                                                                              HorizontalAlignment="Center"/>
+                                                            <!-- Seta de ordenação -->
+                                                            <Path x:Name="SortArrow"
+                                                                  Grid.Column="1"
+                                                                  Data="M 0 4 L 4 0 L 8 4"
+                                                                  Stroke="#FFD700"
+                                                                  StrokeThickness="2"
+                                                                  Width="8" Height="4"
+                                                                  VerticalAlignment="Center"
+                                                                  HorizontalAlignment="Center"
+                                                                  Visibility="Visible"
+                                                                  RenderTransformOrigin="0.5,0.5"/>
+                                                            <!-- Seta de ordenação -->
+                                                            <!--<Path x:Name="SortArrow"
+                                                                          Data="M 0 4 L 4 0 L 8 4"
+                                                                          Stroke="#FFD700"
+                                                                          StrokeThickness="2"
+                                                                          Width="8" Height="4"
+                                                                          HorizontalAlignment="Right"
+                                                                          VerticalAlignment="Center"
+                                                                          Margin="0,0,8,0"
+                                                                          Visibility="Collapsed"/>-->
+                                                        </Grid>
+                                                    </Border>
+
+                                                    <ControlTemplate.Triggers>
+                                                        <!-- Hover -->
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="headerBorder" 
+                                                                    Property="Background" 
+                                                                    Value="#28AEED"/>
+                                                        </Trigger>
+                                                        <!-- Ordenação crescente -->
+                                                        <Trigger Property="SortDirection" Value="Ascending">
+                                                            <Setter TargetName="SortArrow" 
+                                                                    Property="Visibility" 
+                                                                    Value="Visible"/>
+                                                            <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                                <Setter.Value>
+                                                                    <RotateTransform Angle="180"/>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Trigger>
+                                                        <!-- Ordenação decrescente -->
+                                                        <Trigger Property="SortDirection" Value="Descending">
+                                                            <Setter TargetName="SortArrow" Property="Visibility" Value="Visible"/>
+                                                            <Setter TargetName="SortArrow" Property="RenderTransform">
+                                                                <Setter.Value>
+                                                                    <RotateTransform Angle="0"/>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="CellStyle">
+                                <Setter.Value>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Padding" Value="8,4"/>
+                                        <Setter Property="FontSize" Value="13"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowStyle">
+                                <Setter.Value>
+                                    <Style TargetType="DataGridRow">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background" Value="#28AEED"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Width" Value="8"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ScrollBar">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <Track Name="PART_Track" 
+                                                   IsDirectionReversed="True" 
+                                                   Focusable="False">
+                                                <Track.DecreaseRepeatButton>
+                                                    <RepeatButton Command="ScrollBar.LineUpCommand"
+                                                                  Style="{x:Null}" 
+                                                                  IsTabStop="False"
+                                                                  Background="Transparent"/>
+                                                </Track.DecreaseRepeatButton>
+                                                <Track.Thumb>
+                                                    <Thumb Height="150">
+                                                        <Thumb.Template>
+                                                            <ControlTemplate TargetType="Thumb">
+                                                                <Border Background="#28AEED"
+                                                                        BorderBrush="#303860"
+                                                                        BorderThickness="1"
+                                                                        CornerRadius="4"/>
+                                                            </ControlTemplate>
+                                                        </Thumb.Template>
+                                                    </Thumb>
+                                                </Track.Thumb>
+                                                <Track.IncreaseRepeatButton>
+                                                    <RepeatButton Command="ScrollBar.LineDownCommand"
+                                                                  Style="{x:Null}" 
+                                                                  IsTabStop="False"
+                                                                  Background="Transparent"/>
+                                                </Track.IncreaseRepeatButton>
+                                            </Track>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                    </Grid.Resources>
+                    
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Content="Cadastrar" Width="75" Height="30" Margin="0, 0, 5, 0" Command="{Binding AddCommand}"/>
-                        <Button Content="Demitir" Width="75" Height="30" Margin="0, 0, 5, 0" Command="{Binding DeleteCommand}"/>
-                        <Button Content="Editar" Width="75" Height="30" Command="{Binding SaveCommand}"/>
+                        <Button Content="CADASTRAR" Command="{Binding AddCommand}"/>
+                        <Button Content="DEMITIR" Command="{Binding DeleteCommand}"/>
+                        <Button Content="EDITAR" Command="{Binding SaveCommand}"/>
                     </StackPanel>
 
                     <DataGrid ItemsSource="{Binding Users}" 
@@ -147,7 +350,7 @@
                               CanUserAddRows="False"
                               CanUserDeleteRows="False"
                               CanUserResizeRows="False"
-                              Height="350">
+                              Height="300">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Nome" Binding="{Binding Name}" Width="*"/>
                             <DataGridTextColumn Header="Sobrenome" Binding="{Binding LastName}" Width="*"/>
