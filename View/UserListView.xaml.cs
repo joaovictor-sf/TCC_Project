@@ -7,9 +7,9 @@ namespace TCC_MVVM.View
     /// <summary>
     /// Interaction logic for UserList.xaml
     /// </summary>
-    public partial class UserList : Window
+    public partial class UserListView : Window
     {
-        public UserList()
+        public UserListView()
         {
             InitializeComponent();
             if (DataContext is UserListViewModel vm) {

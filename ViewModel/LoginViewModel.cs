@@ -70,7 +70,7 @@ namespace TCC_MVVM.ViewModel
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     //var main = new MainWindow(user);
-                    var main = new UserList();
+                    var main = new UserListView();
                     main.Show();
                 });
 
