@@ -21,6 +21,7 @@ namespace TCC_MVVM.Model
         public bool IsActive { get; set; } = true;
         public ICollection<ProcessLog> ProcessLogs { get; set; }
         public ICollection<InactivityLog> InactivityLogs { get; set; }
+        public bool MustChangePassword { get; set; } = false;
 
         public UserModel() {
             ProcessLogs = new HashSet<ProcessLog>();

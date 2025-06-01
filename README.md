@@ -23,28 +23,36 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [x] Criar um Enum de horas de trabalho(WorkHours)(Ex: 8h, 6h, 4h, etc)
 - [x] Criar um Boolean de Status de Usuário(isActive)
 - [x] Implementar ao projeto principal
+- [x] Adicionar a função de editar
+- [x] Adicionar de deminir usuários
+- [x] Criar função de criar nova senha após o primeiro login do usuario
+- [ ] Atualizar a formatação dos emails validos no cadastro e edit
+- [ ] Adicionar a função de resetar senha do usuário em edit
+- [ ] Melhorar o design da janela de monitoramento
+	- [ ] Adicionar o restante do horário de trabalho do dia do usuário
+	- [ ] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados
+	- [ ] Melhorar o design em si
+- [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
+- [ ] Melhorar a formadação dos dados
+	- [ ] Melhorar a formatação dos dados de tempo de ProcessLog
+	- [ ] Melhorar a formatação dos dados de tempo de InactivityLog
+- [ ] Não permitir usuarios demitidos entrarem no sistema
+- [ ] Remover as MensageBoxs após o fim dos testes
+
+# MAYBE
+- [ ] Enviar senha por email
 - [ ] Estudar e avaliar mais opções de monitoramento
 	- [x] Inatividade
 	- [ ] Envio de screenshots
-- [x] Adicionar a função de editar
-- [x] Adicionar de deminir usuários
-- [ ] Criar função de criar nova senha após o primeiro login do usuario
-- [ ] Enviar senha por email
-- [ ] Remover as MensageBoxs após o fim dos testes
-- [ ] Mudar o nome username para cpf(TALVEZ)
+- [ ] Mudar o nome username para cpf
 - [ ] Decidir em como será implementado o sistema de Roles. Objetivo: Funcionario apenas poderá acessar a janela de monitoramento, o RH poderá acessar a janela de monitoramento, a janela com a lista de usuarios e a janela de cadastro ou apenas as duas anteriores tirando a de monitoramento, e o Admin poderá acessar todas as janelas + funcionalidades exclusivas. Algumas ideias dessas funionalidades: 
 	- [ ] Apenas o Admin poderá cadastrar outro Admin
 	- [ ] Criação de novas Roles
 	- [ ] Criação de novas WorkHours
 	- [ ] A capacidade de apagar completamente um usuário do banco de dados
-- [ ] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
-- [ ] Melhorar a formadação dos dados
-	- [ ] Melhorar a formatação dos dados de tempo de ProcessLog
-	- [ ] Melhorar a formatação dos dados de tempo de InactivityLog
 - [ ] Adicionar o icone do sistema
 - [ ] Conectar ao banco na nuvem
 - [ ] [OPÇÃO A] Bloquear o botão de fechamento se o monitoramento estiver ativo
-- [ ] [OPÇÃO B] Ao fechar a aplicação, verificar se o monitoramento está ativo e, se estiver, em vez de parar a aplicação, apenas fechar a janela e fazer a aplicação continuar rodando em segundo plano.(Necessário criar um icone na barra de tarefas para o usuário poder acessar a aplicação novamente))
+- [ ] [OPÇÃO B] Ao fechar a aplicação, verificar se o monitoramento está ativo e, se estiver, em vez de parar a aplicação, apenas fechar a janela e fazer a aplicação continuar rodando em segundo plano.(Necessário criar um icone na barra de tarefas para o usuário poder acessar a aplicação novament)e)
 - [ ] Testar a aplicação em outros computadores
 - [ ] Testar a aplicação em outros sistemas operacionais
-- [ ] Não permitir usuarios demitidos entrarem no sistema

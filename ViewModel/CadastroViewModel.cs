@@ -122,7 +122,8 @@ namespace TCC_MVVM.ViewModel
                     Email = Email,
                     Role = Role.Value,
                     WorkHours = WorkHours,
-                    IsActive = true
+                    IsActive = true,
+                    MustChangePassword = true
                 };
 
                 db.Users.Add(novoUsuario);

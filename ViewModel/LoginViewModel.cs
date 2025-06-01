@@ -76,19 +76,32 @@ namespace TCC_MVVM.ViewModel
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
-                    Window nextWindow = user.Role switch
-                    {
-                        UserRole.DEV => new MainWindow(user),
-                        UserRole.RH or UserRole.ADMIN => new UserListView(),
-                        _ => null
-                    };
+                    if (user.MustChangePassword) {
+                        var changePwdWindow = new ChangePasswordView();
+                        var changePwdVM = new ChangePasswordViewModel(user)
+                        {
+                            CloseWindow = () => changePwdWindow.Close(),
+                            MinimizeWindow = () => changePwdWindow.WindowState = WindowState.Minimized
+                        };
+                        changePwdWindow.DataContext = changePwdVM;
+                        changePwdWindow.Owner = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive);
+                        changePwdWindow.ShowDialog();
+                    } else {
+                        Window nextWindow = user.Role switch
+                        {
+                            UserRole.DEV => new MainWindow(user),
+                            UserRole.RH or UserRole.ADMIN => new UserListView(),
+                            _ => null
+                        };
 
-                    if (nextWindow != null) {
-                        nextWindow.Show();
+                        if (nextWindow != null) {
+                            nextWindow.Show();
+                        }
+                        IsViewVisible = false;
                     }
                 });
 
-                IsViewVisible = false;
+                //IsViewVisible = false;
             } else {
                 ErrorMessage = "* Invalid username or password";
             }
