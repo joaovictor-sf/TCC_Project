@@ -3,6 +3,7 @@ using System.Windows;
 using TCC_MVVM.Infra;
 using TCC_MVVM.Util;
 using TCC_MVVM.View;
+using TCC_MVVM.Model.Enum;
 
 namespace TCC_MVVM.ViewModel
 {
@@ -45,10 +46,17 @@ namespace TCC_MVVM.ViewModel
         public RelayCommand RecoverPasswordCommand { get; }
         public RelayCommand ShowPasswordCommand { get; }
         public RelayCommand RememberPasswordCommand { get; }
+        public ICommand MinimizeCommand { get; }
+        public ICommand CloseCommand { get; }
+        public Action? MinimizeWindow { get; set; }
+        public Action? CloseWindow { get; set; }
 
         public LoginViewModel() {
             LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecoverPasswordCommand = new RelayCommand(ExecuteRecoverPasswordCommand);
+
+            MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
+            CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
         }
 
         private void ExecuteLoginCommand(object? parameter) {
@@ -64,14 +72,20 @@ namespace TCC_MVVM.ViewModel
             var user = db.Users.FirstOrDefault(u => u.Username == Username);
 
             if (user != null && BCrypt.Net.BCrypt.Verify(Password, user.PasswordHash)) {
-                // abrir MainView, por exemplo
-                MessageBox.Show($"Welcome {user.Name} {user.LastName}");
+                MessageBox.Show($"Bem-vindo {user.Name} {user.LastName}!", "Login", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 Application.Current.Dispatcher.Invoke(() =>
                 {
-                    //var main = new MainWindow(user);
-                    var main = new UserListView();
-                    main.Show();
+                    Window nextWindow = user.Role switch
+                    {
+                        UserRole.DEV => new MainWindow(user),
+                        UserRole.RH or UserRole.ADMIN => new UserListView(),
+                        _ => null
+                    };
+
+                    if (nextWindow != null) {
+                        nextWindow.Show();
+                    }
                 });
 
                 IsViewVisible = false;

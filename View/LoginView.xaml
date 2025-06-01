@@ -103,7 +103,7 @@
                             FontFamily="Montserrat" 
                             Cursor="Hand" 
                             Grid.Column="1" 
-                            Click="btnMinimize_Click">
+                            Command="{Binding MinimizeCommand}">
 
                         <Button.Style>
                             <Style TargetType="Button">
@@ -135,7 +135,7 @@
                             FontFamily="Montserrat" 
                             Cursor="Hand" 
                             Grid.Column="2" 
-                            Click="btnClose_Click">
+                            Command="{Binding CloseCommand}">
 
                         <Button.Style>
                             <Style TargetType="Button">
