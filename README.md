@@ -29,7 +29,8 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [ ] Atualizar a formatação dos emails validos no cadastro e edit
 - [ ] Adicionar a função de resetar senha do usuário em edit
 - [ ] Melhorar o design da janela de monitoramento
-	- [ ] Adicionar o restante do horário de trabalho do dia do usuário
+	- [x] Adicionar o restante do horário de trabalho do dia do usuário
+		- [ ] Realizar um teste de 4 horas de trabalho para verificar se o horário é atualizado corretamente 
 	- [ ] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados
 	- [ ] Melhorar o design em si
 - [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)

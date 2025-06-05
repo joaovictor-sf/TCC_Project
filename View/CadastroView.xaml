@@ -253,9 +253,6 @@
                     <TextBlock Text="Username:"/>
                     <TextBox Text="{Binding Username}"/>
 
-                    <!--<TextBlock Text="Role:"/>
-                <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding Role}" Margin="5"/>-->
-
                     <TextBlock Text="Cargo:"/>
                     <ComboBox ItemsSource="{Binding Roles}" 
                               SelectedItem="{Binding Role}"

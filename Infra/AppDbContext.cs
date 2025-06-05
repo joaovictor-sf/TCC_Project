@@ -9,6 +9,7 @@ namespace TCC_MVVM.Infra
         public DbSet<ProcessLog> ProcessLogs { get; set; }
         public DbSet<InactivityLog> InactivityLogs { get; set; }
         public DbSet<UserModel> Users { get; set; }
+        public DbSet<DailyWorkLog> DailyWorkLogs { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
@@ -53,6 +54,20 @@ namespace TCC_MVVM.Infra
                 WorkHours = WorkHours.OITO_HORAS,
                 IsActive = true
             });
+
+            modelBuilder.Entity<DailyWorkLog>()
+                       .HasOne(log => log.User)
+                       .WithMany()
+                       .HasForeignKey(log => log.UserId)
+                       .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<DailyWorkLog>()
+                        .HasIndex(log => new { log.UserId, log.Date })
+                        .IsUnique(); // Um log por usuário por dia
+
+            modelBuilder.Entity<DailyWorkLog>()
+                        .Property(d => d.Date)
+                        .HasColumnType("timestamp without time zone");
 
             base.OnModelCreating(modelBuilder);
         }
