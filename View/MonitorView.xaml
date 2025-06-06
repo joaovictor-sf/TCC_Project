@@ -1,0 +1,178 @@
+﻿<Window x:Class="TCC_MVVM.View.MonitorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCC_MVVM.View"
+        xmlns:viewmodel="clr-namespace:TCC_MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="MonitorView" Height="550" Width="550"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+
+    <Window.DataContext>
+        <viewmodel:MonitorViewModel/>
+    </Window.DataContext>
+
+    <Border CornerRadius="12">
+        <Border CornerRadius="10" 
+                BorderThickness="2">
+            <!-- Background Gradient -->
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#303860" Offset="0.5"/>
+                    <GradientStop Color="#b69a50" Offset="0.75"/>
+                    <GradientStop Color="#736958" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <!-- Border Background -->
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0.0"/>
+                    <GradientStop Color="#1b1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="LOG IN" 
+                               Foreground="DarkGray" 
+                               FontSize="10" 
+                               FontFamily="Montserrat" 
+                               Grid.Column="0" 
+                               VerticalAlignment="Center" 
+                               Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize" 
+                            BorderThickness="0" 
+                            Content="-" 
+                            Foreground="White" 
+                            FontSize="16" 
+                            FontFamily="Montserrat" 
+                            Cursor="Hand" 
+                            Grid.Column="1" 
+                            Command="{Binding MinimizeCommand}">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnClose" 
+                            BorderThickness="0" 
+                            Content="X" 
+                            Foreground="White" 
+                            FontSize="12" 
+                            FontFamily="Montserrat" 
+                            Cursor="Hand" 
+                            Grid.Column="2" 
+                            Command="{Binding CloseCommand}">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                <!-- Main Content -->
+                <StackPanel VerticalAlignment="Center" Grid.Row="1">
+
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="DarkGray"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="FontWeight" Value="Medium"/>
+                            <Setter Property="Margin" Value="0,15,0,0"/>
+                        </Style>
+                        <Style TargetType="Button">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="12"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="Margin" Value="0,10,0,0"/>
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40"
+                                                CornerRadius="20"
+                                                Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <TextBlock Text="Welcome NOME SOBRENOME"/>
+
+                    <TextBlock Text="{Binding TempoRestante}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Command="{Binding StopCommand}" Content="STOP"/>
+                        <Button Command="{Binding StartCommand}" Content="Start"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
+</Window>

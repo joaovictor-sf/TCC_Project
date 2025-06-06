@@ -4,19 +4,18 @@ using TCC_MVVM.ViewModel;
 
 namespace TCC_MVVM.View
 {
-    
-    public partial class LoginView : Window
+    public partial class MonitorView : Window
     {
-        public LoginView()
+        public MonitorView()
         {
             InitializeComponent();
-            var vm = new LoginViewModel
+            DataContextChanged += (s, e) =>
             {
-                MinimizeWindow = () => WindowState = WindowState.Minimized,
-                CloseWindow = () => Application.Current.Shutdown()
+                if (e.NewValue is MonitorViewModel vm) {
+                    vm.MinimizeWindow = () => WindowState = WindowState.Minimized;
+                    vm.CloseWindow = () => Application.Current.Shutdown();
+                }
             };
-
-            DataContext = vm;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e) {

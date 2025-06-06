@@ -4,6 +4,7 @@ using TCC_MVVM.Infra;
 using TCC_MVVM.Util;
 using TCC_MVVM.View;
 using TCC_MVVM.Model.Enum;
+using TCC_MVVM.Model;
 
 namespace TCC_MVVM.ViewModel
 {
@@ -89,7 +90,7 @@ namespace TCC_MVVM.ViewModel
                     } else {
                         Window nextWindow = user.Role switch
                         {
-                            UserRole.DEV => new MainWindow(user),
+                            UserRole.DEV => CriarMonitorView(user),
                             UserRole.RH or UserRole.ADMIN => new UserListView(),
                             _ => null
                         };
@@ -105,6 +106,17 @@ namespace TCC_MVVM.ViewModel
             } else {
                 ErrorMessage = "* Invalid username or password";
             }
+        }
+
+        private Window CriarMonitorView(UserModel user) {
+            var view = new MonitorView();
+            var vm = new MonitorViewModel(user)
+            {
+                CloseWindow = () => view.Close(),
+                MinimizeWindow = () => view.WindowState = WindowState.Minimized
+            };
+            view.DataContext = vm;
+            return view;
         }
 
         private bool CanExecuteLoginCommand(object? parameter) {
