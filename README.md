@@ -34,14 +34,17 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 	- [ ] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados
 	- [ ] Melhorar o design em si
 - [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
-- [ ] Melhorar a formadação dos dados
+- [x] Melhorar a formadação dos dados
 	- [x] Melhorar a formatação dos dados de tempo de ProcessLog
 		- [x] Update UsageTime
 		- [x] Remove StartTime e Timestamp para maior clareza
-	- [ ] Melhorar a formatação dos dados de tempo de InactivityLog
+	- [x] Melhorar a formatação dos dados de tempo de InactivityLog
+		- [x] Muda TimeStamp para Date
+		- [x] Ao adicionar dados no mesmo dia, somar o tempo de inatividade ao invés de criar um novo registro
 - [x] Não permitir usuarios demitidos logarem
 - [ ] Criar opção de Logout
 - [ ] Remover as MensageBoxs após o fim dos testes
+- [ ] Criar comentários explicativos no código(Acho que o C# tem algo semelhante ao Javadoc do Java)
 
 # MAYBE
 - [ ] Enviar senha por email

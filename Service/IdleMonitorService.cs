@@ -14,7 +14,7 @@ namespace TCC_MVVM.Service {
         }
 
         private readonly DispatcherTimer _timer;
-        private readonly TimeSpan _threshold = TimeSpan.FromSeconds(30); //Muda o tempo de inatividade aqui
+        private readonly TimeSpan _threshold = TimeSpan.FromSeconds(5); //Muda o tempo de inatividade aqui
         private DateTime? _inactivityStart = null;
 
         public TimeSpan TotalInactivity { get; private set; } = TimeSpan.Zero;
@@ -63,7 +63,7 @@ namespace TCC_MVVM.Service {
         public InactivityLog GenerateLog() {
             return new InactivityLog
             {
-                Timestamp = DateTime.UtcNow,
+                Date = DateTime.UtcNow.Date,
                 TotalInactivity = TotalInactivity,
                 MaxInactivity = MaxInactivity
             };

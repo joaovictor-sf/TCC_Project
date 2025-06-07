@@ -182,10 +182,28 @@ namespace TCC_MVVM.ViewModel
         }
 
         private void SaveInactivityLogToDatabase() {
-            using var context = new AppDbContext();
+            /*using var context = new AppDbContext();
             var inactivityLog = _idleMonitorService.GenerateLog();
             inactivityLog.UserId = _usuarioLogado.Id;
             context.InactivityLogs.Add(inactivityLog);
+            context.SaveChanges();*/
+
+            using var context = new AppDbContext();
+            var newLog = _idleMonitorService.GenerateLog();
+            newLog.UserId = _usuarioLogado.Id;
+
+            var existing = context.InactivityLogs.FirstOrDefault(l =>
+                l.UserId == _usuarioLogado.Id &&
+                l.Date == newLog.Date);
+
+            if (existing != null) {
+                existing.TotalInactivity += newLog.TotalInactivity;
+                if (newLog.MaxInactivity > existing.MaxInactivity)
+                    existing.MaxInactivity = newLog.MaxInactivity;
+            } else {
+                context.InactivityLogs.Add(newLog);
+            }
+
             context.SaveChanges();
         }
     }
