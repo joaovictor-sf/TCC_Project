@@ -166,15 +166,15 @@ namespace TCC_MVVM.ViewModel
                     pl.UserId == _usuarioLogado.Id &&
                     pl.AppName == log.AppName &&
                     pl.WindowTitle == log.WindowTitle &&
-                    pl.StartTime.Date == data);
+                    pl.Date == data);
 
                 if (existing != null) {
                     existing.UsageTime += log.UsageTime;
-                    existing.Timestamp = DateTime.UtcNow;
+                    //existing.Timestamp = DateTime.UtcNow.TimeOfDay;
                 } else {
                     log.UserId = _usuarioLogado.Id;
-                    log.StartTime = data;
-                    log.Timestamp = DateTime.UtcNow;
+                    log.Date = data;
+                    //log.Timestamp = DateTime.UtcNow.TimeOfDay;
                     context.ProcessLogs.Add(log);
                 }
             }

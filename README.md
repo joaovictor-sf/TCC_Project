@@ -35,9 +35,9 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 	- [ ] Melhorar o design em si
 - [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
 - [ ] Melhorar a formadação dos dados
-	- [ ] Melhorar a formatação dos dados de tempo de ProcessLog
+	- [x] Melhorar a formatação dos dados de tempo de ProcessLog
 		- [x] Update UsageTime
-		- [ ] Change StartTime to Date
+		- [x] Remove StartTime e Timestamp para maior clareza
 	- [ ] Melhorar a formatação dos dados de tempo de InactivityLog
 - [x] Não permitir usuarios demitidos logarem
 - [ ] Criar opção de Logout

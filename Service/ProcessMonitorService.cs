@@ -102,8 +102,9 @@ namespace TCC_MVVM.Service {
                     AppName = g.Key.AppName,
                     WindowTitle = g.Key.WindowTitle,
                     UsageTime = TimeSpan.FromTicks(g.Sum(s => s.Duration.Ticks)),
-                    StartTime = g.Min(s => s.StartTime.ToUniversalTime()),
-                    Timestamp = DateTime.UtcNow
+                    //StartTime = g.Min(s => s.StartTime.ToUniversalTime()),
+                    Date = DateTime.UtcNow.Date,
+                    //Timestamp = DateTime.UtcNow.TimeOfDay
                 })
                 .OrderByDescending(p => p.UsageTime)
                 .ToList();
