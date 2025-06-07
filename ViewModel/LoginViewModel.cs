@@ -73,6 +73,12 @@ namespace TCC_MVVM.ViewModel
             var user = db.Users.FirstOrDefault(u => u.Username == Username);
 
             if (user != null && BCrypt.Net.BCrypt.Verify(Password, user.PasswordHash)) {
+
+                if (!user.IsActive) {
+                    ErrorMessage = "* Usuário desativado. Contate o administrador.";
+                    return;
+                }
+
                 MessageBox.Show($"Bem-vindo {user.Name} {user.LastName}!", "Login", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 Application.Current.Dispatcher.Invoke(() =>

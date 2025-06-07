@@ -36,8 +36,11 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
 - [ ] Melhorar a formadação dos dados
 	- [ ] Melhorar a formatação dos dados de tempo de ProcessLog
+		- [x] Update UsageTime
+		- [ ] Change StartTime to Date
 	- [ ] Melhorar a formatação dos dados de tempo de InactivityLog
-- [ ] Não permitir usuarios demitidos entrarem no sistema
+- [x] Não permitir usuarios demitidos logarem
+- [ ] Criar opção de Logout
 - [ ] Remover as MensageBoxs após o fim dos testes
 
 # MAYBE
@@ -46,7 +49,7 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 	- [x] Inatividade
 	- [ ] Envio de screenshots
 - [ ] Mudar o nome username para cpf
-- [ ] Decidir em como será implementado o sistema de Roles. Objetivo: Funcionario apenas poderá acessar a janela de monitoramento, o RH poderá acessar a janela de monitoramento, a janela com a lista de usuarios e a janela de cadastro ou apenas as duas anteriores tirando a de monitoramento, e o Admin poderá acessar todas as janelas + funcionalidades exclusivas. Algumas ideias dessas funionalidades: 
+- [ ] Decidir em como será implementado o sistema de beneficios da role Admin, que poderá acessar todas as janelas + funcionalidades exclusivas. Algumas ideias dessas funionalidades: 
 	- [ ] Apenas o Admin poderá cadastrar outro Admin
 	- [ ] Criação de novas Roles
 	- [ ] Criação de novas WorkHours

@@ -154,10 +154,30 @@ namespace TCC_MVVM.ViewModel
 
         private void SaveLogsToDatabase(List<ProcessLog> summary) {
             using var context = new AppDbContext();
-            foreach (var log in summary) {
+            /*foreach (var log in summary) {
                 log.UserId = _usuarioLogado.Id;
             }
-            context.ProcessLogs.AddRange(summary);
+            context.ProcessLogs.AddRange(summary);*/
+
+            foreach (var log in summary) {
+                var data = DateTime.UtcNow.Date;
+
+                var existing = context.ProcessLogs.FirstOrDefault(pl => 
+                    pl.UserId == _usuarioLogado.Id &&
+                    pl.AppName == log.AppName &&
+                    pl.WindowTitle == log.WindowTitle &&
+                    pl.StartTime.Date == data);
+
+                if (existing != null) {
+                    existing.UsageTime += log.UsageTime;
+                    existing.Timestamp = DateTime.UtcNow;
+                } else {
+                    log.UserId = _usuarioLogado.Id;
+                    log.StartTime = data;
+                    log.Timestamp = DateTime.UtcNow;
+                    context.ProcessLogs.Add(log);
+                }
+            }
             context.SaveChanges();
         }
 
