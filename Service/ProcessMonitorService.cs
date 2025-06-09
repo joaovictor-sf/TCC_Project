@@ -7,6 +7,7 @@ using TCC_MVVM.Model;
 namespace TCC_MVVM.Service {
     class ProcessMonitorService {
         public event Action<List<ProcessLog>>? MonitoringStopped;
+        public event Action<List<(string AppName, string WindowTitle)>>? ProcessesUpdated;
 
         private readonly List<ProcessSession> _processSessions = new();
         private readonly TimeSpan _monitoringInterval;
@@ -55,6 +56,14 @@ namespace TCC_MVVM.Service {
                     });
                 }
             }
+
+            ProcessesUpdated?.Invoke(
+                _processSessions
+                .Where(s => !s.EndTime.HasValue)
+                .Select(s => (s.AppName, s.WindowTitle))
+                .Distinct()
+                .ToList()
+            );
         }
 
         private Dictionary<string, (string AppName, string WindowTitle)> GetActiveProcesses() {

@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 using TCC_MVVM.Infra;
 using TCC_MVVM.Model;
+using TCC_MVVM.Model.DTO;
 using TCC_MVVM.Service;
 using TCC_MVVM.Util;
 
@@ -11,8 +13,9 @@ namespace TCC_MVVM.ViewModel
     class MonitorViewModel : ViewModelBase {
         private readonly ProcessMonitorService _processMonitorService;
         private readonly IdleMonitorService _idleMonitorService;
-        private bool _isMonitoring;
         private readonly UserModel _usuarioLogado;
+
+        public ObservableCollection<ProcessDisplayItem> ProcessosMonitorados { get; } = new();
 
         private DispatcherTimer _timer;
         private DateTime _lastTick;
@@ -21,7 +24,7 @@ namespace TCC_MVVM.ViewModel
         private TimeSpan _workedToday;
         public TimeSpan RemainingTime => _usuarioLogado.WorkHours.ToTimeSpan() - _workedToday;
 
-        private string _tempoRestante;
+        private string _tempoRestante = "00:00:00";
         public string TempoRestante {
             get => _tempoRestante;
             set {
@@ -33,6 +36,7 @@ namespace TCC_MVVM.ViewModel
         public ICommand StartCommand { get; }
         public ICommand StopCommand { get; }
 
+        private bool _isMonitoring;
         public bool IsMonitoring {
             get => _isMonitoring;
             private set {
@@ -74,6 +78,18 @@ namespace TCC_MVVM.ViewModel
 
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+
+            if (!(DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)) {
+                using var db = new AppDbContext();
+                var hoje = DateTime.Today;
+                _todayLog = db.DailyWorkLogs
+                    .FirstOrDefault(l => l.UserId == _usuarioLogado.Id && l.Date == hoje);
+
+                _workedToday = _todayLog?.TimeWorked ?? TimeSpan.Zero;
+                UpdateRemainingTimeUI();
+            }
+
+            _processMonitorService.ProcessesUpdated += AtualizarListaMonitorada;
         }
 
         public MonitorViewModel() {
@@ -88,10 +104,32 @@ namespace TCC_MVVM.ViewModel
 
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+
+            _processMonitorService.ProcessesUpdated += AtualizarListaMonitorada;
         }
 
+        private void AtualizarListaMonitorada(List<(string AppName, string WindowTitle)> processos) {
+            App.Current.Dispatcher.Invoke(() =>
+            {
+                var novos = processos.Select(p => new ProcessDisplayItem { AppName = p.AppName, WindowTitle = p.WindowTitle }).ToList();
+
+                // Remove apps que não estão mais ativos
+                foreach (var existente in ProcessosMonitorados.ToList()) {
+                    if (!novos.Contains(existente))
+                        ProcessosMonitorados.Remove(existente);
+                }
+
+                // Adiciona novos apps
+                foreach (var novo in novos) {
+                    if (!ProcessosMonitorados.Contains(novo))
+                        ProcessosMonitorados.Add(novo);
+                }
+            });
+        }
+
+
         private void InicializarTimer() {
-            if (_timer != null || DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday) return;
+            //if (_timer != null || DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday) return;
 
             using var db = new AppDbContext();
 
