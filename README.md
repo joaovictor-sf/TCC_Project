@@ -31,9 +31,9 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [ ] Fazer o UserList atualizar após cadastro
 - [ ] Melhorar o design da janela de monitoramento
 	- [x] Adicionar o restante do horário de trabalho do dia do usuário
-		- [ ] Realizar um teste de 4 horas de trabalho para verificar se o horário é atualizado corretamente 
+	- [ ] Realizar um teste de 4 horas de trabalho para verificar se o horário é atualizado corretamente 
 	- [x] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados
-	- [ ] Melhorar o design em si
+	- [x] Melhorar o design em si
 - [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
 - [ ] Melhorar a formadação dos dados
 	- [x] Melhorar a formatação dos dados de tempo de ProcessLog

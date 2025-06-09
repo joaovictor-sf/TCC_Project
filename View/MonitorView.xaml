@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TCC_MVVM.View"
         xmlns:viewmodel="clr-namespace:TCC_MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MonitorView" Height="550" Width="550"
+        Title="MonitorView" Height="320" Width="500"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -52,7 +52,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="LOG IN" 
+                    <TextBlock Text="M O N I T O R A M E N T O   D E   A P L I C A Ç Õ E S" 
                                Foreground="DarkGray" 
                                FontSize="10" 
                                FontFamily="Montserrat" 
@@ -143,7 +143,7 @@
                             <Setter Property="FontFamily" Value="Montserrat"/>
                             <Setter Property="Cursor" Value="Hand"/>
                             <Setter Property="Padding" Value="10"/>
-                            <Setter Property="Margin" Value="0,10,0,0"/>
+                            <Setter Property="Margin" Value="10"/>
                             <Setter Property="Background" Value="#462AD8"/>
                             <Setter Property="Template">
                                 <Setter.Value>
@@ -162,11 +162,111 @@
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
+                        <Style TargetType="ListBox">
+                            <Setter Property="Background" Value="#18123a"/>
+                            <Setter Property="BorderBrush" Value="#303860"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Padding" Value="8"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBox">
+                                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="12">
+                                            <ScrollViewer Focusable="false">
+                                                <ItemsPresenter/>
+                                            </ScrollViewer>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="13"/>
+                            <Setter Property="Margin" Value="0,2,0,2"/>
+                            <Setter Property="Padding" Value="10,6"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border x:Name="Bd"
+                                                Background="{TemplateBinding Background}"
+                                                CornerRadius="8"
+                                                SnapsToDevicePixels="true">
+                                            <ContentPresenter HorizontalAlignment="Stretch"
+                                                              VerticalAlignment="Center"
+                                                              Margin="0"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="#28AEED"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="#303860"/>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Foreground" Value="#888"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style TargetType="ScrollBar">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Width" Value="8"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ScrollBar">
+                                        <Grid Background="{TemplateBinding Background}">
+                                            <Track Name="PART_Track" IsDirectionReversed="true" Focusable="false">
+                                                <Track.DecreaseRepeatButton>
+                                                    <RepeatButton Command="ScrollBar.LineUpCommand"
+                                                                  Style="{x:Null}" 
+                                                                  IsTabStop="False"
+                                                                  Background="Transparent"/>
+                                                </Track.DecreaseRepeatButton>
+                                                <Track.Thumb>
+                                                    <Thumb>
+                                                        <Thumb.Template>
+                                                            <ControlTemplate TargetType="Thumb">
+                                                                <Border Background="#28AEED"
+                                                                        BorderBrush="#303860"
+                                                                        BorderThickness="1"
+                                                                        CornerRadius="4"/>
+                                                            </ControlTemplate>
+                                                        </Thumb.Template>
+                                                    </Thumb>
+                                                </Track.Thumb>
+                                                <Track.IncreaseRepeatButton>
+                                                    <RepeatButton Command="ScrollBar.LineDownCommand"
+                                                                  Style="{x:Null}" 
+                                                                  IsTabStop="False"
+                                                                  Background="Transparent"/>
+                                                </Track.IncreaseRepeatButton>
+                                            </Track>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
                     </StackPanel.Resources>
 
-                    <TextBlock Text="Welcome NOME SOBRENOME"/>
+                    <!--<TextBlock Text="Welcome NOME SOBRENOME"/>-->
 
-                    <TextBlock Text="{Binding TempoRestante}"/>
+                    <TextBlock Text="{Binding TempoRestante}"
+                               HorizontalAlignment="Center"
+                               FontSize="16"/>
 
                     <TextBlock Text="Aplicações sendo monitoradas:" 
                                FontWeight="Bold" 

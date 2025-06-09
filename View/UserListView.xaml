@@ -308,7 +308,7 @@
                                                                   Background="Transparent"/>
                                                 </Track.DecreaseRepeatButton>
                                                 <Track.Thumb>
-                                                    <Thumb Height="150">
+                                                    <Thumb>
                                                         <Thumb.Template>
                                                             <ControlTemplate TargetType="Thumb">
                                                                 <Border Background="#28AEED"
