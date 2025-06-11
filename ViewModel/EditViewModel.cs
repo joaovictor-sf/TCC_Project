@@ -53,6 +53,12 @@ namespace TCC_MVVM.ViewModel
                     return;
                 }
 
+                if (!EmailValido(Email)) {
+                    MessageBox.Show("E-mail inválido!", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+
                 // Atualiza os dados
                 user.Name = Nome;
                 user.LastName = Sobrenome;
@@ -73,7 +79,14 @@ namespace TCC_MVVM.ViewModel
             return !string.IsNullOrWhiteSpace(Nome)
                 && !string.IsNullOrWhiteSpace(Sobrenome)
                 && !string.IsNullOrWhiteSpace(Email)
+                && EmailValido(Email)
                 && !string.IsNullOrWhiteSpace(Username);
         }
+
+        private bool EmailValido(string email) {
+            return System.Text.RegularExpressions.Regex.IsMatch(email,
+                @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        }
+
     }
 }

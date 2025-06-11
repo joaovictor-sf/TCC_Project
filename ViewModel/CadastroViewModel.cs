@@ -95,6 +95,7 @@ namespace TCC_MVVM.ViewModel
             return !string.IsNullOrEmpty(Nome) &&
                    !string.IsNullOrEmpty(Sobrenome) &&
                    !string.IsNullOrEmpty(Email) &&
+                   EmailValido(Email) &&
                    !string.IsNullOrEmpty(Username) &&
                    Role != default &&
                    WorkHours != default;
@@ -106,6 +107,11 @@ namespace TCC_MVVM.ViewModel
 
                 if (db.Users.Any(u => u.Username == Username)) {
                     Mensagem = "Esse username já está em uso.";
+                    return;
+                }
+
+                if (!EmailValido(Email)) {
+                    Mensagem = "E-mail inválido.";
                     return;
                 }
 
@@ -146,6 +152,11 @@ namespace TCC_MVVM.ViewModel
                 //MessageBox.Show($"Erro ao cadastrar: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
                 MessageBox.Show($"Erro ao cadastrar: {ex}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private bool EmailValido(string email) {
+            return System.Text.RegularExpressions.Regex.IsMatch(email,
+                @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
         }
     }
 }

@@ -25,8 +25,9 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [x] Implementar ao projeto principal
 - [x] Adicionar a função de editar
 - [x] Adicionar de deminir usuários
+- [x] Impedir que usuários demitidos façam login
 - [x] Criar função de criar nova senha após o primeiro login do usuario
-- [ ] Atualizar a formatação dos emails validos no cadastro e edit
+- [x] Atualizar a formatação dos emails validos no cadastro e edit
 - [ ] Adicionar a função de resetar senha do usuário em edit
 - [ ] Fazer o UserList atualizar após cadastro
 - [ ] Melhorar o design da janela de monitoramento
@@ -53,6 +54,7 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 
 # MAYBE
 - [ ] Enviar senha por email
+- [ ] Editar o cadastro e o edit para avisar o porquê o usuário não poder ser cadastrado ou editado(ex: email já cadastrado, cpf já cadastrado, etc))
 - [ ] Estudar e avaliar mais opções de monitoramento
 	- [x] Inatividade
 	- [ ] Envio de screenshots
