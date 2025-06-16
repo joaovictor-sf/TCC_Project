@@ -48,18 +48,19 @@ namespace TCC_MVVM.ViewModel
             try {
                 using var db = new AppDbContext();
                 var user = db.Users.FirstOrDefault(u => u.Id == _originalUser.Id);
+
+                //Não precisa verificar se o usuário existe, pois o ViewModel é inicializado com um usuário existente.
                 if (user == null) {
                     Mensagem = "Usuário não encontrado.";
                     return;
                 }
 
+                // Não funciona
                 if (!EmailValido(Email)) {
                     MessageBox.Show("E-mail inválido!", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-
-                // Atualiza os dados
                 user.Name = Nome;
                 user.LastName = Sobrenome;
                 user.Email = Email;

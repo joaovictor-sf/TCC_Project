@@ -60,6 +60,34 @@
                                VerticalAlignment="Center" 
                                Margin="10,0,0,0"/>
 
+                    <Button Command="{Binding LogoutCommand}"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Margin="0,0,10,0"
+                            Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <TextBlock Text="Logout"
+                                   Foreground="White"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Montserrat">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                                            <Setter Property="TextDecorations" Value="Underline"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Button>
+
                     <Button x:Name="btnMinimize" 
                             BorderThickness="0" 
                             Content="-" 
@@ -287,7 +315,21 @@
                     </ListBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Command="{Binding StopCommand}" Content="STOP"/>
-                        <Button Command="{Binding StartCommand}" Content="Start"/>
+                        <!--<Button Command="{Binding StartCommand}" Content="START"/>-->
+                        <Button Command="{Binding StartCommand}" Content="START">
+                            <Button.Style>
+                                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsMonitoring}" Value="True">
+                                            <Setter Property="Background" Value="#28AEED"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsMonitoring}" Value="False">
+                                            <Setter Property="Background" Value="#462AD8"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>

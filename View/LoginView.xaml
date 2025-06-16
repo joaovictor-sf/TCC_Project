@@ -15,31 +15,17 @@
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
 
-    <!-- 
-    #303860
-    #b69a50
-    -->
-    <!-- Padrão
-        Border
-        #462AD8
-        #DA34AE
-        #8A16C1
-        BackGround
-        #060531
-        #1b1448
-    -->
-
     <Window.DataContext>
         <viewmodel:LoginViewModel/>
     </Window.DataContext>
 
-    <Window.Resources>
+    <!--<Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-    </Window.Resources>
+    </Window.Resources>-->
 
-    <Window.Visibility>
+    <!--<Window.Visibility>
         <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibilityConverter}"/>
-    </Window.Visibility>
+    </Window.Visibility>-->
 
     <Window.InputBindings>
         <KeyBinding Key="Enter"
@@ -277,14 +263,41 @@
                                FontWeight="Medium"
                                FontFamily="Montserrat"/>
 
-                        <TextBlock Text="Reset"
+                        <!--<TextBlock Text="Reset"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                Cursor="Hand"
-                               Margin="8,0,0,0"/>
+                               Margin="8,0,0,0"/>-->
 
+                        <Button Command="{Binding ResetCommand}"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Padding="0"
+                                Margin="8,0,0,0"
+                                Cursor="Hand">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <TextBlock Text="Reset"
+                                       Foreground="White"
+                                       FontSize="12"
+                                       FontWeight="Medium"
+                                       FontFamily="Montserrat">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                                                <Setter Property="TextDecorations" Value="Underline"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>

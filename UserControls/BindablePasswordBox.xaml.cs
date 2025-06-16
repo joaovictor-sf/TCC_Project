@@ -3,9 +3,6 @@ using System.Windows.Controls;
 
 namespace TCC_MVVM.UserControls
 {
-    /// <summary>
-    /// Interaction logic for BindablePasswordBox.xaml
-    /// </summary>
     public partial class BindablePasswordBox : UserControl
     {
         public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(string), typeof(BindablePasswordBox));

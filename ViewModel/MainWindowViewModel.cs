@@ -12,6 +12,7 @@ using TCC_MVVM.Util;
 
 namespace TCC_MVVM.ViewModel
 {
+    //Exluir Classe
     class MainWindowViewModel : INotifyPropertyChanged {
         private readonly ProcessMonitorService _processMonitorService;
         private readonly IdleMonitorService _idleMonitorService;

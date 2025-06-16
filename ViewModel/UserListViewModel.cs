@@ -22,6 +22,9 @@ namespace TCC_MVVM.ViewModel
 
         public ICommand MinimizeCommand { get; }
         public ICommand CloseCommand { get; }
+
+        public ICommand LogoutCommand { get; }
+
         public ICommand AddCommand { get; }
         public ICommand EditCommand { get; }
         public ICommand DeleteCommand { get; }
@@ -34,9 +37,30 @@ namespace TCC_MVVM.ViewModel
 
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+
             AddCommand = new RelayCommand(_ => OpenCadastroModal());
             EditCommand = new RelayCommand(_ => OpenEditModal(), _ => SelectedUser != null);
             DeleteCommand = new RelayCommand(_ => DemitirUsuario(), _ => SelectedUser != null);
+
+            LogoutCommand = new RelayCommand(ExecuteLogout);
+        }
+
+        private void ExecuteLogout(object? parameter) {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var loginView = new LoginView();
+                if (loginView.DataContext is LoginViewModel loginVM) {
+                    loginVM.Reset();
+                }
+                loginView.Show();
+
+                foreach (Window window in Application.Current.Windows) {
+                    if (window.DataContext == this) {
+                        window.Close();
+                        break;
+                    }
+                }
+            });
         }
 
         private void OpenCadastroModal() {
@@ -45,6 +69,7 @@ namespace TCC_MVVM.ViewModel
                 Owner = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive)
             };
             cadastroView.ShowDialog();
+            RefreshUserList();
         }
 
         private void OpenEditModal() {
@@ -52,7 +77,7 @@ namespace TCC_MVVM.ViewModel
 
             var viewModel = new EditViewModel(SelectedUser)
             {
-                CloseWindow = () => { }, // Evita null temporariamente
+                CloseWindow = () => { },
                 MinimizeWindow = () => { }
             };
 
@@ -62,7 +87,7 @@ namespace TCC_MVVM.ViewModel
                 Owner = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive)
             };
 
-            viewModel.CloseWindow = () => editView.Close();      // Associa corretamente após o editView estar instanciado
+            viewModel.CloseWindow = () => editView.Close();
             viewModel.MinimizeWindow = () => editView.WindowState = WindowState.Minimized;
 
             editView.ShowDialog();

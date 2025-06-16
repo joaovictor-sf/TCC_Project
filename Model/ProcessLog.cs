@@ -8,12 +8,8 @@ namespace TCC_MVVM.Model
         public string AppName { get; set; }
         public string WindowTitle { get; set; }
         public TimeSpan UsageTime { get; set; }
-        //[Column(TypeName = "time")]
-        //public TimeSpan StartTime { get; set; }
         [Column(TypeName = "date")]
         public DateTime Date { get; set; }
-        //[Column(TypeName = "time")]
-        //public TimeSpan Timestamp { get; set; }
         public int UserId { get; set; }
         public UserModel User { get; set; }
     }

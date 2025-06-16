@@ -8,7 +8,6 @@ using TCC_MVVM.Util;
 namespace TCC_MVVM.ViewModel
 {
     class CadastroViewModel : ViewModelBase {
-        // Propriedades para binding
         private string _nome;
         private string _sobrenome;
         private string _email;
@@ -105,6 +104,7 @@ namespace TCC_MVVM.ViewModel
             try {
                 using var db = new AppDbContext();
 
+                //Essa parte não está funcionando
                 if (db.Users.Any(u => u.Username == Username)) {
                     Mensagem = "Esse username já está em uso.";
                     return;
@@ -113,9 +113,8 @@ namespace TCC_MVVM.ViewModel
                 if (!EmailValido(Email)) {
                     Mensagem = "E-mail inválido.";
                     return;
-                }
+                }//Até aqui
 
-                // Gera senha e faz hash
                 string senhaGerada = Guid.NewGuid().ToString("N")[..8];
                 string senhaCriptografada = BCrypt.Net.BCrypt.HashPassword(senhaGerada);
 
@@ -135,21 +134,11 @@ namespace TCC_MVVM.ViewModel
                 db.Users.Add(novoUsuario);
                 db.SaveChanges();
 
-                Mensagem = $"Usuário cadastrado com sucesso!\nSenha gerada: {senhaGerada}";
-                MessageBox.Show(Mensagem, "Cadastro", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                // Limpar os campos após cadastro
                 Nome = string.Empty;
                 Sobrenome = string.Empty;
                 Email = string.Empty;
                 Username = string.Empty;
-                //Role = string.Empty;
-
-                // Esconde a mensagem após 5 segundos
-                //await Task.Delay(5000);
-                //Mensagem = "";
             } catch (Exception ex) {
-                //MessageBox.Show($"Erro ao cadastrar: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
                 MessageBox.Show($"Erro ao cadastrar: {ex}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }

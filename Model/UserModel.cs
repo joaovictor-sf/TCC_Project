@@ -11,8 +11,6 @@ namespace TCC_MVVM.Model
         public string Username { get; set; }
         [Required]
         public string PasswordHash { get; set; }
-        //[Required]
-        //public string Role { get; set; }  // "Funcionario", "RH", "Admin"
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

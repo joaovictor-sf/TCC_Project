@@ -24,29 +24,27 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [x] Criar um Boolean de Status de Usuário(isActive)
 - [x] Implementar ao projeto principal
 - [x] Adicionar a função de editar
+- [x] Não permitir usuarios demitidos logarem
 - [x] Adicionar de deminir usuários
-- [x] Impedir que usuários demitidos façam login
 - [x] Criar função de criar nova senha após o primeiro login do usuario
 - [x] Atualizar a formatação dos emails validos no cadastro e edit
-- [ ] Adicionar a função de resetar senha do usuário em edit
-- [ ] Fazer o UserList atualizar após cadastro
-- [ ] Melhorar o design da janela de monitoramento
-	- [x] Adicionar o restante do horário de trabalho do dia do usuário
-	- [ ] Realizar um teste de 4 horas de trabalho para verificar se o horário é atualizado corretamente 
-	- [x] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados
-	- [x] Melhorar o design em si
 - [x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)
-- [ ] Melhorar a formadação dos dados
+- [x] Melhorar a formadação dos dados
 	- [x] Melhorar a formatação dos dados de tempo de ProcessLog
 		- [x] Update UsageTime
 		- [x] Remove StartTime e Timestamp para maior clareza
 	- [x] Melhorar a formatação dos dados de tempo de InactivityLog
 		- [x] Muda TimeStamp para Date
 		- [x] Ao adicionar dados no mesmo dia, somar o tempo de inatividade ao invés de criar um novo registro
-	- [ ] Ajustar o Date de DailyWorkLogs
-- [x] Não permitir usuarios demitidos logarem
-- [ ] Criar opção de Logout
-- [ ] Remover as MensageBoxs após o fim dos testes
+	- [x] Ajustar o Date de DailyWorkLogs
+- [x] Fazer o UserList atualizar após cadastro
+- [ ] Melhorar o design da janela de monitoramento
+	- [x] Adicionar o restante do horário de trabalho do dia do usuário
+	- [ ] Realizar um teste de 4 horas de trabalho para verificar se o horário é atualizado corretamente 
+	- [x] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados
+	- [x] Melhorar o design em si
+- [x] Criar opção de Logout
+- [x] Remover as MensageBoxs após o fim dos testes
 - [ ] Criar comentários explicativos no código(Acho que o C# tem algo semelhante ao Javadoc do Java)
 
 # LISTA DE ERROS:

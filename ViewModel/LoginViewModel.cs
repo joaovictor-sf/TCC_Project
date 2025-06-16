@@ -9,11 +9,10 @@ using TCC_MVVM.Model;
 namespace TCC_MVVM.ViewModel
 {
     class LoginViewModel : ViewModelBase {
-        // Fields
         private string _username;
         private string _password;
         private string _errorMessage;
-        private bool _isViewVisible = true;
+        //private bool _isViewVisible = true;
 
         public string Username {
             get => _username; set {
@@ -35,18 +34,18 @@ namespace TCC_MVVM.ViewModel
                 OnPropertyChanged(nameof(ErrorMessage));
             }
         }
-        public bool IsViewVisible {
+        /*public bool IsViewVisible {
             get => _isViewVisible; set {
                 _isViewVisible = value;
                 OnPropertyChanged(nameof(IsViewVisible));
             }
-        }
+        }*/
 
-        // Commands
         public RelayCommand LoginCommand { get; }
         public RelayCommand RecoverPasswordCommand { get; }
         public RelayCommand ShowPasswordCommand { get; }
         public RelayCommand RememberPasswordCommand { get; }
+
         public ICommand MinimizeCommand { get; }
         public ICommand CloseCommand { get; }
         public Action? MinimizeWindow { get; set; }
@@ -79,8 +78,6 @@ namespace TCC_MVVM.ViewModel
                     return;
                 }
 
-                MessageBox.Show($"Bem-vindo {user.Name} {user.LastName}!", "Login", MessageBoxButton.OK, MessageBoxImage.Information);
-
                 Application.Current.Dispatcher.Invoke(() =>
                 {
                     if (user.MustChangePassword) {
@@ -104,11 +101,13 @@ namespace TCC_MVVM.ViewModel
                         if (nextWindow != null) {
                             nextWindow.Show();
                         }
-                        IsViewVisible = false;
+                        //IsViewVisible = false;
+                        Application.Current.Windows
+                        .OfType<Window>()
+                        .FirstOrDefault(w => w.DataContext == this)?
+                        .Close();
                     }
                 });
-
-                //IsViewVisible = false;
             } else {
                 ErrorMessage = "* Invalid username or password";
             }
@@ -130,8 +129,14 @@ namespace TCC_MVVM.ViewModel
         }
 
         private void ExecuteRecoverPasswordCommand(object? parameter) {
-            // Simulate a password recovery process
             ErrorMessage = "Password recovery link sent to your email.";
+        }
+
+        public void Reset() {
+            Username = string.Empty;
+            Password = string.Empty;
+            ErrorMessage = string.Empty;
+            //IsViewVisible = true;
         }
     }
 }

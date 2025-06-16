@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using TCC_MVVM.Model;
 
 namespace TCC_MVVM.Service {
@@ -37,14 +34,12 @@ namespace TCC_MVVM.Service {
             var now = DateTime.UtcNow;
             var activeProcesses = GetActiveProcesses();
 
-            // Fecha sessões de processos que não estão mais ativos
             foreach (var session in _processSessions.Where(s => !s.EndTime.HasValue)) {
                 if (!activeProcesses.ContainsKey(session.Key)) {
                     session.EndTime = now;
                 }
             }
 
-            // Inicia novas sessões para processos recém-detectados
             foreach (var kvp in activeProcesses) {
                 if (!_processSessions.Any(s => s.Key == kvp.Key && !s.EndTime.HasValue)) {
                     _processSessions.Add(new ProcessSession
@@ -93,7 +88,6 @@ namespace TCC_MVVM.Service {
             _timer.Dispose();
             IsMonitoring = false;
 
-            // Finaliza todas as sessões ativas
             var now = DateTime.UtcNow;
             foreach (var session in _processSessions.Where(s => !s.EndTime.HasValue)) {
                 session.EndTime = now;
@@ -111,9 +105,7 @@ namespace TCC_MVVM.Service {
                     AppName = g.Key.AppName,
                     WindowTitle = g.Key.WindowTitle,
                     UsageTime = TimeSpan.FromTicks(g.Sum(s => s.Duration.Ticks)),
-                    //StartTime = g.Min(s => s.StartTime.ToUniversalTime()),
-                    Date = DateTime.UtcNow.Date,
-                    //Timestamp = DateTime.UtcNow.TimeOfDay
+                    Date = DateTime.UtcNow.Date
                 })
                 .OrderByDescending(p => p.UsageTime)
                 .ToList();

@@ -4,9 +4,6 @@ using TCC_MVVM.ViewModel;
 
 namespace TCC_MVVM.View
 {
-    /// <summary>
-    /// Interaction logic for CadastroView.xaml
-    /// </summary>
     public partial class CadastroView : Window
     {
         public CadastroView()

@@ -7,6 +7,7 @@ using TCC_MVVM.Model;
 using TCC_MVVM.Model.DTO;
 using TCC_MVVM.Service;
 using TCC_MVVM.Util;
+using TCC_MVVM.View;
 
 namespace TCC_MVVM.ViewModel
 {
@@ -41,6 +42,7 @@ namespace TCC_MVVM.ViewModel
             get => _isMonitoring;
             private set {
                 if (SetProperty(ref _isMonitoring, value)) {
+                    CommandManager.InvalidateRequerySuggested();
                     if (value) {
                         _processMonitorService.StartMonitoring();
                         _idleMonitorService.Start();
@@ -58,6 +60,8 @@ namespace TCC_MVVM.ViewModel
         }
 
         public bool IsNotMonitoring => !IsMonitoring;
+
+        public ICommand LogoutCommand { get; }
 
         public ICommand MinimizeCommand { get; }
         public ICommand CloseCommand { get; }
@@ -78,6 +82,8 @@ namespace TCC_MVVM.ViewModel
 
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+
+            LogoutCommand = new RelayCommand(ExecuteLogout, _ => !IsMonitoring);
 
             if (!(DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)) {
                 using var db = new AppDbContext();
@@ -105,7 +111,27 @@ namespace TCC_MVVM.ViewModel
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
 
+            LogoutCommand = new RelayCommand(ExecuteLogout, _ => !IsMonitoring);
+
             _processMonitorService.ProcessesUpdated += AtualizarListaMonitorada;
+        }
+
+        private void ExecuteLogout(object? parameter) {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                var loginView = new LoginView();
+                if (loginView.DataContext is LoginViewModel loginVM) {
+                    loginVM.Reset();
+                }
+                loginView.Show();
+
+                foreach (Window window in Application.Current.Windows) {
+                    if (window.DataContext == this) {
+                        window.Close();
+                        break;
+                    }
+                }
+            });
         }
 
         private void AtualizarListaMonitorada(List<(string AppName, string WindowTitle)> processos) {
@@ -113,13 +139,11 @@ namespace TCC_MVVM.ViewModel
             {
                 var novos = processos.Select(p => new ProcessDisplayItem { AppName = p.AppName, WindowTitle = p.WindowTitle }).ToList();
 
-                // Remove apps que não estão mais ativos
                 foreach (var existente in ProcessosMonitorados.ToList()) {
                     if (!novos.Contains(existente))
                         ProcessosMonitorados.Remove(existente);
                 }
 
-                // Adiciona novos apps
                 foreach (var novo in novos) {
                     if (!ProcessosMonitorados.Contains(novo))
                         ProcessosMonitorados.Add(novo);
@@ -129,8 +153,6 @@ namespace TCC_MVVM.ViewModel
 
 
         private void InicializarTimer() {
-            //if (_timer != null || DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday) return;
-
             using var db = new AppDbContext();
 
             var hoje = DateTime.Now.Date;
@@ -208,11 +230,9 @@ namespace TCC_MVVM.ViewModel
 
                 if (existing != null) {
                     existing.UsageTime += log.UsageTime;
-                    //existing.Timestamp = DateTime.UtcNow.TimeOfDay;
                 } else {
                     log.UserId = _usuarioLogado.Id;
                     log.Date = data;
-                    //log.Timestamp = DateTime.UtcNow.TimeOfDay;
                     context.ProcessLogs.Add(log);
                 }
             }
@@ -220,12 +240,6 @@ namespace TCC_MVVM.ViewModel
         }
 
         private void SaveInactivityLogToDatabase() {
-            /*using var context = new AppDbContext();
-            var inactivityLog = _idleMonitorService.GenerateLog();
-            inactivityLog.UserId = _usuarioLogado.Id;
-            context.InactivityLogs.Add(inactivityLog);
-            context.SaveChanges();*/
-
             using var context = new AppDbContext();
             var newLog = _idleMonitorService.GenerateLog();
             newLog.UserId = _usuarioLogado.Id;

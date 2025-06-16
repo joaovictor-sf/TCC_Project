@@ -19,9 +19,6 @@ namespace TCC_MVVM.Infra
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            //modelBuilder.HasPostgresEnum<UserRole>();
-            //modelBuilder.HasPostgresEnum<WorkHours>();
-
             modelBuilder.Entity<ProcessLog>()
                         .HasOne(p => p.User)
                         .WithMany(u => u.ProcessLogs)
@@ -64,10 +61,6 @@ namespace TCC_MVVM.Infra
             modelBuilder.Entity<DailyWorkLog>()
                         .HasIndex(log => new { log.UserId, log.Date })
                         .IsUnique(); // Um log por usuário por dia
-
-            modelBuilder.Entity<DailyWorkLog>()
-                        .Property(d => d.Date)
-                        .HasColumnType("timestamp without time zone");
 
             base.OnModelCreating(modelBuilder);
         }

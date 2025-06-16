@@ -4,9 +4,6 @@ using TCC_MVVM.ViewModel;
 
 namespace TCC_MVVM.View
 {
-    /// <summary>
-    /// Interaction logic for UserList.xaml
-    /// </summary>
     public partial class UserListView : Window
     {
         public UserListView()
@@ -14,7 +11,7 @@ namespace TCC_MVVM.View
             InitializeComponent();
             if (DataContext is UserListViewModel vm) {
                 vm.MinimizeWindow = () => WindowState = WindowState.Minimized;
-                vm.CloseWindow = () => Application.Current.Shutdown();
+                vm.CloseWindow = () => Close();
             }
         }
 
