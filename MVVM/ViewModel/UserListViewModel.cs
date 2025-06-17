@@ -10,6 +10,8 @@ using TCC_MVVM.View;
 namespace TCC_MVVM.MVVM.ViewModel
 {
     class UserListViewModel : ViewModelBase {
+        private readonly UserModel _usuarioLogado;
+
         public ObservableCollection<UserModel> Users { get; set; }
 
         private UserModel _selectedUser;
@@ -32,6 +34,21 @@ namespace TCC_MVVM.MVVM.ViewModel
 
         public Action? MinimizeWindow { get; set; }
         public Action? CloseWindow { get; set; }
+
+        public UserListViewModel(UserModel usuarioLogado) {
+            _usuarioLogado = usuarioLogado;
+
+            Users = new ObservableCollection<UserModel>(GetAllUsers());
+
+            MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
+            CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+
+            AddCommand = new RelayCommand(_ => OpenCadastroModal());
+            EditCommand = new RelayCommand(_ => OpenEditModal(), _ => SelectedUser != null);
+            DeleteCommand = new RelayCommand(_ => DemitirUsuario(), _ => SelectedUser != null);
+
+            LogoutCommand = new RelayCommand(ExecuteLogout);
+        }
 
         public UserListViewModel() {
             Users = new ObservableCollection<UserModel>(GetAllUsers());
@@ -65,7 +82,7 @@ namespace TCC_MVVM.MVVM.ViewModel
         }
 
         private void OpenCadastroModal() {
-            var cadastroView = new CadastroView
+            var cadastroView = new CadastroView(_usuarioLogado)
             {
                 Owner = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive)
             };

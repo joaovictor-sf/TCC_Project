@@ -14,10 +14,6 @@
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
 
-    <Window.DataContext>
-        <viewmodel:CadastroViewModel/>
-    </Window.DataContext>
-
     <Window.InputBindings>
         <KeyBinding Key="Enter"
             Command="{Binding CadastrarCommand}" />
@@ -254,12 +250,12 @@
                     <TextBox Text="{Binding Username}"/>
 
                     <TextBlock Text="Cargo:"/>
-                    <ComboBox ItemsSource="{Binding Roles}" 
+                    <ComboBox ItemsSource="{Binding AvailableRoles}" 
                               SelectedItem="{Binding Role}"
                               SelectedIndex="-1"/>
 
                     <TextBlock Text="Carga Horária:"/>
-                    <ComboBox ItemsSource="{Binding WorkHourOptions}" 
+                    <ComboBox ItemsSource="{Binding AvailableWorkHours}" 
                           SelectedItem="{Binding WorkHours}" />
 
                     <TextBlock Text="Mensagem:"/>

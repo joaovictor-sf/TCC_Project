@@ -62,6 +62,7 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 	- [ ] Criação de novas Roles
 	- [ ] Criação de novas WorkHours
 	- [ ] A capacidade de apagar completamente um usuário do banco de dados
+	- [ ] Apenas o ADMIN tem acesso a crianção de funcionarios com certas Roles e WorkHours
 - [ ] Adicionar o icone do sistema
 - [ ] Conectar ao banco na nuvem
 - [ ] [OPÇÃO A] Bloquear o botão de fechamento se o monitoramento estiver ativo

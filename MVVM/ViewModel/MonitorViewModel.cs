@@ -98,7 +98,7 @@ namespace TCC_MVVM.MVVM.ViewModel
 
             if (!(DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)) {
                 using var db = new AppDbContext();
-                var hoje = DateTime.Today;
+                var hoje = DateTime.UtcNow.Date;
                 _todayLog = db.DailyWorkLogs
                     .FirstOrDefault(l => l.UserId == _usuarioLogado.Id && l.Date == hoje);
 
@@ -170,7 +170,7 @@ namespace TCC_MVVM.MVVM.ViewModel
         private void InicializarTimer() {
             using var db = new AppDbContext();
 
-            var hoje = DateTime.Now.Date;
+            var hoje = DateTime.UtcNow.Date;
             _todayLog = db.DailyWorkLogs
                 .FirstOrDefault(l => l.UserId == _usuarioLogado.Id && l.Date.Date == hoje);
 
@@ -178,7 +178,7 @@ namespace TCC_MVVM.MVVM.ViewModel
                 _todayLog = new DailyWorkLog
                 {
                     UserId = _usuarioLogado.Id,
-                    Date = DateTime.Today,
+                    Date = DateTime.UtcNow.Date,
                     TimeWorked = TimeSpan.Zero
                 };
                 db.DailyWorkLogs.Add(_todayLog);

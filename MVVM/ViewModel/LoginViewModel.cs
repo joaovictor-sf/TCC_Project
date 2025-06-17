@@ -95,7 +95,7 @@ namespace TCC_MVVM.MVVM.ViewModel
                         Window nextWindow = user.Role switch
                         {
                             UserRole.DEV => CriarMonitorView(user),
-                            UserRole.RH or UserRole.ADMIN => new UserListView(),
+                            UserRole.RH or UserRole.ADMIN => CriarUserListView(user),
                             _ => null
                         };
 
@@ -117,6 +117,17 @@ namespace TCC_MVVM.MVVM.ViewModel
         private Window CriarMonitorView(UserModel user) {
             var view = new MonitorView();
             var vm = new MonitorViewModel(user)
+            {
+                CloseWindow = () => view.Close(),
+                MinimizeWindow = () => view.WindowState = WindowState.Minimized
+            };
+            view.DataContext = vm;
+            return view;
+        }
+
+        private Window CriarUserListView(UserModel user) {
+            var view = new UserListView();
+            var vm = new UserListViewModel(user)
             {
                 CloseWindow = () => view.Close(),
                 MinimizeWindow = () => view.WindowState = WindowState.Minimized

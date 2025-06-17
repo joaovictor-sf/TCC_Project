@@ -9,6 +9,8 @@ using TCC_MVVM.MVVM.Base;
 namespace TCC_MVVM.MVVM.ViewModel
 {
     class CadastroViewModel : ViewModelBase {
+        private readonly UserModel _usuarioLogado;
+
         private string _nome;
         private string _sobrenome;
         private string _email;
@@ -61,7 +63,14 @@ namespace TCC_MVVM.MVVM.ViewModel
                 CommandManager.InvalidateRequerySuggested();
             }
         }
+        public IEnumerable<UserRole> AvailableRoles {
+            get {
+                if (_usuarioLogado.Role == UserRole.RH)
+                    return new[] { UserRole.DEV, UserRole.RH };
 
+                return Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
+            }
+        }
         public WorkHours WorkHours {
             get => _workHours;
             set {
@@ -70,14 +79,22 @@ namespace TCC_MVVM.MVVM.ViewModel
                 CommandManager.InvalidateRequerySuggested();
             }
         }
+        public IEnumerable<WorkHours> AvailableWorkHours {
+            get {
+                if (_usuarioLogado.Role == UserRole.RH)
+                    return new[] { WorkHours.QUATRO_HORAS, WorkHours.SEIS_HORAS, WorkHours.OITO_HORAS };
+
+                return Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
+            }
+        }
 
         public string Mensagem {
             get => _mensagem;
             set { _mensagem = value; OnPropertyChanged(nameof(Mensagem)); }
         }
 
-        public IEnumerable<UserRole> Roles => Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
-        public IEnumerable<WorkHours> WorkHourOptions => Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
+        //public IEnumerable<UserRole> Roles => Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
+        //public IEnumerable<WorkHours> WorkHourOptions => Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
 
         public ICommand CadastrarCommand { get; }
         public ICommand MinimizeCommand { get; }
@@ -85,11 +102,18 @@ namespace TCC_MVVM.MVVM.ViewModel
         public Action? MinimizeWindow { get; set; }
         public Action? CloseWindow { get; set; }
 
-        public CadastroViewModel() {
+        public CadastroViewModel(UserModel user) {
+            _usuarioLogado = user;
+
             CadastrarCommand = new RelayCommand(ExecuteCadastrar, CanExecuteCadastrar);
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
         }
+        /*public CadastroViewModel() {
+            CadastrarCommand = new RelayCommand(ExecuteCadastrar, CanExecuteCadastrar);
+            MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
+            CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+        }*/
 
         private bool CanExecuteCadastrar(object? parameter) {
             return !string.IsNullOrEmpty(Nome) &&
