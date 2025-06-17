@@ -93,7 +93,7 @@ namespace TCC_MVVM.MVVM.ViewModel
         private void OpenEditModal() {
             if (SelectedUser == null) return;
 
-            var viewModel = new EditViewModel(SelectedUser)
+            var viewModel = new EditViewModel(SelectedUser, _usuarioLogado)
             {
                 CloseWindow = () => { },
                 MinimizeWindow = () => { }
@@ -101,7 +101,7 @@ namespace TCC_MVVM.MVVM.ViewModel
 
             var editView = new EditView
             {
-                DataContext = new EditViewModel(SelectedUser),
+                DataContext = new EditViewModel(SelectedUser, _usuarioLogado),
                 Owner = Application.Current.Windows.OfType<Window>().FirstOrDefault(w => w.IsActive)
             };
 

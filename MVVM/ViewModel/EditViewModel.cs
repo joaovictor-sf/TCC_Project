@@ -9,6 +9,7 @@ using TCC_MVVM.MVVM.Base;
 namespace TCC_MVVM.MVVM.ViewModel
 {
     public class EditViewModel : ViewModelBase {
+        private readonly UserModel _usuarioLogado;
         private readonly UserModel _originalUser;
 
         public string Nome { get; set; }
@@ -19,8 +20,23 @@ namespace TCC_MVVM.MVVM.ViewModel
         public WorkHours WorkHours { get; set; }
         public string Mensagem { get; set; }
 
-        public IEnumerable<UserRole> Roles => Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
-        public IEnumerable<WorkHours> WorkHourOptions => Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
+        public IEnumerable<UserRole> AvailableRoles {
+            get {
+                if (_usuarioLogado.Role == UserRole.RH)
+                    return new[] { UserRole.DEV, UserRole.RH };
+                return Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
+            }
+        }
+        public IEnumerable<WorkHours> AvailableWorkHours {
+            get {
+                if (_usuarioLogado.Role == UserRole.RH)
+                    return new[] { WorkHours.QUATRO_HORAS, WorkHours.SEIS_HORAS, WorkHours.OITO_HORAS };
+
+                return Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
+            }
+        }
+        //public IEnumerable<UserRole> Roles => Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
+        //public IEnumerable<WorkHours> WorkHourOptions => Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
 
         public ICommand EditCommand { get; }
 
@@ -28,8 +44,23 @@ namespace TCC_MVVM.MVVM.ViewModel
         public ICommand CloseCommand { get; }
         public Action? MinimizeWindow { get; set; }
         public Action? CloseWindow { get; set; }
+        public EditViewModel(UserModel userEditado, UserModel usuarioLogado) {
+            _originalUser = userEditado;
+            _usuarioLogado = usuarioLogado;
 
-        public EditViewModel(UserModel user) {
+            Nome = userEditado.Name;
+            Sobrenome = userEditado.LastName;
+            Email = userEditado.Email;
+            Username = userEditado.Username;
+            Role = userEditado.Role;
+            WorkHours = userEditado.WorkHours;
+
+            EditCommand = new RelayCommand(_ => SalvarEdicao(), _ => CanEdit());
+            MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
+            CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
+        }
+        
+        /*public EditViewModel(UserModel user) {
             _originalUser = user;
 
             // Preenche os campos com os dados do usuário selecionado
@@ -43,7 +74,7 @@ namespace TCC_MVVM.MVVM.ViewModel
             EditCommand = new RelayCommand(_ => SalvarEdicao(), _ => CanEdit());
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
-        }
+        }*/
 
         private void SalvarEdicao() {
             try {
