@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TCC_MVVM.View"
-        xmlns:viewmodel="clr-namespace:TCC_MVVM.ViewModel"
+        xmlns:viewmodel="clr-namespace:TCC_MVVM.MVVM.ViewModel"
+        xmlns:converter="clr-namespace:TCC_MVVM.Util"
         mc:Ignorable="d"
         Title="MonitorView" Height="320" Width="500"
         WindowStyle="None"
@@ -17,6 +18,11 @@
     <Window.DataContext>
         <viewmodel:MonitorViewModel/>
     </Window.DataContext>
+
+    <Window.Resources>
+        <!--<converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>-->
+        <converter:TempoRestanteOuMensagemConverter x:Key="TempoRestanteOuMensagemConverter"/>
+    </Window.Resources>
 
     <Border CornerRadius="12">
         <Border CornerRadius="10" 
@@ -290,11 +296,26 @@
                         </Style>
                     </StackPanel.Resources>
 
-                    <!--<TextBlock Text="Welcome NOME SOBRENOME"/>-->
-
-                    <TextBlock Text="{Binding TempoRestante}"
+                    <!--<TextBlock Text="{Binding TempoRestante}"
                                HorizontalAlignment="Center"
-                               FontSize="16"/>
+                               FontSize="16"/>-->
+
+                    <TextBlock HorizontalAlignment="Center"
+                               FontSize="16">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource TempoRestanteOuMensagemConverter}">
+                                <Binding Path="HasCompletedWorkToday"/>
+                                <Binding Path="TempoRestante"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <!--<TextBlock Text="Você já completou seu horário de trabalho hoje."
+                               Foreground="LightGreen"
+                               FontWeight="Bold"
+                               FontSize="14"
+                               HorizontalAlignment="Center"
+                               Visibility="{Binding HasCompletedWorkToday, Converter={StaticResource BoolToVisibilityConverter}}"/>-->
 
                     <TextBlock Text="Aplicações sendo monitoradas:" 
                                FontWeight="Bold" 

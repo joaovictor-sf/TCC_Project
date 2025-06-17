@@ -3,9 +3,10 @@ using System.Windows;
 using TCC_MVVM.Infra;
 using TCC_MVVM.Model.Enum;
 using TCC_MVVM.Model;
-using TCC_MVVM.Util;
+using TCC_MVVM.MVVM.Commands;
+using TCC_MVVM.MVVM.Base;
 
-namespace TCC_MVVM.ViewModel
+namespace TCC_MVVM.MVVM.ViewModel
 {
     class CadastroViewModel : ViewModelBase {
         private string _nome;
@@ -138,6 +139,8 @@ namespace TCC_MVVM.ViewModel
                 Sobrenome = string.Empty;
                 Email = string.Empty;
                 Username = string.Empty;
+
+                Mensagem = $"Usuário cadastrado com sucesso!\nSenha gerada: {senhaGerada}";
             } catch (Exception ex) {
                 MessageBox.Show($"Erro ao cadastrar: {ex}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using TCC_MVVM.ViewModel;
+using TCC_MVVM.MVVM.ViewModel;
 
 namespace TCC_MVVM.View
 {

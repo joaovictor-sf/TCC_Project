@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TCC_MVVM.View"
-        xmlns:viewmodel="clr-namespace:TCC_MVVM.ViewModel"
+        xmlns:viewmodel="clr-namespace:TCC_MVVM.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="CadastroView" Height="600" Width="500"
         WindowStyle="None"

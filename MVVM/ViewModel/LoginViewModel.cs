@@ -1,12 +1,13 @@
 ﻿using System.Windows.Input;
 using System.Windows;
 using TCC_MVVM.Infra;
-using TCC_MVVM.Util;
 using TCC_MVVM.View;
 using TCC_MVVM.Model.Enum;
 using TCC_MVVM.Model;
+using TCC_MVVM.MVVM.Commands;
+using TCC_MVVM.MVVM.Base;
 
-namespace TCC_MVVM.ViewModel
+namespace TCC_MVVM.MVVM.ViewModel
 {
     class LoginViewModel : ViewModelBase {
         private string _username;

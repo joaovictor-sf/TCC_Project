@@ -1,11 +1,12 @@
 ﻿using System.Windows.Input;
 using TCC_MVVM.Model.Enum;
 using TCC_MVVM.Model;
-using TCC_MVVM.Util;
+using TCC_MVVM.MVVM.Commands;
 using System.Windows;
 using TCC_MVVM.Infra;
+using TCC_MVVM.MVVM.Base;
 
-namespace TCC_MVVM.ViewModel
+namespace TCC_MVVM.MVVM.ViewModel
 {
     public class EditViewModel : ViewModelBase {
         private readonly UserModel _originalUser;

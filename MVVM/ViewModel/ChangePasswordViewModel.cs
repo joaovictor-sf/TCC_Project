@@ -2,9 +2,10 @@
 using System.Windows.Input;
 using TCC_MVVM.Infra;
 using TCC_MVVM.Model;
-using TCC_MVVM.Util;
+using TCC_MVVM.MVVM.Base;
+using TCC_MVVM.MVVM.Commands;
 
-namespace TCC_MVVM.ViewModel
+namespace TCC_MVVM.MVVM.ViewModel
 {
     class ChangePasswordViewModel : ViewModelBase {
         private string _currentPassword;

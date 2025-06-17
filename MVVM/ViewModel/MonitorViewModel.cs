@@ -6,10 +6,11 @@ using TCC_MVVM.Infra;
 using TCC_MVVM.Model;
 using TCC_MVVM.Model.DTO;
 using TCC_MVVM.Service;
-using TCC_MVVM.Util;
+using TCC_MVVM.MVVM.Commands;
 using TCC_MVVM.View;
+using TCC_MVVM.MVVM.Base;
 
-namespace TCC_MVVM.ViewModel
+namespace TCC_MVVM.MVVM.ViewModel
 {
     class MonitorViewModel : ViewModelBase {
         private readonly ProcessMonitorService _processMonitorService;
@@ -31,6 +32,16 @@ namespace TCC_MVVM.ViewModel
             set {
                 _tempoRestante = value;
                 OnPropertyChanged();
+            }
+        }
+
+        private bool _hasCompletedWorkToday;
+        public bool HasCompletedWorkToday {
+            get => _hasCompletedWorkToday;
+            set {
+                _hasCompletedWorkToday = value;
+                OnPropertyChanged();
+                CommandManager.InvalidateRequerySuggested();
             }
         }
 
@@ -77,7 +88,7 @@ namespace TCC_MVVM.ViewModel
 
             _processMonitorService.MonitoringStopped += SaveLogsToDatabase;
 
-            StartCommand = new RelayCommand(() => IsMonitoring = true, () => !IsMonitoring);
+            StartCommand = new RelayCommand(() => IsMonitoring = true, () => !IsMonitoring && !HasCompletedWorkToday);
             StopCommand = new RelayCommand(() => IsMonitoring = false, () => IsMonitoring);
 
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
@@ -92,6 +103,10 @@ namespace TCC_MVVM.ViewModel
                     .FirstOrDefault(l => l.UserId == _usuarioLogado.Id && l.Date == hoje);
 
                 _workedToday = _todayLog?.TimeWorked ?? TimeSpan.Zero;
+                if (_workedToday >= _usuarioLogado.WorkHours.ToTimeSpan()) {
+                    HasCompletedWorkToday = true;
+                }
+
                 UpdateRemainingTimeUI();
             }
 
@@ -105,7 +120,7 @@ namespace TCC_MVVM.ViewModel
 
             _processMonitorService.MonitoringStopped += SaveLogsToDatabase;
 
-            StartCommand = new RelayCommand(() => IsMonitoring = true, () => !IsMonitoring);
+            StartCommand = new RelayCommand(() => IsMonitoring = true, () => !IsMonitoring && !HasCompletedWorkToday);
             StopCommand = new RelayCommand(() => IsMonitoring = false, () => IsMonitoring);
 
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
@@ -135,7 +150,7 @@ namespace TCC_MVVM.ViewModel
         }
 
         private void AtualizarListaMonitorada(List<(string AppName, string WindowTitle)> processos) {
-            App.Current.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 var novos = processos.Select(p => new ProcessDisplayItem { AppName = p.AppName, WindowTitle = p.WindowTitle }).ToList();
 
@@ -202,6 +217,9 @@ namespace TCC_MVVM.ViewModel
 
             if (_workedToday >= _usuarioLogado.WorkHours.ToTimeSpan()) {
                 _timer.Stop();
+                IsMonitoring = false;
+                HasCompletedWorkToday = true;
+
                 MessageBox.Show("Parabéns! Você completou seu horário de trabalho diário!", "Completo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
