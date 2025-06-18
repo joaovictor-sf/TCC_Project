@@ -9,7 +9,6 @@ namespace TCC_MVVM.Service {
         private readonly List<ProcessSession> _processSessions = new();
         private readonly TimeSpan _monitoringInterval;
         private System.Timers.Timer? _timer;
-        private DateTime _monitoringStartTime;
 
         public bool IsMonitoring { get; private set; }
         public DateTime MonitoringStartTime { get; private set; }
@@ -34,13 +33,21 @@ namespace TCC_MVVM.Service {
             var now = DateTime.UtcNow;
             var activeProcesses = GetActiveProcesses();
 
+            EncerrarSessoesFinalizadasExternamente(activeProcesses, now);
+            AdicionarNovasSessoes(activeProcesses, now);
+            NotificarAtualizacaoProcessos();
+        }
+
+        private void EncerrarSessoesFinalizadasExternamente(Dictionary<string, (string AppName, string WindowTitle)> ativos, DateTime now) {
             foreach (var session in _processSessions.Where(s => !s.EndTime.HasValue)) {
-                if (!activeProcesses.ContainsKey(session.Key)) {
+                if (!ativos.ContainsKey(session.Key)) {
                     session.EndTime = now;
                 }
             }
+        }
 
-            foreach (var kvp in activeProcesses) {
+        private void AdicionarNovasSessoes(Dictionary<string, (string AppName, string WindowTitle)> ativos, DateTime now) {
+            foreach (var kvp in ativos) {
                 if (!_processSessions.Any(s => s.Key == kvp.Key && !s.EndTime.HasValue)) {
                     _processSessions.Add(new ProcessSession
                     {
@@ -51,14 +58,16 @@ namespace TCC_MVVM.Service {
                     });
                 }
             }
+        }
 
-            ProcessesUpdated?.Invoke(
-                _processSessions
+        private void NotificarAtualizacaoProcessos() {
+            var ativos = _processSessions
                 .Where(s => !s.EndTime.HasValue)
                 .Select(s => (s.AppName, s.WindowTitle))
                 .Distinct()
-                .ToList()
-            );
+                .ToList();
+
+            ProcessesUpdated?.Invoke(ativos);
         }
 
         private Dictionary<string, (string AppName, string WindowTitle)> GetActiveProcesses() {

@@ -9,6 +9,7 @@ using TCC_MVVM.Service;
 using TCC_MVVM.MVVM.Commands;
 using TCC_MVVM.View;
 using TCC_MVVM.MVVM.Base;
+using TCC_MVVM.Util;
 
 namespace TCC_MVVM.MVVM.ViewModel
 {
@@ -98,7 +99,7 @@ namespace TCC_MVVM.MVVM.ViewModel
 
             if (!(DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)) {
                 using var db = new AppDbContext();
-                var hoje = DateTime.UtcNow.Date;
+                var hoje = DateTime.UtcNow.ToLocalTime().Date;
                 _todayLog = db.DailyWorkLogs
                     .FirstOrDefault(l => l.UserId == _usuarioLogado.Id && l.Date == hoje);
 
@@ -113,6 +114,7 @@ namespace TCC_MVVM.MVVM.ViewModel
             _processMonitorService.ProcessesUpdated += AtualizarListaMonitorada;
         }
 
+        //Apagar metodo
         public MonitorViewModel() {
             _processMonitorService = new ProcessMonitorService(TimeSpan.FromSeconds(5));
 
@@ -178,7 +180,7 @@ namespace TCC_MVVM.MVVM.ViewModel
                 _todayLog = new DailyWorkLog
                 {
                     UserId = _usuarioLogado.Id,
-                    Date = DateTime.UtcNow.Date,
+                    Date = DateTime.UtcNow.ToLocalTime().Date,
                     TimeWorked = TimeSpan.Zero
                 };
                 db.DailyWorkLogs.Add(_todayLog);
@@ -238,7 +240,7 @@ namespace TCC_MVVM.MVVM.ViewModel
             context.ProcessLogs.AddRange(summary);*/
 
             foreach (var log in summary) {
-                var data = DateTime.UtcNow.Date;
+                var data = DateTime.UtcNow.ToLocalTime().Date;
 
                 var existing = context.ProcessLogs.FirstOrDefault(pl => 
                     pl.UserId == _usuarioLogado.Id &&
