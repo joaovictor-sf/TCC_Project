@@ -9,12 +9,19 @@ using TCC_MVVM.MVVM.Base;
 
 namespace TCC_MVVM.MVVM.ViewModel
 {
+    /// <summary>
+    /// ViewModel responsável pela lógica de autenticação do sistema.
+    /// Gerencia os dados de entrada do usuário, autenticação, controle de janela
+    /// e navegação para as respectivas telas conforme o papel do usuário.
+    /// </summary>
     class LoginViewModel : ViewModelBase {
         private string _username;
         private string _password;
         private string _errorMessage;
-        //private bool _isViewVisible = true;
 
+        /// <summary>
+        /// Nome de usuário informado na tela de login.
+        /// </summary>
         public string Username {
             get => _username; set {
                 _username = value;
@@ -22,6 +29,9 @@ namespace TCC_MVVM.MVVM.ViewModel
                 CommandManager.InvalidateRequerySuggested();
             }
         }
+        /// <summary>
+        /// Senha informada na tela de login.
+        /// </summary>
         public string Password {
             get => _password; set {
                 _password = value;
@@ -29,29 +39,45 @@ namespace TCC_MVVM.MVVM.ViewModel
                 CommandManager.InvalidateRequerySuggested();
             }
         }
+        /// <summary>
+        /// Mensagem de erro exibida ao usuário, caso a autenticação falhe.
+        /// </summary>
         public string ErrorMessage {
             get => _errorMessage; set {
                 _errorMessage = value;
                 OnPropertyChanged(nameof(ErrorMessage));
             }
         }
-        /*public bool IsViewVisible {
-            get => _isViewVisible; set {
-                _isViewVisible = value;
-                OnPropertyChanged(nameof(IsViewVisible));
-            }
-        }*/
 
+        /// <summary>
+        /// Comando que executa o processo de login.
+        /// </summary>
         public RelayCommand LoginCommand { get; }
+        /// <summary>
+        /// Comando que simula envio de link de recuperação de senha.
+        /// </summary>
         public RelayCommand RecoverPasswordCommand { get; }
-        public RelayCommand ShowPasswordCommand { get; }
-        public RelayCommand RememberPasswordCommand { get; }
 
+        /// <summary>
+        /// Comando para minimizar a janela.
+        /// </summary>
         public ICommand MinimizeCommand { get; }
+        /// <summary>
+        /// Comando para fechar a janela.
+        /// </summary>
         public ICommand CloseCommand { get; }
+        /// <summary>
+        /// Ação a ser executada para minimizar a janela associada.
+        /// </summary>
         public Action? MinimizeWindow { get; set; }
+        /// <summary>
+        /// Ação a ser executada para fechar a janela associada.
+        /// </summary>
         public Action? CloseWindow { get; set; }
 
+        /// <summary>
+        /// Inicializa os comandos do ViewModel.
+        /// </summary>
         public LoginViewModel() {
             LoginCommand = new RelayCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecoverPasswordCommand = new RelayCommand(ExecuteRecoverPasswordCommand);
@@ -60,14 +86,10 @@ namespace TCC_MVVM.MVVM.ViewModel
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
         }
 
+        /// <summary>
+        /// Executa o processo de login com validação e redirecionamento de acordo com o papel do usuário.
+        /// </summary>
         private void ExecuteLoginCommand(object? parameter) {
-            bool validData;
-            if (string.IsNullOrEmpty(Username) || Username.Length < 3 || string.IsNullOrEmpty(Password) || Password.Length < 3) {
-                validData = false;
-            } else {
-                validData = true;
-            }
-
             using var db = new AppDbContext();
 
             var user = db.Users.FirstOrDefault(u => u.Username == Username);
@@ -102,7 +124,6 @@ namespace TCC_MVVM.MVVM.ViewModel
                         if (nextWindow != null) {
                             nextWindow.Show();
                         }
-                        //IsViewVisible = false;
                         Application.Current.Windows
                         .OfType<Window>()
                         .FirstOrDefault(w => w.DataContext == this)?
@@ -125,6 +146,9 @@ namespace TCC_MVVM.MVVM.ViewModel
             return view;
         }
 
+        /// <summary>
+        /// Cria e configura a janela de lista de usuários (usada por RH e Admin).
+        /// </summary>
         private Window CriarUserListView(UserModel user) {
             var view = new UserListView();
             var vm = new UserListViewModel(user)
@@ -136,19 +160,27 @@ namespace TCC_MVVM.MVVM.ViewModel
             return view;
         }
 
+        /// <summary>
+        /// Valida se o comando de login pode ser executado.
+        /// </summary>
         private bool CanExecuteLoginCommand(object? parameter) {
             return !string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password);
         }
 
+        /// <summary>
+        /// Simula o envio de recuperação de senha.
+        /// </summary>
         private void ExecuteRecoverPasswordCommand(object? parameter) {
             ErrorMessage = "Password recovery link sent to your email.";
         }
 
+        /// <summary>
+        /// Reseta os campos do formulário de login.
+        /// </summary>
         public void Reset() {
             Username = string.Empty;
             Password = string.Empty;
             ErrorMessage = string.Empty;
-            //IsViewVisible = true;
         }
     }
 }

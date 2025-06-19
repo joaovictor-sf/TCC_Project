@@ -13,11 +13,18 @@ using TCC_MVVM.Util;
 
 namespace TCC_MVVM.MVVM.ViewModel
 {
+    /// <summary>
+    /// ViewModel responsável por monitorar processos e inatividade do usuário,
+    /// controlar o tempo de trabalho diário e atualizar a interface.
+    /// </summary>
     class MonitorViewModel : ViewModelBase {
         private readonly ProcessMonitorService _processMonitorService;
         private readonly IdleMonitorService _idleMonitorService;
         private readonly UserModel _usuarioLogado;
 
+        /// <summary>
+        /// Lista de processos monitorados exibida na interface.
+        /// </summary>
         public ObservableCollection<ProcessDisplayItem> ProcessosMonitorados { get; } = new();
 
         private DispatcherTimer _timer;
@@ -25,8 +32,10 @@ namespace TCC_MVVM.MVVM.ViewModel
         private DailyWorkLog _todayLog;
 
         private TimeSpan _workedToday;
-        public TimeSpan RemainingTime => _usuarioLogado.WorkHours.ToTimeSpan() - _workedToday;
 
+        /// <summary>
+        /// Tempo restante de trabalho formatado para exibição na interface.
+        /// </summary>
         private string _tempoRestante = "00:00:00";
         public string TempoRestante {
             get => _tempoRestante;
@@ -37,6 +46,9 @@ namespace TCC_MVVM.MVVM.ViewModel
         }
 
         private bool _hasCompletedWorkToday;
+        /// <summary>
+        /// Indica se o usuário já completou seu horário de trabalho no dia.
+        /// </summary>
         public bool HasCompletedWorkToday {
             get => _hasCompletedWorkToday;
             set {
@@ -46,10 +58,19 @@ namespace TCC_MVVM.MVVM.ViewModel
             }
         }
 
+        /// <summary>
+        /// Comando para iniciar o monitoramento.
+        /// </summary>
         public ICommand StartCommand { get; }
+        /// <summary>
+        /// Comando para parar o monitoramento.
+        /// </summary>
         public ICommand StopCommand { get; }
 
         private bool _isMonitoring;
+        /// <summary>
+        /// Indica se o monitoramento está ativo.
+        /// </summary>
         public bool IsMonitoring {
             get => _isMonitoring;
             private set {
@@ -71,15 +92,37 @@ namespace TCC_MVVM.MVVM.ViewModel
             }
         }
 
+        /// <summary>
+        /// Indica se o monitoramento está inativo.
+        /// </summary>
         public bool IsNotMonitoring => !IsMonitoring;
 
+        /// <summary>
+        /// Comando para realizar logout e retornar à tela de login.
+        /// </summary>
         public ICommand LogoutCommand { get; }
 
+        /// <summary>
+        /// Comando para minimizar a janela.
+        /// </summary>
         public ICommand MinimizeCommand { get; }
+        /// <summary>
+        /// Comando para fechar a janela.
+        /// </summary>
         public ICommand CloseCommand { get; }
+        /// <summary>
+        /// Delegate chamado para minimizar a janela.
+        /// </summary>
         public Action? MinimizeWindow { get; set; }
+        /// <summary>
+        /// Delegate chamado para fechar a janela.
+        /// </summary>
         public Action? CloseWindow { get; set; }
 
+        /// <summary>
+        /// Construtor principal do ViewModel. Inicializa comandos, serviços e configura o estado da interface.
+        /// </summary>
+        /// <param name="usuario">Usuário atualmente logado.</param>
         public MonitorViewModel(UserModel usuario) {
             _usuarioLogado = usuario;
 
@@ -114,7 +157,10 @@ namespace TCC_MVVM.MVVM.ViewModel
             _processMonitorService.ProcessesUpdated += AtualizarListaMonitorada;
         }
 
-        //Apagar metodo
+        /// <summary>
+        /// Construtor padrão necessário para evitar exceções em tempo de execução.
+        /// </summary>
+        [Obsolete("Use o construtor com parâmetro UserModel.")]
         public MonitorViewModel() {
             _processMonitorService = new ProcessMonitorService(TimeSpan.FromSeconds(5));
 
@@ -133,6 +179,9 @@ namespace TCC_MVVM.MVVM.ViewModel
             _processMonitorService.ProcessesUpdated += AtualizarListaMonitorada;
         }
 
+        /// <summary>
+        /// Realiza logout e retorna para a tela de login.
+        /// </summary>
         private void ExecuteLogout(object? parameter) {
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -151,6 +200,9 @@ namespace TCC_MVVM.MVVM.ViewModel
             });
         }
 
+        /// <summary>
+        /// Atualiza a lista de processos monitorados exibida na interface.
+        /// </summary>
         private void AtualizarListaMonitorada(List<(string AppName, string WindowTitle)> processos) {
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -168,8 +220,17 @@ namespace TCC_MVVM.MVVM.ViewModel
             });
         }
 
-
+        /// <summary>
+        /// Inicializa o temporizador e prepara o log diário.
+        /// </summary>
         private void InicializarTimer() {
+            PrepararLogDiario();
+            ConfigurarTimer();
+        }
+        /// <summary>
+        /// Verifica ou cria o log de trabalho do dia atual.
+        /// </summary>
+        private void PrepararLogDiario() {
             using var db = new AppDbContext();
 
             var hoje = DateTime.UtcNow.Date;
@@ -189,34 +250,62 @@ namespace TCC_MVVM.MVVM.ViewModel
 
             _workedToday = _todayLog.TimeWorked;
             UpdateRemainingTimeUI();
-
+        }
+        /// <summary>
+        /// Configura e inicia o temporizador de contagem do tempo trabalhado.
+        /// </summary>
+        private void ConfigurarTimer() {
             _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             _timer.Tick += (s, e) => AtualizarTempoTrabalhado();
             _lastTick = DateTime.Now;
             _timer.Start();
         }
 
+        /// <summary>
+        /// Interrompe e reseta o temporizador.
+        /// </summary>
         private void PausarTimer() {
             _timer?.Stop();
             _timer = null;
         }
 
+        /// <summary>
+        /// Atualiza o tempo trabalhado com base no intervalo entre ticks.
+        /// </summary>
         private void AtualizarTempoTrabalhado() {
+            AtualizarTempoDecorrido();
+            AtualizarLogDiarioNoBanco();
+            UpdateRemainingTimeUI();
+            VerificarEncerramentoAutomatico();
+        }
+
+        /// <summary>
+        /// Atualiza a variável de tempo trabalhado.
+        /// </summary>
+        private void AtualizarTempoDecorrido() {
             var now = DateTime.Now;
             var delta = now - _lastTick;
             _lastTick = now;
 
             _workedToday += delta;
+        }
 
+        /// <summary>
+        /// Atualiza o registro no banco de dados com o tempo de trabalho mais recente.
+        /// </summary>
+        private void AtualizarLogDiarioNoBanco() {
             using var db = new AppDbContext();
             var log = db.DailyWorkLogs.FirstOrDefault(l => l.Id == _todayLog.Id);
             if (log != null) {
                 log.TimeWorked = _workedToday;
                 db.SaveChanges();
             }
+        }
 
-            UpdateRemainingTimeUI();
-
+        /// <summary>
+        /// Encerra automaticamente o monitoramento se o tempo de trabalho for atingido.
+        /// </summary>
+        private void VerificarEncerramentoAutomatico() {
             if (_workedToday >= _usuarioLogado.WorkHours.ToTimeSpan()) {
                 _timer.Stop();
                 IsMonitoring = false;
@@ -226,18 +315,19 @@ namespace TCC_MVVM.MVVM.ViewModel
             }
         }
 
+        /// <summary>
+        /// Atualiza o tempo restante exibido na UI.
+        /// </summary>
         private void UpdateRemainingTimeUI() {
             var remaining = _usuarioLogado.WorkHours.ToTimeSpan() - _workedToday;
             TempoRestante = remaining > TimeSpan.Zero ? remaining.ToString(@"hh\:mm\:ss") : "00:00:00";
         }
 
-
+        /// <summary>
+        /// Salva ou atualiza os logs de processos no banco de dados.
+        /// </summary>
         private void SaveLogsToDatabase(List<ProcessLog> summary) {
             using var context = new AppDbContext();
-            /*foreach (var log in summary) {
-                log.UserId = _usuarioLogado.Id;
-            }
-            context.ProcessLogs.AddRange(summary);*/
 
             foreach (var log in summary) {
                 var data = DateTime.UtcNow.ToLocalTime().Date;
@@ -259,6 +349,9 @@ namespace TCC_MVVM.MVVM.ViewModel
             context.SaveChanges();
         }
 
+        /// <summary>
+        /// Salva ou atualiza os logs de inatividade no banco de dados.
+        /// </summary>
         private void SaveInactivityLogToDatabase() {
             using var context = new AppDbContext();
             var newLog = _idleMonitorService.GenerateLog();
