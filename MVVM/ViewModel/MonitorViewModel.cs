@@ -97,7 +97,7 @@ namespace TCC_MVVM.MVVM.ViewModel
 
             LogoutCommand = new RelayCommand(ExecuteLogout, _ => !IsMonitoring);
 
-            if (!(DateTime.Today.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)) {
+            if (!(DateTime.UtcNow.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday)) {
                 using var db = new AppDbContext();
                 var hoje = DateTime.UtcNow.ToLocalTime().Date;
                 _todayLog = db.DailyWorkLogs
@@ -180,7 +180,7 @@ namespace TCC_MVVM.MVVM.ViewModel
                 _todayLog = new DailyWorkLog
                 {
                     UserId = _usuarioLogado.Id,
-                    Date = DateTime.UtcNow.ToLocalTime().Date,
+                    Date = hoje,
                     TimeWorked = TimeSpan.Zero
                 };
                 db.DailyWorkLogs.Add(_todayLog);
