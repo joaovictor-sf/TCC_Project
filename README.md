@@ -48,7 +48,7 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 - [ ] Criar comentários explicativos no código(Acho que o C# tem algo semelhante ao Javadoc do Java)
 	- [x] Comentar o Infra e Util
 	- [x] Comentar o Model
-	- [ ] Comentar o Service
+	- [x] Comentar o Service
 	- [ ] Comentar o MVVM
 
 # LISTA DE ERROS:

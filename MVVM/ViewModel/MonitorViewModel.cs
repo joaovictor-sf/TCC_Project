@@ -154,7 +154,7 @@ namespace TCC_MVVM.MVVM.ViewModel
         private void AtualizarListaMonitorada(List<(string AppName, string WindowTitle)> processos) {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                var novos = processos.Select(p => new ProcessDisplayItem { AppName = p.AppName, WindowTitle = p.WindowTitle }).ToList();
+                var novos = processos.Select(p => new ProcessDisplayItem(p.AppName, p.WindowTitle)).ToList();
 
                 foreach (var existente in ProcessosMonitorados.ToList()) {
                     if (!novos.Contains(existente))
