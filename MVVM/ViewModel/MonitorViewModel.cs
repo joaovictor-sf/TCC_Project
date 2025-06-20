@@ -18,8 +18,17 @@ namespace TCC_MVVM.MVVM.ViewModel
     /// controlar o tempo de trabalho diário e atualizar a interface.
     /// </summary>
     class MonitorViewModel : ViewModelBase {
+        /// <summary>
+        /// Serviço responsável por monitorar os processos em execução.
+        /// </summary>
         private readonly ProcessMonitorService _processMonitorService;
+        /// <summary>
+        /// Serviço responsável por monitorar a inatividade do usuário.
+        /// </summary>
         private readonly IdleMonitorService _idleMonitorService;
+        /// <summary>
+        /// Dados do usuário atualmente logado.
+        /// </summary>
         private readonly UserModel _usuarioLogado;
 
         /// <summary>
@@ -27,10 +36,23 @@ namespace TCC_MVVM.MVVM.ViewModel
         /// </summary>
         public ObservableCollection<ProcessDisplayItem> ProcessosMonitorados { get; } = new();
 
+        /// <summary>
+        /// Temporizador usado para contar o tempo de trabalho em intervalos regulares.
+        /// </summary>
         private DispatcherTimer _timer;
+        /// <summary>
+        /// Armazena o horário da última atualização do temporizador.
+        /// Usado para calcular o tempo decorrido.
+        /// </summary>
         private DateTime _lastTick;
+        /// <summary>
+        /// Registro do log de trabalho do dia atual no banco de dados.
+        /// </summary>
         private DailyWorkLog _todayLog;
 
+        /// <summary>
+        /// Tempo total trabalhado no dia corrente.
+        /// </summary>
         private TimeSpan _workedToday;
 
         /// <summary>

@@ -16,14 +16,6 @@ namespace TCC_MVVM.View
 
             InitializeComponent();
         }
-        /*public CadastroView()
-        {
-            InitializeComponent();
-            if (DataContext is CadastroViewModel vm) {
-                vm.MinimizeWindow = () => WindowState = WindowState.Minimized;
-                vm.CloseWindow = () => Close();
-            }
-        }*/
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e) {
             if (e.ChangedButton == MouseButton.Left) {
