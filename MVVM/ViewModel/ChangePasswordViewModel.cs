@@ -17,22 +17,22 @@ namespace TCC_MVVM.MVVM.ViewModel
 
         public string CurrentPassword {
             get => _currentPassword;
-            set { _currentPassword = value; OnPropertyChanged(nameof(CurrentPassword)); }
+            set { SetField(ref _currentPassword, value, nameof(CurrentPassword)); }
         }
 
         public string NewPassword {
             get => _newPassword;
-            set { _newPassword = value; OnPropertyChanged(nameof(NewPassword)); }
+            set { SetField(ref _newPassword, value, nameof(NewPassword)); }
         }
 
         public string ConfirmPassword {
             get => _confirmPassword;
-            set { _confirmPassword = value; OnPropertyChanged(nameof(ConfirmPassword)); }
+            set { SetField(ref _confirmPassword, value, nameof(ConfirmPassword)); }
         }
 
         public string Message {
             get => _message;
-            set { _message = value; OnPropertyChanged(nameof(Message)); }
+            set { SetField(ref _message, value, nameof(Message)); }
         }
 
         public ICommand ChangePasswordCommand { get; }
@@ -50,22 +50,7 @@ namespace TCC_MVVM.MVVM.ViewModel
         }
 
         private void ExecuteChangePassword() {
-            if (string.IsNullOrWhiteSpace(CurrentPassword) ||
-                string.IsNullOrWhiteSpace(NewPassword) ||
-                string.IsNullOrWhiteSpace(ConfirmPassword)) {
-                MessageBox.Show("Preencha todos os campos.", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (!BCrypt.Net.BCrypt.Verify(CurrentPassword, _user.PasswordHash)) {
-                MessageBox.Show("Senha atual incorreta.", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (NewPassword != ConfirmPassword) {
-                MessageBox.Show("A nova senha e a confirmação não coincidem.", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            if (!ValidarEntradas()) return;
 
             using var db = new AppDbContext();
             var userInDb = db.Users.FirstOrDefault(u => u.Id == _user.Id);
@@ -81,5 +66,34 @@ namespace TCC_MVVM.MVVM.ViewModel
             MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
             CloseWindow?.Invoke();
         }
+
+        private bool ValidarEntradas() {
+            if (CamposInvalidos()) return MostrarErro("Preencha todos os campos corretamente.");
+            if (!BCrypt.Net.BCrypt.Verify(CurrentPassword, _user.PasswordHash)) return MostrarErro("Senha atual incorreta.");
+            if (NewPassword != ConfirmPassword) return MostrarErro("A nova senha e a confirmação não coincidem.");
+            return true;
+        }
+
+        private bool MostrarErro(string msg) {
+            Message = msg;
+            return false;
+        }
+
+        /// <summary>
+        /// Método auxiliar para setar valores de propriedades e notificar alterações.
+        /// </summary>
+        private void SetField<T>(ref T field, T value, string propertyName) {
+            field = value;
+            OnPropertyChanged(propertyName);
+            CommandManager.InvalidateRequerySuggested();
+        }
+
+        /// <summary>
+        /// Verifica se algum dos campos obrigatórios está inválido ou vazio.
+        /// </summary>
+        private bool CamposInvalidos() =>
+            string.IsNullOrWhiteSpace(CurrentPassword) ||
+            string.IsNullOrWhiteSpace(NewPassword) ||
+            string.IsNullOrWhiteSpace(ConfirmPassword);
     }
 }
