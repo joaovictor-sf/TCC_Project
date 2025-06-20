@@ -8,6 +8,9 @@ using TCC_MVVM.MVVM.Base;
 
 namespace TCC_MVVM.MVVM.ViewModel
 {
+    /// <summary>
+    /// ViewModel responsável pela lógica de edição de usuários existentes.
+    /// </summary>
     public class EditViewModel : ViewModelBase {
         private readonly UserModel _usuarioLogado;
         private readonly UserModel _originalUser;
@@ -59,16 +62,27 @@ namespace TCC_MVVM.MVVM.ViewModel
             get => _role;
             set => SetField(ref _role, value, nameof(Role));
         }
+
+        /// <summary>
+        /// Carga horária de trabalho diária do usuário.
+        /// </summary>
         public WorkHours WorkHours {
             get => _workHours;
             set => SetField(ref _workHours, value, nameof(WorkHours));
 
         }
+
+        /// <summary>
+        /// Mensagem de feedback exibida na interface.
+        /// </summary>
         public string Mensagem {
             get => _mensagem;
             set { _mensagem = value; OnPropertyChanged(nameof(Mensagem)); }
         }
 
+        /// <summary>
+        /// Cargos disponíveis para seleção de acordo com a permissão do usuário logado.
+        /// </summary>
         public IEnumerable<UserRole> AvailableRoles {
             get {
                 if (_usuarioLogado.Role == UserRole.RH)
@@ -76,6 +90,9 @@ namespace TCC_MVVM.MVVM.ViewModel
                 return Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
             }
         }
+        /// <summary>
+        /// Cargas horárias disponíveis para seleção.
+        /// </summary>
         public IEnumerable<WorkHours> AvailableWorkHours {
             get {
                 if (_usuarioLogado.Role == UserRole.RH)
@@ -85,12 +102,34 @@ namespace TCC_MVVM.MVVM.ViewModel
             }
         }
 
+        /// <summary>
+        /// Comando que executa a edição e salvamento dos dados.
+        /// </summary>
         public ICommand EditCommand { get; }
 
+        /// <summary>
+        /// Comando para minimizar a janela.
+        /// </summary>
         public ICommand MinimizeCommand { get; }
+        /// <summary>
+        /// Comando para fechar a janela.
+        /// </summary>
         public ICommand CloseCommand { get; }
+
+        /// <summary>
+        /// Ação executada para minimizar a janela, definida pela view.
+        /// </summary>
         public Action? MinimizeWindow { get; set; }
+        /// <summary>
+        /// Ação executada para fechar a janela, definida pela view.
+        /// </summary>
         public Action? CloseWindow { get; set; }
+
+        /// <summary>
+        /// Inicializa o ViewModel com os dados do usuário editado e do usuário logado.
+        /// </summary>
+        /// <param name="userEditado">Usuário a ser editado.</param>
+        /// <param name="usuarioLogado">Usuário atualmente logado.</param>
         public EditViewModel(UserModel userEditado, UserModel usuarioLogado) {
             _originalUser = userEditado;
             _usuarioLogado = usuarioLogado;
@@ -107,6 +146,9 @@ namespace TCC_MVVM.MVVM.ViewModel
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
         }
 
+        /// <summary>
+        /// Realiza a validação dos dados e atualiza o usuário no banco de dados.
+        /// </summary>
         private void SalvarEdicao() {
             try {
                 using var db = new AppDbContext();
