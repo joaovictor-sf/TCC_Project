@@ -21,47 +21,27 @@ namespace TCC_MVVM.MVVM.ViewModel
 
         public string Nome {
             get => _nome;
-            set {
-                _nome = value;
-                OnPropertyChanged(nameof(Nome));
-                CommandManager.InvalidateRequerySuggested();
-            }
+            set => SetField(ref _nome, value, nameof(Nome));
         }
 
         public string Sobrenome {
             get => _sobrenome;
-            set {
-                _sobrenome = value;
-                OnPropertyChanged(nameof(Sobrenome));
-                CommandManager.InvalidateRequerySuggested();
-            }
+            set => SetField(ref _sobrenome, value, nameof(Sobrenome));
         }
 
         public string Email {
             get => _email;
-            set {
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-                CommandManager.InvalidateRequerySuggested();
-            }
+            set => SetField(ref _email, value, nameof(Email));
         }
 
         public string Username {
             get => _username;
-            set {
-                _username = value;
-                OnPropertyChanged(nameof(Username));
-                CommandManager.InvalidateRequerySuggested();
-            }
+            set => SetField(ref _username, value, nameof(Username));
         }
 
         public UserRole? Role {
             get => _role;
-            set {
-                _role = value;
-                OnPropertyChanged(nameof(Role));
-                CommandManager.InvalidateRequerySuggested();
-            }
+            set => SetField(ref _role, value, nameof(Role));
         }
         public IEnumerable<UserRole> AvailableRoles {
             get {
@@ -73,11 +53,8 @@ namespace TCC_MVVM.MVVM.ViewModel
         }
         public WorkHours WorkHours {
             get => _workHours;
-            set {
-                _workHours = value;
-                OnPropertyChanged(nameof(WorkHours));
-                CommandManager.InvalidateRequerySuggested();
-            }
+            set => SetField(ref _workHours, value, nameof(WorkHours));
+
         }
         public IEnumerable<WorkHours> AvailableWorkHours {
             get {
@@ -93,9 +70,6 @@ namespace TCC_MVVM.MVVM.ViewModel
             set { _mensagem = value; OnPropertyChanged(nameof(Mensagem)); }
         }
 
-        //public IEnumerable<UserRole> Roles => Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
-        //public IEnumerable<WorkHours> WorkHourOptions => Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
-
         public ICommand CadastrarCommand { get; }
         public ICommand MinimizeCommand { get; }
         public ICommand CloseCommand { get; }
@@ -105,43 +79,32 @@ namespace TCC_MVVM.MVVM.ViewModel
         public CadastroViewModel(UserModel user) {
             _usuarioLogado = user;
 
-            CadastrarCommand = new RelayCommand(ExecuteCadastrar, CanExecuteCadastrar);
+            CadastrarCommand = new RelayCommand(ExecuteCadastrar);
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
-        }
-        /*public CadastroViewModel() {
-            CadastrarCommand = new RelayCommand(ExecuteCadastrar, CanExecuteCadastrar);
-            MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
-            CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
-        }*/
-
-        private bool CanExecuteCadastrar(object? parameter) {
-            return !string.IsNullOrEmpty(Nome) &&
-                   !string.IsNullOrEmpty(Sobrenome) &&
-                   !string.IsNullOrEmpty(Email) &&
-                   EmailValido(Email) &&
-                   !string.IsNullOrEmpty(Username) &&
-                   Role != default &&
-                   WorkHours != default;
         }
 
         private async void ExecuteCadastrar(object? parameter) {
             try {
                 using var db = new AppDbContext();
 
-                //Essa parte não está funcionando
-                if (db.Users.Any(u => u.Username == Username)) {
+                if (CamposInvalidos()) {
+                    Mensagem = "Preencha todos os campos corretamente.";
+                    return;
+                }
+
+                if (UsernameEmUso(db)) {
                     Mensagem = "Esse username já está em uso.";
                     return;
                 }
 
-                if (!EmailValido(Email)) {
+                if (EmailInvalido(Email)) {
                     Mensagem = "E-mail inválido.";
                     return;
-                }//Até aqui
+                }
 
-                string senhaGerada = Guid.NewGuid().ToString("N")[..8];
-                string senhaCriptografada = BCrypt.Net.BCrypt.HashPassword(senhaGerada);
+                string senhaGerada = GerarSenhaAleatoria();
+                string senhaCriptografada = Criptografar(senhaGerada);
 
                 var novoUsuario = new UserModel
                 {
@@ -159,10 +122,7 @@ namespace TCC_MVVM.MVVM.ViewModel
                 db.Users.Add(novoUsuario);
                 db.SaveChanges();
 
-                Nome = string.Empty;
-                Sobrenome = string.Empty;
-                Email = string.Empty;
-                Username = string.Empty;
+                LimparCampos();
 
                 Mensagem = $"Usuário cadastrado com sucesso!\nSenha gerada: {senhaGerada}";
             } catch (Exception ex) {
@@ -170,9 +130,33 @@ namespace TCC_MVVM.MVVM.ViewModel
             }
         }
 
-        private bool EmailValido(string email) {
-            return System.Text.RegularExpressions.Regex.IsMatch(email,
-                @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        private void SetField<T>(ref T field, T value, string propertyName) {
+            field = value;
+            OnPropertyChanged(propertyName);
+            CommandManager.InvalidateRequerySuggested();
         }
+
+        private bool UsernameEmUso(AppDbContext db) => db.Users.Any(u => u.Username == Username.Trim());
+
+        private bool EmailInvalido(string email) => !System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+
+        private string GerarSenhaAleatoria() => Guid.NewGuid().ToString("N")[..8];
+
+        private string Criptografar(string senha) => BCrypt.Net.BCrypt.HashPassword(senha);
+
+        private void LimparCampos() {
+            Nome = string.Empty;
+            Sobrenome = string.Empty;
+            Email = string.Empty;
+            Username = string.Empty;
+        }
+
+        private bool CamposInvalidos() =>
+            string.IsNullOrWhiteSpace(Nome) ||
+            string.IsNullOrWhiteSpace(Sobrenome) ||
+            string.IsNullOrWhiteSpace(Email) ||
+            string.IsNullOrWhiteSpace(Username) ||
+            Role == null ||
+            WorkHours == default;
     }
 }
