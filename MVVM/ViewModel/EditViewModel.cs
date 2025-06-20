@@ -12,13 +12,62 @@ namespace TCC_MVVM.MVVM.ViewModel
         private readonly UserModel _usuarioLogado;
         private readonly UserModel _originalUser;
 
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public string Email { get; set; }
-        public string Username { get; set; }
-        public UserRole Role { get; set; }
-        public WorkHours WorkHours { get; set; }
-        public string Mensagem { get; set; }
+        private string _nome;
+        private string _sobrenome;
+        private string _email;
+        private string _username;
+        private UserRole _role;
+        private WorkHours _workHours;
+        private string _mensagem;
+
+        /// <summary>
+        /// Nome do usuário.
+        /// </summary>
+        public string Nome {
+            get => _nome;
+            set => SetField(ref _nome, value, nameof(Nome));
+        }
+
+        /// <summary>
+        /// Sobrenome do usuário.
+        /// </summary>
+        public string Sobrenome {
+            get => _sobrenome;
+            set => SetField(ref _sobrenome, value, nameof(Sobrenome));
+        }
+
+        /// <summary>
+        /// E-mail do usuário.
+        /// </summary>
+        public string Email {
+            get => _email;
+            set => SetField(ref _email, value, nameof(Email));
+        }
+
+        /// <summary>
+        /// Nome de usuário (username) para login.
+        /// </summary>
+        public string Username {
+            get => _username;
+            set => SetField(ref _username, value, nameof(Username));
+        }
+
+        /// <summary>
+        /// Papel (Role) do usuário no sistema.
+        /// </summary>
+        public UserRole Role {
+            get => _role;
+            set => SetField(ref _role, value, nameof(Role));
+        }
+        public WorkHours WorkHours {
+            get => _workHours;
+            set => SetField(ref _workHours, value, nameof(WorkHours));
+
+        }
+        public string Mensagem {
+            get => _mensagem;
+            set { _mensagem = value; OnPropertyChanged(nameof(Mensagem)); }
+        }
 
         public IEnumerable<UserRole> AvailableRoles {
             get {
@@ -35,8 +84,6 @@ namespace TCC_MVVM.MVVM.ViewModel
                 return Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
             }
         }
-        //public IEnumerable<UserRole> Roles => Enum.GetValues(typeof(UserRole)).Cast<UserRole>();
-        //public IEnumerable<WorkHours> WorkHourOptions => Enum.GetValues(typeof(WorkHours)).Cast<WorkHours>();
 
         public ICommand EditCommand { get; }
 
@@ -55,41 +102,34 @@ namespace TCC_MVVM.MVVM.ViewModel
             Role = userEditado.Role;
             WorkHours = userEditado.WorkHours;
 
-            EditCommand = new RelayCommand(_ => SalvarEdicao(), _ => CanEdit());
+            EditCommand = new RelayCommand(_ => SalvarEdicao());
             MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
             CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
         }
-        
-        /*public EditViewModel(UserModel user) {
-            _originalUser = user;
-
-            // Preenche os campos com os dados do usuário selecionado
-            Nome = user.Name;
-            Sobrenome = user.LastName;
-            Email = user.Email;
-            Username = user.Username;
-            Role = user.Role;
-            WorkHours = user.WorkHours;
-
-            EditCommand = new RelayCommand(_ => SalvarEdicao(), _ => CanEdit());
-            MinimizeCommand = new RelayCommand(_ => MinimizeWindow?.Invoke());
-            CloseCommand = new RelayCommand(_ => CloseWindow?.Invoke());
-        }*/
 
         private void SalvarEdicao() {
             try {
                 using var db = new AppDbContext();
                 var user = db.Users.FirstOrDefault(u => u.Id == _originalUser.Id);
 
-                //Não precisa verificar se o usuário existe, pois o ViewModel é inicializado com um usuário existente.
+                //Realisticamente, user não pode ser nulo, pois o ViewModel é inicializado com um usuário existente.
                 if (user == null) {
                     Mensagem = "Usuário não encontrado.";
                     return;
                 }
 
-                // Não funciona
-                if (!EmailValido(Email)) {
-                    MessageBox.Show("E-mail inválido!", "Erro", MessageBoxButton.OK, MessageBoxImage.Warning);
+                if (CamposInvalidos()) {
+                    Mensagem = "Preencha todos os campos corretamente.";
+                    return;
+                }
+
+                if (Username != user.Username && UsernameEmUso(db)) {
+                    Mensagem = "Esse username já está em uso.";
+                    return;
+                }
+
+                if (EmailInvalido(Email)) {
+                    Mensagem = "E-mail inválido.";
                     return;
                 }
 
@@ -108,18 +148,35 @@ namespace TCC_MVVM.MVVM.ViewModel
                 MessageBox.Show($"Erro ao salvar alterações: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private bool CanEdit() {
-            return !string.IsNullOrWhiteSpace(Nome)
-                && !string.IsNullOrWhiteSpace(Sobrenome)
-                && !string.IsNullOrWhiteSpace(Email)
-                && EmailValido(Email)
-                && !string.IsNullOrWhiteSpace(Username);
-        }
 
-        private bool EmailValido(string email) {
-            return System.Text.RegularExpressions.Regex.IsMatch(email,
-                @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
-        }
+        /// <summary>
+        /// Verifica se o username já está em uso no banco.
+        /// </summary>
+        private bool UsernameEmUso(AppDbContext db) => db.Users.Any(u => u.Username == Username.Trim());
 
+        /// <summary>
+        /// Verifica se o e-mail informado é inválido.
+        /// </summary>
+        private bool EmailInvalido(string email) => !System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+
+        /// <summary>
+        /// Verifica se algum dos campos obrigatórios está inválido ou vazio.
+        /// </summary>
+        private bool CamposInvalidos() =>
+            string.IsNullOrWhiteSpace(Nome) ||
+            string.IsNullOrWhiteSpace(Sobrenome) ||
+            string.IsNullOrWhiteSpace(Email) ||
+            string.IsNullOrWhiteSpace(Username) ||
+            Role == null ||
+            WorkHours == default;
+
+        /// <summary>
+        /// Método auxiliar para setar valores de propriedades e notificar alterações.
+        /// </summary>
+        private void SetField<T>(ref T field, T value, string propertyName) {
+            field = value;
+            OnPropertyChanged(propertyName);
+            CommandManager.InvalidateRequerySuggested();
+        }
     }
 }
