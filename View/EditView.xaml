@@ -264,7 +264,7 @@
                                Grid.Column="1" 
                                Margin="5,10,5,0" 
                                TextWrapping="Wrap" 
-                               Foreground="DarkGreen"/>
+                               Foreground="DarkRed"/>
 
                     <Button BorderThickness="0"
                             Content="SALVAR"
