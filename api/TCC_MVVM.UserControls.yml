@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.UserControls
+  commentId: N:TCC_MVVM.UserControls
+  id: TCC_MVVM.UserControls
+  children:
+  - TCC_MVVM.UserControls.BindablePasswordBox
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.UserControls
+  nameWithType: TCC_MVVM.UserControls
+  fullName: TCC_MVVM.UserControls
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.UserControls.BindablePasswordBox
+  commentId: T:TCC_MVVM.UserControls.BindablePasswordBox
+  href: TCC_MVVM.UserControls.BindablePasswordBox.html
+  name: BindablePasswordBox
+  nameWithType: BindablePasswordBox
+  fullName: TCC_MVVM.UserControls.BindablePasswordBox

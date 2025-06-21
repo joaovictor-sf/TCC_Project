@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.View
+  commentId: N:TCC_MVVM.View
+  id: TCC_MVVM.View
+  children:
+  - TCC_MVVM.View.CadastroView
+  - TCC_MVVM.View.ChangePasswordView
+  - TCC_MVVM.View.EditView
+  - TCC_MVVM.View.LoginView
+  - TCC_MVVM.View.MonitorView
+  - TCC_MVVM.View.UserListView
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.View
+  nameWithType: TCC_MVVM.View
+  fullName: TCC_MVVM.View
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.View.CadastroView
+  commentId: T:TCC_MVVM.View.CadastroView
+  href: TCC_MVVM.View.CadastroView.html
+  name: CadastroView
+  nameWithType: CadastroView
+  fullName: TCC_MVVM.View.CadastroView
+- uid: TCC_MVVM.View.ChangePasswordView
+  commentId: T:TCC_MVVM.View.ChangePasswordView
+  href: TCC_MVVM.View.ChangePasswordView.html
+  name: ChangePasswordView
+  nameWithType: ChangePasswordView
+  fullName: TCC_MVVM.View.ChangePasswordView
+- uid: TCC_MVVM.View.EditView
+  commentId: T:TCC_MVVM.View.EditView
+  href: TCC_MVVM.View.EditView.html
+  name: EditView
+  nameWithType: EditView
+  fullName: TCC_MVVM.View.EditView
+- uid: TCC_MVVM.View.LoginView
+  commentId: T:TCC_MVVM.View.LoginView
+  href: TCC_MVVM.View.LoginView.html
+  name: LoginView
+  nameWithType: LoginView
+  fullName: TCC_MVVM.View.LoginView
+- uid: TCC_MVVM.View.MonitorView
+  commentId: T:TCC_MVVM.View.MonitorView
+  href: TCC_MVVM.View.MonitorView.html
+  name: MonitorView
+  nameWithType: MonitorView
+  fullName: TCC_MVVM.View.MonitorView
+- uid: TCC_MVVM.View.UserListView
+  commentId: T:TCC_MVVM.View.UserListView
+  href: TCC_MVVM.View.UserListView.html
+  name: UserListView
+  nameWithType: UserListView
+  fullName: TCC_MVVM.View.UserListView

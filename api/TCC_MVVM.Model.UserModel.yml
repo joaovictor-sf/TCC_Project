@@ -1,0 +1,1031 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Model.UserModel
+  commentId: T:TCC_MVVM.Model.UserModel
+  id: UserModel
+  parent: TCC_MVVM.Model
+  children:
+  - TCC_MVVM.Model.UserModel.#ctor
+  - TCC_MVVM.Model.UserModel.Email
+  - TCC_MVVM.Model.UserModel.Id
+  - TCC_MVVM.Model.UserModel.InactivityLogs
+  - TCC_MVVM.Model.UserModel.IsActive
+  - TCC_MVVM.Model.UserModel.LastName
+  - TCC_MVVM.Model.UserModel.MustChangePassword
+  - TCC_MVVM.Model.UserModel.Name
+  - TCC_MVVM.Model.UserModel.PasswordHash
+  - TCC_MVVM.Model.UserModel.ProcessLogs
+  - TCC_MVVM.Model.UserModel.Role
+  - TCC_MVVM.Model.UserModel.Username
+  - TCC_MVVM.Model.UserModel.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: UserModel
+  nameWithType: UserModel
+  fullName: TCC_MVVM.Model.UserModel
+  type: Class
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: UserModel
+    path: Model/UserModel.cs
+    startLine: 8
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Representa um usuário do sistema com informações de login, papel e configuração de jornada de trabalho.
+  example: []
+  syntax:
+    content: public class UserModel
+    content.vb: Public Class UserModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TCC_MVVM.Model.UserModel.Id
+  commentId: P:TCC_MVVM.Model.UserModel.Id
+  id: Id
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: UserModel.Id
+  fullName: TCC_MVVM.Model.UserModel.Id
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Id
+    path: Model/UserModel.cs
+    startLine: 10
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  syntax:
+    content: >-
+      [Key]
+
+      public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property Id As Integer
+  overload: TCC_MVVM.Model.UserModel.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: TCC_MVVM.Model.UserModel.Username
+  commentId: P:TCC_MVVM.Model.UserModel.Username
+  id: Username
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: Username
+  nameWithType: UserModel.Username
+  fullName: TCC_MVVM.Model.UserModel.Username
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Username
+    path: Model/UserModel.cs
+    startLine: 16
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Nome de usuário usado para login.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public string Username { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property Username As String
+  overload: TCC_MVVM.Model.UserModel.Username*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: TCC_MVVM.Model.UserModel.PasswordHash
+  commentId: P:TCC_MVVM.Model.UserModel.PasswordHash
+  id: PasswordHash
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: PasswordHash
+  nameWithType: UserModel.PasswordHash
+  fullName: TCC_MVVM.Model.UserModel.PasswordHash
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: PasswordHash
+    path: Model/UserModel.cs
+    startLine: 22
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Hash da senha criptografada do usuário.
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      public string PasswordHash { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Required>
+
+      Public Property PasswordHash As String
+  overload: TCC_MVVM.Model.UserModel.PasswordHash*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+- uid: TCC_MVVM.Model.UserModel.Name
+  commentId: P:TCC_MVVM.Model.UserModel.Name
+  id: Name
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: UserModel.Name
+  fullName: TCC_MVVM.Model.UserModel.Name
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Name
+    path: Model/UserModel.cs
+    startLine: 28
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Primeiro nome do usuário.
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TCC_MVVM.Model.UserModel.Name*
+- uid: TCC_MVVM.Model.UserModel.LastName
+  commentId: P:TCC_MVVM.Model.UserModel.LastName
+  id: LastName
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: LastName
+  nameWithType: UserModel.LastName
+  fullName: TCC_MVVM.Model.UserModel.LastName
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: LastName
+    path: Model/UserModel.cs
+    startLine: 33
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Sobrenome do usuário.
+  example: []
+  syntax:
+    content: public string LastName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LastName As String
+  overload: TCC_MVVM.Model.UserModel.LastName*
+- uid: TCC_MVVM.Model.UserModel.Email
+  commentId: P:TCC_MVVM.Model.UserModel.Email
+  id: Email
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: UserModel.Email
+  fullName: TCC_MVVM.Model.UserModel.Email
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Email
+    path: Model/UserModel.cs
+    startLine: 38
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: E-mail do usuário.
+  example: []
+  syntax:
+    content: public string Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: TCC_MVVM.Model.UserModel.Email*
+- uid: TCC_MVVM.Model.UserModel.Role
+  commentId: P:TCC_MVVM.Model.UserModel.Role
+  id: Role
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: Role
+  nameWithType: UserModel.Role
+  fullName: TCC_MVVM.Model.UserModel.Role
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Role
+    path: Model/UserModel.cs
+    startLine: 43
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Papel do usuário no sistema (ADMIN, RH ou DEV).
+  example: []
+  syntax:
+    content: public UserRole Role { get; set; }
+    parameters: []
+    return:
+      type: TCC_MVVM.Model.Enum.UserRole
+    content.vb: Public Property Role As UserRole
+  overload: TCC_MVVM.Model.UserModel.Role*
+- uid: TCC_MVVM.Model.UserModel.WorkHours
+  commentId: P:TCC_MVVM.Model.UserModel.WorkHours
+  id: WorkHours
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: WorkHours
+  nameWithType: UserModel.WorkHours
+  fullName: TCC_MVVM.Model.UserModel.WorkHours
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: WorkHours
+    path: Model/UserModel.cs
+    startLine: 48
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Carga horária de trabalho configurada para o usuário.
+  example: []
+  syntax:
+    content: public WorkHours WorkHours { get; set; }
+    parameters: []
+    return:
+      type: TCC_MVVM.Model.Enum.WorkHours
+    content.vb: Public Property WorkHours As WorkHours
+  overload: TCC_MVVM.Model.UserModel.WorkHours*
+- uid: TCC_MVVM.Model.UserModel.IsActive
+  commentId: P:TCC_MVVM.Model.UserModel.IsActive
+  id: IsActive
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: UserModel.IsActive
+  fullName: TCC_MVVM.Model.UserModel.IsActive
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: IsActive
+    path: Model/UserModel.cs
+    startLine: 53
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Indica se o usuário está ativo no sistema.
+  example: []
+  syntax:
+    content: public bool IsActive { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsActive As Boolean
+  overload: TCC_MVVM.Model.UserModel.IsActive*
+- uid: TCC_MVVM.Model.UserModel.ProcessLogs
+  commentId: P:TCC_MVVM.Model.UserModel.ProcessLogs
+  id: ProcessLogs
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: ProcessLogs
+  nameWithType: UserModel.ProcessLogs
+  fullName: TCC_MVVM.Model.UserModel.ProcessLogs
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: ProcessLogs
+    path: Model/UserModel.cs
+    startLine: 58
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Logs de uso de aplicações registrados pelo usuário.
+  example: []
+  syntax:
+    content: public ICollection<ProcessLog> ProcessLogs { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{TCC_MVVM.Model.ProcessLog}
+    content.vb: Public Property ProcessLogs As ICollection(Of ProcessLog)
+  overload: TCC_MVVM.Model.UserModel.ProcessLogs*
+- uid: TCC_MVVM.Model.UserModel.InactivityLogs
+  commentId: P:TCC_MVVM.Model.UserModel.InactivityLogs
+  id: InactivityLogs
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: InactivityLogs
+  nameWithType: UserModel.InactivityLogs
+  fullName: TCC_MVVM.Model.UserModel.InactivityLogs
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: InactivityLogs
+    path: Model/UserModel.cs
+    startLine: 63
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Logs de inatividade registrados pelo usuário.
+  example: []
+  syntax:
+    content: public ICollection<InactivityLog> InactivityLogs { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{TCC_MVVM.Model.InactivityLog}
+    content.vb: Public Property InactivityLogs As ICollection(Of InactivityLog)
+  overload: TCC_MVVM.Model.UserModel.InactivityLogs*
+- uid: TCC_MVVM.Model.UserModel.MustChangePassword
+  commentId: P:TCC_MVVM.Model.UserModel.MustChangePassword
+  id: MustChangePassword
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: MustChangePassword
+  nameWithType: UserModel.MustChangePassword
+  fullName: TCC_MVVM.Model.UserModel.MustChangePassword
+  type: Property
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: MustChangePassword
+    path: Model/UserModel.cs
+    startLine: 68
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Indica se o usuário deve trocar sua senha no próximo login.
+  example: []
+  syntax:
+    content: public bool MustChangePassword { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property MustChangePassword As Boolean
+  overload: TCC_MVVM.Model.UserModel.MustChangePassword*
+- uid: TCC_MVVM.Model.UserModel.#ctor
+  commentId: M:TCC_MVVM.Model.UserModel.#ctor
+  id: '#ctor'
+  parent: TCC_MVVM.Model.UserModel
+  langs:
+  - csharp
+  - vb
+  name: UserModel()
+  nameWithType: UserModel.UserModel()
+  fullName: TCC_MVVM.Model.UserModel.UserModel()
+  type: Constructor
+  source:
+    remote:
+      path: Model/UserModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: .ctor
+    path: Model/UserModel.cs
+    startLine: 70
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  syntax:
+    content: public UserModel()
+    content.vb: Public Sub New()
+  overload: TCC_MVVM.Model.UserModel.#ctor*
+  nameWithType.vb: UserModel.New()
+  fullName.vb: TCC_MVVM.Model.UserModel.New()
+  name.vb: New()
+references:
+- uid: TCC_MVVM.Model
+  commentId: N:TCC_MVVM.Model
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model
+  nameWithType: TCC_MVVM.Model
+  fullName: TCC_MVVM.Model
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TCC_MVVM.Model.UserModel.Id*
+  commentId: Overload:TCC_MVVM.Model.UserModel.Id
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_Id
+  name: Id
+  nameWithType: UserModel.Id
+  fullName: TCC_MVVM.Model.UserModel.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: TCC_MVVM.Model.UserModel.Username*
+  commentId: Overload:TCC_MVVM.Model.UserModel.Username
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_Username
+  name: Username
+  nameWithType: UserModel.Username
+  fullName: TCC_MVVM.Model.UserModel.Username
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TCC_MVVM.Model.UserModel.PasswordHash*
+  commentId: Overload:TCC_MVVM.Model.UserModel.PasswordHash
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_PasswordHash
+  name: PasswordHash
+  nameWithType: UserModel.PasswordHash
+  fullName: TCC_MVVM.Model.UserModel.PasswordHash
+- uid: TCC_MVVM.Model.UserModel.Name*
+  commentId: Overload:TCC_MVVM.Model.UserModel.Name
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_Name
+  name: Name
+  nameWithType: UserModel.Name
+  fullName: TCC_MVVM.Model.UserModel.Name
+- uid: TCC_MVVM.Model.UserModel.LastName*
+  commentId: Overload:TCC_MVVM.Model.UserModel.LastName
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_LastName
+  name: LastName
+  nameWithType: UserModel.LastName
+  fullName: TCC_MVVM.Model.UserModel.LastName
+- uid: TCC_MVVM.Model.UserModel.Email*
+  commentId: Overload:TCC_MVVM.Model.UserModel.Email
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_Email
+  name: Email
+  nameWithType: UserModel.Email
+  fullName: TCC_MVVM.Model.UserModel.Email
+- uid: TCC_MVVM.Model.UserModel.Role*
+  commentId: Overload:TCC_MVVM.Model.UserModel.Role
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_Role
+  name: Role
+  nameWithType: UserModel.Role
+  fullName: TCC_MVVM.Model.UserModel.Role
+- uid: TCC_MVVM.Model.Enum.UserRole
+  commentId: T:TCC_MVVM.Model.Enum.UserRole
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.UserRole.html
+  name: UserRole
+  nameWithType: UserRole
+  fullName: TCC_MVVM.Model.Enum.UserRole
+- uid: TCC_MVVM.Model.Enum
+  commentId: N:TCC_MVVM.Model.Enum
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model.Enum
+  nameWithType: TCC_MVVM.Model.Enum
+  fullName: TCC_MVVM.Model.Enum
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+- uid: TCC_MVVM.Model.UserModel.WorkHours*
+  commentId: Overload:TCC_MVVM.Model.UserModel.WorkHours
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_WorkHours
+  name: WorkHours
+  nameWithType: UserModel.WorkHours
+  fullName: TCC_MVVM.Model.UserModel.WorkHours
+- uid: TCC_MVVM.Model.Enum.WorkHours
+  commentId: T:TCC_MVVM.Model.Enum.WorkHours
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.WorkHours.html
+  name: WorkHours
+  nameWithType: WorkHours
+  fullName: TCC_MVVM.Model.Enum.WorkHours
+- uid: TCC_MVVM.Model.UserModel.IsActive*
+  commentId: Overload:TCC_MVVM.Model.UserModel.IsActive
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_IsActive
+  name: IsActive
+  nameWithType: UserModel.IsActive
+  fullName: TCC_MVVM.Model.UserModel.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TCC_MVVM.Model.UserModel.ProcessLogs*
+  commentId: Overload:TCC_MVVM.Model.UserModel.ProcessLogs
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_ProcessLogs
+  name: ProcessLogs
+  nameWithType: UserModel.ProcessLogs
+  fullName: TCC_MVVM.Model.UserModel.ProcessLogs
+- uid: System.Collections.Generic.ICollection{TCC_MVVM.Model.ProcessLog}
+  commentId: T:System.Collections.Generic.ICollection{TCC_MVVM.Model.ProcessLog}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<ProcessLog>
+  nameWithType: ICollection<ProcessLog>
+  fullName: System.Collections.Generic.ICollection<TCC_MVVM.Model.ProcessLog>
+  nameWithType.vb: ICollection(Of ProcessLog)
+  fullName.vb: System.Collections.Generic.ICollection(Of TCC_MVVM.Model.ProcessLog)
+  name.vb: ICollection(Of ProcessLog)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: TCC_MVVM.Model.ProcessLog
+    name: ProcessLog
+    href: TCC_MVVM.Model.ProcessLog.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TCC_MVVM.Model.ProcessLog
+    name: ProcessLog
+    href: TCC_MVVM.Model.ProcessLog.html
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TCC_MVVM.Model.UserModel.InactivityLogs*
+  commentId: Overload:TCC_MVVM.Model.UserModel.InactivityLogs
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_InactivityLogs
+  name: InactivityLogs
+  nameWithType: UserModel.InactivityLogs
+  fullName: TCC_MVVM.Model.UserModel.InactivityLogs
+- uid: System.Collections.Generic.ICollection{TCC_MVVM.Model.InactivityLog}
+  commentId: T:System.Collections.Generic.ICollection{TCC_MVVM.Model.InactivityLog}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<InactivityLog>
+  nameWithType: ICollection<InactivityLog>
+  fullName: System.Collections.Generic.ICollection<TCC_MVVM.Model.InactivityLog>
+  nameWithType.vb: ICollection(Of InactivityLog)
+  fullName.vb: System.Collections.Generic.ICollection(Of TCC_MVVM.Model.InactivityLog)
+  name.vb: ICollection(Of InactivityLog)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: TCC_MVVM.Model.InactivityLog
+    name: InactivityLog
+    href: TCC_MVVM.Model.InactivityLog.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TCC_MVVM.Model.InactivityLog
+    name: InactivityLog
+    href: TCC_MVVM.Model.InactivityLog.html
+  - name: )
+- uid: TCC_MVVM.Model.UserModel.MustChangePassword*
+  commentId: Overload:TCC_MVVM.Model.UserModel.MustChangePassword
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel_MustChangePassword
+  name: MustChangePassword
+  nameWithType: UserModel.MustChangePassword
+  fullName: TCC_MVVM.Model.UserModel.MustChangePassword
+- uid: TCC_MVVM.Model.UserModel.#ctor*
+  commentId: Overload:TCC_MVVM.Model.UserModel.#ctor
+  href: TCC_MVVM.Model.UserModel.html#TCC_MVVM_Model_UserModel__ctor
+  name: UserModel
+  nameWithType: UserModel.UserModel
+  fullName: TCC_MVVM.Model.UserModel.UserModel
+  nameWithType.vb: UserModel.New
+  fullName.vb: TCC_MVVM.Model.UserModel.New
+  name.vb: New

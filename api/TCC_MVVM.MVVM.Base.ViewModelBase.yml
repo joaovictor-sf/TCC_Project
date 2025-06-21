@@ -1,0 +1,522 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase
+  commentId: T:TCC_MVVM.MVVM.Base.ViewModelBase
+  id: ViewModelBase
+  parent: TCC_MVVM.MVVM.Base
+  children:
+  - TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+  - TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  - TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  langs:
+  - csharp
+  - vb
+  name: ViewModelBase
+  nameWithType: ViewModelBase
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase
+  type: Class
+  source:
+    remote:
+      path: MVVM/Base/ViewModelBase.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: ViewModelBase
+    path: MVVM/Base/ViewModelBase.cs
+    startLine: 8
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.Base
+  summary: Classe base para todos os ViewModels, implementa INotifyPropertyChanged.
+  example: []
+  syntax:
+    content: 'public abstract class ViewModelBase : INotifyPropertyChanged'
+    content.vb: Public MustInherit Class ViewModelBase Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  commentId: E:TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  id: PropertyChanged
+  parent: TCC_MVVM.MVVM.Base.ViewModelBase
+  langs:
+  - csharp
+  - vb
+  name: PropertyChanged
+  nameWithType: ViewModelBase.PropertyChanged
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  type: Event
+  source:
+    remote:
+      path: MVVM/Base/ViewModelBase.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: PropertyChanged
+    path: MVVM/Base/ViewModelBase.cs
+    startLine: 10
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.Base
+  summary: Occurs when a property value changes.
+  example: []
+  syntax:
+    content: public event PropertyChangedEventHandler? PropertyChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+  commentId: M:TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+  id: OnPropertyChanged(System.String)
+  parent: TCC_MVVM.MVVM.Base.ViewModelBase
+  langs:
+  - csharp
+  - vb
+  name: OnPropertyChanged(string?)
+  nameWithType: ViewModelBase.OnPropertyChanged(string?)
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(string?)
+  type: Method
+  source:
+    remote:
+      path: MVVM/Base/ViewModelBase.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: OnPropertyChanged
+    path: MVVM/Base/ViewModelBase.cs
+    startLine: 16
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.Base
+  summary: Notifica que uma propriedade foi alterada.
+  example: []
+  syntax:
+    content: public void OnPropertyChanged(string? propertyName = null)
+    parameters:
+    - id: propertyName
+      type: System.String
+      description: Nome da propriedade. Preenchido automaticamente pelo compilador.
+    content.vb: Public Sub OnPropertyChanged(propertyName As String = Nothing)
+  overload: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged*
+  nameWithType.vb: ViewModelBase.OnPropertyChanged(String)
+  fullName.vb: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  commentId: M:TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  id: SetProperty``1(``0@,``0,System.String)
+  parent: TCC_MVVM.MVVM.Base.ViewModelBase
+  langs:
+  - csharp
+  - vb
+  name: SetProperty<T>(ref T, T, string?)
+  nameWithType: ViewModelBase.SetProperty<T>(ref T, T, string?)
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty<T>(ref T, T, string?)
+  type: Method
+  source:
+    remote:
+      path: MVVM/Base/ViewModelBase.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: SetProperty
+    path: MVVM/Base/ViewModelBase.cs
+    startLine: 27
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.Base
+  summary: Define o valor de uma propriedade e notifica a alteração se necessário.
+  example: []
+  syntax:
+    content: protected bool SetProperty<T>(ref T field, T value, string? propertyName = null)
+    parameters:
+    - id: field
+      type: '{T}'
+      description: Campo de backing da propriedade.
+    - id: value
+      type: '{T}'
+      description: Novo valor.
+    - id: propertyName
+      type: System.String
+      description: Nome da propriedade. Preenchido automaticamente pelo compilador.
+    typeParameters:
+    - id: T
+      description: Tipo do valor.
+    return:
+      type: System.Boolean
+    content.vb: Protected Function SetProperty(Of T)(field As T, value As T, propertyName As String = Nothing) As Boolean
+  overload: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty*
+  nameWithType.vb: ViewModelBase.SetProperty(Of T)(T, T, String)
+  fullName.vb: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+references:
+- uid: TCC_MVVM.MVVM.Base
+  commentId: N:TCC_MVVM.MVVM.Base
+  href: TCC_MVVM.html
+  name: TCC_MVVM.MVVM.Base
+  nameWithType: TCC_MVVM.MVVM.Base
+  fullName: TCC_MVVM.MVVM.Base
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.Base
+    name: Base
+    href: TCC_MVVM.MVVM.Base.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.Base
+    name: Base
+    href: TCC_MVVM.MVVM.Base.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  parent: System.ComponentModel.INotifyPropertyChanged
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged.propertychanged
+  name: PropertyChanged
+  nameWithType: INotifyPropertyChanged.PropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.propertychangedeventhandler
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged*
+  commentId: Overload:TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_OnPropertyChanged_System_String_
+  name: OnPropertyChanged
+  nameWithType: ViewModelBase.OnPropertyChanged
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty*
+  commentId: Overload:TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  name: SetProperty
+  nameWithType: ViewModelBase.SetProperty
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

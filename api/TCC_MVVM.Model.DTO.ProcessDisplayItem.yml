@@ -1,0 +1,512 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem
+  commentId: T:TCC_MVVM.Model.DTO.ProcessDisplayItem
+  id: ProcessDisplayItem
+  parent: TCC_MVVM.Model.DTO
+  children:
+  - TCC_MVVM.Model.DTO.ProcessDisplayItem.#ctor(System.String,System.String)
+  - TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName
+  - TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle
+  langs:
+  - csharp
+  - vb
+  name: ProcessDisplayItem
+  nameWithType: ProcessDisplayItem
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem
+  type: Class
+  source:
+    remote:
+      path: Model/DTO/ProcessDisplayItem.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: ProcessDisplayItem
+    path: Model/DTO/ProcessDisplayItem.cs
+    startLine: 8
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.DTO
+  summary: >-
+    Representa um item de processo monitorado para exibição na interface,
+
+    contendo o nome do aplicativo e o título da janela ativa.
+  example: []
+  syntax:
+    content: 'public record ProcessDisplayItem : IEquatable<ProcessDisplayItem>'
+    content.vb: Public Class ProcessDisplayItem Implements IEquatable(Of ProcessDisplayItem)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{TCC_MVVM.Model.DTO.ProcessDisplayItem}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem.#ctor(System.String,System.String)
+  commentId: M:TCC_MVVM.Model.DTO.ProcessDisplayItem.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: TCC_MVVM.Model.DTO.ProcessDisplayItem
+  langs:
+  - csharp
+  - vb
+  name: ProcessDisplayItem(string, string)
+  nameWithType: ProcessDisplayItem.ProcessDisplayItem(string, string)
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem.ProcessDisplayItem(string, string)
+  type: Constructor
+  source:
+    remote:
+      path: Model/DTO/ProcessDisplayItem.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: .ctor
+    path: Model/DTO/ProcessDisplayItem.cs
+    startLine: 8
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.DTO
+  summary: >-
+    Representa um item de processo monitorado para exibição na interface,
+
+    contendo o nome do aplicativo e o título da janela ativa.
+  example: []
+  syntax:
+    content: public ProcessDisplayItem(string AppName, string WindowTitle)
+    parameters:
+    - id: AppName
+      type: System.String
+      description: Nome do processo ou aplicativo monitorado.
+    - id: WindowTitle
+      type: System.String
+      description: Título da janela ativa associada ao processo.
+    content.vb: Public Sub New(AppName As String, WindowTitle As String)
+  overload: TCC_MVVM.Model.DTO.ProcessDisplayItem.#ctor*
+  nameWithType.vb: ProcessDisplayItem.New(String, String)
+  fullName.vb: TCC_MVVM.Model.DTO.ProcessDisplayItem.New(String, String)
+  name.vb: New(String, String)
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName
+  commentId: P:TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName
+  id: AppName
+  parent: TCC_MVVM.Model.DTO.ProcessDisplayItem
+  langs:
+  - csharp
+  - vb
+  name: AppName
+  nameWithType: ProcessDisplayItem.AppName
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName
+  type: Property
+  source:
+    remote:
+      path: Model/DTO/ProcessDisplayItem.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: AppName
+    path: Model/DTO/ProcessDisplayItem.cs
+    startLine: 8
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.DTO
+  summary: Nome do processo ou aplicativo monitorado.
+  example: []
+  syntax:
+    content: public string AppName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AppName As String
+  overload: TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName*
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle
+  commentId: P:TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle
+  id: WindowTitle
+  parent: TCC_MVVM.Model.DTO.ProcessDisplayItem
+  langs:
+  - csharp
+  - vb
+  name: WindowTitle
+  nameWithType: ProcessDisplayItem.WindowTitle
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle
+  type: Property
+  source:
+    remote:
+      path: Model/DTO/ProcessDisplayItem.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: WindowTitle
+    path: Model/DTO/ProcessDisplayItem.cs
+    startLine: 8
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.DTO
+  summary: Título da janela ativa associada ao processo.
+  example: []
+  syntax:
+    content: public string WindowTitle { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property WindowTitle As String
+  overload: TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle*
+references:
+- uid: TCC_MVVM.Model.DTO
+  commentId: N:TCC_MVVM.Model.DTO
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model.DTO
+  nameWithType: TCC_MVVM.Model.DTO
+  fullName: TCC_MVVM.Model.DTO
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.DTO
+    name: DTO
+    href: TCC_MVVM.Model.DTO.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.DTO
+    name: DTO
+    href: TCC_MVVM.Model.DTO.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{TCC_MVVM.Model.DTO.ProcessDisplayItem}
+  commentId: T:System.IEquatable{TCC_MVVM.Model.DTO.ProcessDisplayItem}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<ProcessDisplayItem>
+  nameWithType: IEquatable<ProcessDisplayItem>
+  fullName: System.IEquatable<TCC_MVVM.Model.DTO.ProcessDisplayItem>
+  nameWithType.vb: IEquatable(Of ProcessDisplayItem)
+  fullName.vb: System.IEquatable(Of TCC_MVVM.Model.DTO.ProcessDisplayItem)
+  name.vb: IEquatable(Of ProcessDisplayItem)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: TCC_MVVM.Model.DTO.ProcessDisplayItem
+    name: ProcessDisplayItem
+    href: TCC_MVVM.Model.DTO.ProcessDisplayItem.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TCC_MVVM.Model.DTO.ProcessDisplayItem
+    name: ProcessDisplayItem
+    href: TCC_MVVM.Model.DTO.ProcessDisplayItem.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem.#ctor*
+  commentId: Overload:TCC_MVVM.Model.DTO.ProcessDisplayItem.#ctor
+  href: TCC_MVVM.Model.DTO.ProcessDisplayItem.html#TCC_MVVM_Model_DTO_ProcessDisplayItem__ctor_System_String_System_String_
+  name: ProcessDisplayItem
+  nameWithType: ProcessDisplayItem.ProcessDisplayItem
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem.ProcessDisplayItem
+  nameWithType.vb: ProcessDisplayItem.New
+  fullName.vb: TCC_MVVM.Model.DTO.ProcessDisplayItem.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName*
+  commentId: Overload:TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName
+  href: TCC_MVVM.Model.DTO.ProcessDisplayItem.html#TCC_MVVM_Model_DTO_ProcessDisplayItem_AppName
+  name: AppName
+  nameWithType: ProcessDisplayItem.AppName
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem.AppName
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle*
+  commentId: Overload:TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle
+  href: TCC_MVVM.Model.DTO.ProcessDisplayItem.html#TCC_MVVM_Model_DTO_ProcessDisplayItem_WindowTitle
+  name: WindowTitle
+  nameWithType: ProcessDisplayItem.WindowTitle
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem.WindowTitle

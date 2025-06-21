@@ -1,0 +1,139 @@
+### YamlMime:TableOfContent
+items:
+- uid: TCC_MVVM
+  name: TCC_MVVM
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.App
+    name: App
+    type: Class
+- uid: TCC_MVVM.MVVM.Base
+  name: TCC_MVVM.MVVM.Base
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase
+    name: ViewModelBase
+    type: Class
+- uid: TCC_MVVM.MVVM.ViewModel
+  name: TCC_MVVM.MVVM.ViewModel
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.MVVM.ViewModel.EditViewModel
+    name: EditViewModel
+    type: Class
+- uid: TCC_MVVM.Migrations
+  name: TCC_MVVM.Migrations
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.Migrations.AddMustChangePasswordFlag
+    name: AddMustChangePasswordFlag
+    type: Class
+  - uid: TCC_MVVM.Migrations.AddUserRelationToLogs
+    name: AddUserRelationToLogs
+    type: Class
+  - uid: TCC_MVVM.Migrations.AtualizaWorkHoursTeste
+    name: AtualizaWorkHoursTeste
+    type: Class
+  - uid: TCC_MVVM.Migrations.FixUserRelations
+    name: FixUserRelations
+    type: Class
+  - uid: TCC_MVVM.Migrations.Inicial
+    name: Inicial
+    type: Class
+  - uid: TCC_MVVM.Migrations.Initial
+    name: Initial
+    type: Class
+  - uid: TCC_MVVM.Migrations.RemoveTimestampFromProcessLog
+    name: RemoveTimestampFromProcessLog
+    type: Class
+  - uid: TCC_MVVM.Migrations.ReplaceTimestampWithDateInInactivityLog
+    name: ReplaceTimestampWithDateInInactivityLog
+    type: Class
+  - uid: TCC_MVVM.Migrations.UpdateDailyWorkLogDateToDateOnly
+    name: UpdateDailyWorkLogDateToDateOnly
+    type: Class
+  - uid: TCC_MVVM.Migrations.UpdateProcessLogDateField
+    name: UpdateProcessLogDateField
+    type: Class
+  - uid: TCC_MVVM.Migrations.UpdateProcessLogDateToDateOnly
+    name: UpdateProcessLogDateToDateOnly
+    type: Class
+  - uid: TCC_MVVM.Migrations.addAddDailyWorkLog
+    name: addAddDailyWorkLog
+    type: Class
+  - uid: TCC_MVVM.Migrations.small
+    name: small
+    type: Class
+- uid: TCC_MVVM.Model
+  name: TCC_MVVM.Model
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.Model.InactivityLog
+    name: InactivityLog
+    type: Class
+  - uid: TCC_MVVM.Model.ProcessLog
+    name: ProcessLog
+    type: Class
+  - uid: TCC_MVVM.Model.UserModel
+    name: UserModel
+    type: Class
+- uid: TCC_MVVM.Model.DTO
+  name: TCC_MVVM.Model.DTO
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.Model.DTO.ProcessDisplayItem
+    name: ProcessDisplayItem
+    type: Class
+- uid: TCC_MVVM.Model.Enum
+  name: TCC_MVVM.Model.Enum
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.Model.Enum.UserRole
+    name: UserRole
+    type: Enum
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    type: Enum
+- uid: TCC_MVVM.UserControls
+  name: TCC_MVVM.UserControls
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.UserControls.BindablePasswordBox
+    name: BindablePasswordBox
+    type: Class
+- uid: TCC_MVVM.Util
+  name: TCC_MVVM.Util
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.Util.BoolToVisibilityConverter
+    name: BoolToVisibilityConverter
+    type: Class
+  - uid: TCC_MVVM.Util.TempoRestanteOuMensagemConverter
+    name: TempoRestanteOuMensagemConverter
+    type: Class
+  - uid: TCC_MVVM.Util.WorkHoursExtensions
+    name: WorkHoursExtensions
+    type: Class
+- uid: TCC_MVVM.View
+  name: TCC_MVVM.View
+  type: Namespace
+  items:
+  - uid: TCC_MVVM.View.CadastroView
+    name: CadastroView
+    type: Class
+  - uid: TCC_MVVM.View.ChangePasswordView
+    name: ChangePasswordView
+    type: Class
+  - uid: TCC_MVVM.View.EditView
+    name: EditView
+    type: Class
+  - uid: TCC_MVVM.View.LoginView
+    name: LoginView
+    type: Class
+  - uid: TCC_MVVM.View.MonitorView
+    name: MonitorView
+    type: Class
+  - uid: TCC_MVVM.View.UserListView
+    name: UserListView
+    type: Class
+memberLayout: SamePage

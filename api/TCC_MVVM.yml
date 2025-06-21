@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM
+  commentId: N:TCC_MVVM
+  id: TCC_MVVM
+  children:
+  - TCC_MVVM.App
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM
+  nameWithType: TCC_MVVM
+  fullName: TCC_MVVM
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.App
+  commentId: T:TCC_MVVM.App
+  href: TCC_MVVM.App.html
+  name: App
+  nameWithType: App
+  fullName: TCC_MVVM.App

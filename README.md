@@ -45,11 +45,11 @@ O projeto é um sistema de analise e monitoramento de logs focado com o objetivo
 	- [x] Melhorar o design em si
 - [x] Criar opção de Logout
 - [x] Remover as MensageBoxs após o fim dos testes
-- [ ] Criar comentários explicativos no código(Acho que o C# tem algo semelhante ao Javadoc do Java)
+- [x] Criar comentários explicativos no código(Acho que o C# tem algo semelhante ao Javadoc do Java)
 	- [x] Comentar o Infra e Util
 	- [x] Comentar o Model
 	- [x] Comentar o Service
-	- [ ] Comentar o MVVM
+	- [x] Comentar o MVVM
 
 # LISTA DE ERROS:
 - (Eu acho) O sistema está respondendo como um outro dia no horário 21 por algum motivo

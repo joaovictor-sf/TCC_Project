@@ -1,0 +1,726 @@
+{
+  "source_base_path": "C:/Users/joaov/source/repos/TCC_MVVM/TCC_MVVM",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/Logotipo.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/Logotipo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/campus.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "Images/campus.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/key-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/key-icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/user-icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/user-icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.App.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.App",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.App.yml\" sourcestartlinenumber=\"1\">Interaction logic for App.xaml</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.MVVM.Base.ViewModelBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.MVVM.Base.ViewModelBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.MVVM.Base.ViewModelBase",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.MVVM.Base.ViewModelBase.yml\" sourcestartlinenumber=\"1\">Classe base para todos os ViewModels, implementa INotifyPropertyChanged.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.MVVM.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.MVVM.Base.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.MVVM.Base",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.MVVM.ViewModel.EditViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.MVVM.ViewModel.EditViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.MVVM.ViewModel.EditViewModel",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.MVVM.ViewModel.EditViewModel.yml\" sourcestartlinenumber=\"1\">ViewModel responsável pela lógica de edição de usuários existentes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.MVVM.ViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.MVVM.ViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.MVVM.ViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.AddMustChangePasswordFlag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.AddMustChangePasswordFlag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.AddMustChangePasswordFlag",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.AddMustChangePasswordFlag.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.AddUserRelationToLogs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.AddUserRelationToLogs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.AddUserRelationToLogs",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.AddUserRelationToLogs.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.AtualizaWorkHoursTeste.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.AtualizaWorkHoursTeste.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.AtualizaWorkHoursTeste",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.AtualizaWorkHoursTeste.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.FixUserRelations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.FixUserRelations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.FixUserRelations",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.FixUserRelations.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.Inicial.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.Inicial.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.Inicial",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.Inicial.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.Initial.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.Initial.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.Initial",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.Initial.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.RemoveTimestampFromProcessLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.RemoveTimestampFromProcessLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.RemoveTimestampFromProcessLog",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.RemoveTimestampFromProcessLog.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.ReplaceTimestampWithDateInInactivityLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.ReplaceTimestampWithDateInInactivityLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.ReplaceTimestampWithDateInInactivityLog",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.ReplaceTimestampWithDateInInactivityLog.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.UpdateDailyWorkLogDateToDateOnly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.UpdateDailyWorkLogDateToDateOnly.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.UpdateDailyWorkLogDateToDateOnly",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.UpdateDailyWorkLogDateToDateOnly.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.UpdateProcessLogDateField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.UpdateProcessLogDateField.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.UpdateProcessLogDateField",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.UpdateProcessLogDateField.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.UpdateProcessLogDateToDateOnly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.UpdateProcessLogDateToDateOnly.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.UpdateProcessLogDateToDateOnly",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.UpdateProcessLogDateToDateOnly.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.addAddDailyWorkLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.addAddDailyWorkLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.addAddDailyWorkLog",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.addAddDailyWorkLog.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.small.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.small.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations.small",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Migrations.small.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.DTO.ProcessDisplayItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.DTO.ProcessDisplayItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.DTO.ProcessDisplayItem",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Model.DTO.ProcessDisplayItem.yml\" sourcestartlinenumber=\"1\">Representa um item de processo monitorado para exibição na interface,\ncontendo o nome do aplicativo e o título da janela ativa.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.DTO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.DTO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.DTO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.Enum.UserRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.Enum.UserRole.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.Enum.UserRole",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Model.Enum.UserRole.yml\" sourcestartlinenumber=\"1\">Define os papéis possíveis dos usuários no sistema.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.Enum.WorkHours.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.Enum.WorkHours.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.Enum.WorkHours",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Model.Enum.WorkHours.yml\" sourcestartlinenumber=\"1\">Define opções de carga horária disponíveis para um usuário.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.Enum.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.Enum.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.Enum",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.InactivityLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.InactivityLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.InactivityLog",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Model.InactivityLog.yml\" sourcestartlinenumber=\"1\">Representa um log de inatividade de um usuário em um determinado dia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.ProcessLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.ProcessLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.ProcessLog",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Model.ProcessLog.yml\" sourcestartlinenumber=\"1\">Representa um log de uso de uma aplicação por um usuário em um determinado dia.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.UserModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.UserModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model.UserModel",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Model.UserModel.yml\" sourcestartlinenumber=\"1\">Representa um usuário do sistema com informações de login, papel e configuração de jornada de trabalho.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Model.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Model.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Model",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.UserControls.BindablePasswordBox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.UserControls.BindablePasswordBox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.UserControls.BindablePasswordBox",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.UserControls.BindablePasswordBox.yml\" sourcestartlinenumber=\"1\">BindablePasswordBox</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.UserControls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.UserControls.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.UserControls",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Util.BoolToVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Util.BoolToVisibilityConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Util.BoolToVisibilityConverter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Util.TempoRestanteOuMensagemConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Util.TempoRestanteOuMensagemConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Util.TempoRestanteOuMensagemConverter",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Util.TempoRestanteOuMensagemConverter.yml\" sourcestartlinenumber=\"1\">Converte o estado de conclusão da jornada de trabalho e o tempo restante em uma string apropriada para exibição.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Util.WorkHoursExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Util.WorkHoursExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Util.WorkHoursExtensions",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.Util.WorkHoursExtensions.yml\" sourcestartlinenumber=\"1\">Classe de extensão que converte valores do enum <xref href=\"TCC_MVVM.Model.Enum.WorkHours\" data-throw-if-not-resolved=\"false\"></xref> para <xref href=\"System.TimeSpan\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.Util.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.Util.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.Util",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.CadastroView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.CadastroView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View.CadastroView",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.View.CadastroView.yml\" sourcestartlinenumber=\"1\">CadastroView</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.ChangePasswordView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.ChangePasswordView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View.ChangePasswordView",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.View.ChangePasswordView.yml\" sourcestartlinenumber=\"1\">ChangePasswordView</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.EditView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.EditView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View.EditView",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.View.EditView.yml\" sourcestartlinenumber=\"1\">EditView</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.LoginView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.LoginView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View.LoginView",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.View.LoginView.yml\" sourcestartlinenumber=\"1\">LoginView</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.MonitorView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.MonitorView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View.MonitorView",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.View.MonitorView.yml\" sourcestartlinenumber=\"1\">MonitorView</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.UserListView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.UserListView.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View.UserListView",
+      "Summary": "<p sourcefile=\"api/TCC_MVVM.View.UserListView.yml\" sourcestartlinenumber=\"1\">UserListView</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.View.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.View.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM.View",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TCC_MVVM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TCC_MVVM.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "TCC_MVVM",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

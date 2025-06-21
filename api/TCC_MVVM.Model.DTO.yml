@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Model.DTO
+  commentId: N:TCC_MVVM.Model.DTO
+  id: TCC_MVVM.Model.DTO
+  children:
+  - TCC_MVVM.Model.DTO.ProcessDisplayItem
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.Model.DTO
+  nameWithType: TCC_MVVM.Model.DTO
+  fullName: TCC_MVVM.Model.DTO
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.Model.DTO.ProcessDisplayItem
+  commentId: T:TCC_MVVM.Model.DTO.ProcessDisplayItem
+  href: TCC_MVVM.Model.DTO.ProcessDisplayItem.html
+  name: ProcessDisplayItem
+  nameWithType: ProcessDisplayItem
+  fullName: TCC_MVVM.Model.DTO.ProcessDisplayItem

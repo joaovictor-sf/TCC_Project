@@ -1,0 +1,1377 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  commentId: T:TCC_MVVM.MVVM.ViewModel.EditViewModel
+  id: EditViewModel
+  parent: TCC_MVVM.MVVM.ViewModel
+  children:
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor(TCC_MVVM.Model.UserModel,TCC_MVVM.Model.UserModel)
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.Email
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.Role
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.Username
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: EditViewModel
+  nameWithType: EditViewModel
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  type: Class
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: EditViewModel
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 13
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: ViewModel responsável pela lógica de edição de usuários existentes.
+  example: []
+  syntax:
+    content: 'public class EditViewModel : ViewModelBase, INotifyPropertyChanged'
+    content.vb: Public Class EditViewModel Inherits ViewModelBase Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  - TCC_MVVM.MVVM.Base.ViewModelBase
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  - TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+  - TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1({T}@,{T},System.String)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome
+  id: Nome
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: Nome
+  nameWithType: EditViewModel.Nome
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Nome
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 28
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Nome do usuário.
+  example: []
+  syntax:
+    content: public string Nome { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Nome As String
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome
+  id: Sobrenome
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: Sobrenome
+  nameWithType: EditViewModel.Sobrenome
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Sobrenome
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 36
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Sobrenome do usuário.
+  example: []
+  syntax:
+    content: public string Sobrenome { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Sobrenome As String
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Email
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.Email
+  id: Email
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: EditViewModel.Email
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Email
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Email
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 44
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: E-mail do usuário.
+  example: []
+  syntax:
+    content: public string Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.Email*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Username
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.Username
+  id: Username
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: Username
+  nameWithType: EditViewModel.Username
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Username
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Username
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 52
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Nome de usuário (username) para login.
+  example: []
+  syntax:
+    content: public string Username { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Username As String
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.Username*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Role
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.Role
+  id: Role
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: Role
+  nameWithType: EditViewModel.Role
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Role
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Role
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 60
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Papel (Role) do usuário no sistema.
+  example: []
+  syntax:
+    content: public UserRole Role { get; set; }
+    parameters: []
+    return:
+      type: TCC_MVVM.Model.Enum.UserRole
+    content.vb: Public Property Role As UserRole
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.Role*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours
+  id: WorkHours
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: WorkHours
+  nameWithType: EditViewModel.WorkHours
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: WorkHours
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 68
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Carga horária de trabalho diária do usuário.
+  example: []
+  syntax:
+    content: public WorkHours WorkHours { get; set; }
+    parameters: []
+    return:
+      type: TCC_MVVM.Model.Enum.WorkHours
+    content.vb: Public Property WorkHours As WorkHours
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem
+  id: Mensagem
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: Mensagem
+  nameWithType: EditViewModel.Mensagem
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Mensagem
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 77
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Mensagem de feedback exibida na interface.
+  example: []
+  syntax:
+    content: public string Mensagem { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Mensagem As String
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles
+  id: AvailableRoles
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: AvailableRoles
+  nameWithType: EditViewModel.AvailableRoles
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: AvailableRoles
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 85
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Cargos disponíveis para seleção de acordo com a permissão do usuário logado.
+  example: []
+  syntax:
+    content: public IEnumerable<UserRole> AvailableRoles { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{TCC_MVVM.Model.Enum.UserRole}
+    content.vb: Public ReadOnly Property AvailableRoles As IEnumerable(Of UserRole)
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours
+  id: AvailableWorkHours
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: AvailableWorkHours
+  nameWithType: EditViewModel.AvailableWorkHours
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: AvailableWorkHours
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 95
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Cargas horárias disponíveis para seleção.
+  example: []
+  syntax:
+    content: public IEnumerable<WorkHours> AvailableWorkHours { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{TCC_MVVM.Model.Enum.WorkHours}
+    content.vb: Public ReadOnly Property AvailableWorkHours As IEnumerable(Of WorkHours)
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand
+  id: EditCommand
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: EditCommand
+  nameWithType: EditViewModel.EditCommand
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: EditCommand
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 107
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Comando que executa a edição e salvamento dos dados.
+  example: []
+  syntax:
+    content: public ICommand EditCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property EditCommand As ICommand
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand
+  id: MinimizeCommand
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: MinimizeCommand
+  nameWithType: EditViewModel.MinimizeCommand
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: MinimizeCommand
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 112
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Comando para minimizar a janela.
+  example: []
+  syntax:
+    content: public ICommand MinimizeCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property MinimizeCommand As ICommand
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand
+  id: CloseCommand
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: CloseCommand
+  nameWithType: EditViewModel.CloseCommand
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: CloseCommand
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 116
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Comando para fechar a janela.
+  example: []
+  syntax:
+    content: public ICommand CloseCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public ReadOnly Property CloseCommand As ICommand
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow
+  id: MinimizeWindow
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: MinimizeWindow
+  nameWithType: EditViewModel.MinimizeWindow
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: MinimizeWindow
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 121
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Ação executada para minimizar a janela, definida pela view.
+  example: []
+  syntax:
+    content: public Action? MinimizeWindow { get; set; }
+    parameters: []
+    return:
+      type: System.Action
+    content.vb: Public Property MinimizeWindow As Action
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow
+  commentId: P:TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow
+  id: CloseWindow
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: CloseWindow
+  nameWithType: EditViewModel.CloseWindow
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow
+  type: Property
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: CloseWindow
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 125
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Ação executada para fechar a janela, definida pela view.
+  example: []
+  syntax:
+    content: public Action? CloseWindow { get; set; }
+    parameters: []
+    return:
+      type: System.Action
+    content.vb: Public Property CloseWindow As Action
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow*
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor(TCC_MVVM.Model.UserModel,TCC_MVVM.Model.UserModel)
+  commentId: M:TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor(TCC_MVVM.Model.UserModel,TCC_MVVM.Model.UserModel)
+  id: '#ctor(TCC_MVVM.Model.UserModel,TCC_MVVM.Model.UserModel)'
+  parent: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: EditViewModel(UserModel, UserModel)
+  nameWithType: EditViewModel.EditViewModel(UserModel, UserModel)
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditViewModel(TCC_MVVM.Model.UserModel, TCC_MVVM.Model.UserModel)
+  type: Constructor
+  source:
+    remote:
+      path: MVVM/ViewModel/EditViewModel.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: .ctor
+    path: MVVM/ViewModel/EditViewModel.cs
+    startLine: 132
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.MVVM.ViewModel
+  summary: Inicializa o ViewModel com os dados do usuário editado e do usuário logado.
+  example: []
+  syntax:
+    content: public EditViewModel(UserModel userEditado, UserModel usuarioLogado)
+    parameters:
+    - id: userEditado
+      type: TCC_MVVM.Model.UserModel
+      description: Usuário a ser editado.
+    - id: usuarioLogado
+      type: TCC_MVVM.Model.UserModel
+      description: Usuário atualmente logado.
+    content.vb: Public Sub New(userEditado As UserModel, usuarioLogado As UserModel)
+  overload: TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor*
+  nameWithType.vb: EditViewModel.New(UserModel, UserModel)
+  fullName.vb: TCC_MVVM.MVVM.ViewModel.EditViewModel.New(TCC_MVVM.Model.UserModel, TCC_MVVM.Model.UserModel)
+  name.vb: New(UserModel, UserModel)
+references:
+- uid: TCC_MVVM.MVVM.ViewModel
+  commentId: N:TCC_MVVM.MVVM.ViewModel
+  href: TCC_MVVM.html
+  name: TCC_MVVM.MVVM.ViewModel
+  nameWithType: TCC_MVVM.MVVM.ViewModel
+  fullName: TCC_MVVM.MVVM.ViewModel
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.ViewModel
+    name: ViewModel
+    href: TCC_MVVM.MVVM.ViewModel.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.ViewModel
+    name: ViewModel
+    href: TCC_MVVM.MVVM.ViewModel.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase
+  commentId: T:TCC_MVVM.MVVM.Base.ViewModelBase
+  parent: TCC_MVVM.MVVM.Base
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html
+  name: ViewModelBase
+  nameWithType: ViewModelBase
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  commentId: E:TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+  parent: TCC_MVVM.MVVM.Base.ViewModelBase
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_PropertyChanged
+  name: PropertyChanged
+  nameWithType: ViewModelBase.PropertyChanged
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.PropertyChanged
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+  commentId: M:TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+  parent: TCC_MVVM.MVVM.Base.ViewModelBase
+  isExternal: true
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_OnPropertyChanged_System_String_
+  name: OnPropertyChanged(string)
+  nameWithType: ViewModelBase.OnPropertyChanged(string)
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(string)
+  nameWithType.vb: ViewModelBase.OnPropertyChanged(String)
+  fullName.vb: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(String)
+  name.vb: OnPropertyChanged(String)
+  spec.csharp:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase.OnPropertyChanged(System.String)
+    name: OnPropertyChanged
+    href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_OnPropertyChanged_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1({T}@,{T},System.String)
+  commentId: M:TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  parent: TCC_MVVM.MVVM.Base.ViewModelBase
+  definition: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: ViewModelBase.SetProperty<T>(ref T, T, string)
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: ViewModelBase.SetProperty(Of T)(T, T, String)
+  fullName.vb: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TCC_MVVM.MVVM.Base
+  commentId: N:TCC_MVVM.MVVM.Base
+  href: TCC_MVVM.html
+  name: TCC_MVVM.MVVM.Base
+  nameWithType: TCC_MVVM.MVVM.Base
+  fullName: TCC_MVVM.MVVM.Base
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.Base
+    name: Base
+    href: TCC_MVVM.MVVM.Base.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.Base
+    name: Base
+    href: TCC_MVVM.MVVM.Base.html
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  commentId: M:TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+  isExternal: true
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  name: SetProperty<T>(ref T, T, string)
+  nameWithType: ViewModelBase.SetProperty<T>(ref T, T, string)
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty<T>(ref T, T, string)
+  nameWithType.vb: ViewModelBase.SetProperty(Of T)(T, T, String)
+  fullName.vb: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty(Of T)(T, T, String)
+  name.vb: SetProperty(Of T)(T, T, String)
+  spec.csharp:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: ref
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: TCC_MVVM.MVVM.Base.ViewModelBase.SetProperty``1(``0@,``0,System.String)
+    name: SetProperty
+    href: TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_Nome
+  name: Nome
+  nameWithType: EditViewModel.Nome
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_Sobrenome
+  name: Sobrenome
+  nameWithType: EditViewModel.Sobrenome
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Email*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.Email
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_Email
+  name: Email
+  nameWithType: EditViewModel.Email
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Email
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Username*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.Username
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_Username
+  name: Username
+  nameWithType: EditViewModel.Username
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Username
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Role*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.Role
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_Role
+  name: Role
+  nameWithType: EditViewModel.Role
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Role
+- uid: TCC_MVVM.Model.Enum.UserRole
+  commentId: T:TCC_MVVM.Model.Enum.UserRole
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.UserRole.html
+  name: UserRole
+  nameWithType: UserRole
+  fullName: TCC_MVVM.Model.Enum.UserRole
+- uid: TCC_MVVM.Model.Enum
+  commentId: N:TCC_MVVM.Model.Enum
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model.Enum
+  nameWithType: TCC_MVVM.Model.Enum
+  fullName: TCC_MVVM.Model.Enum
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_WorkHours
+  name: WorkHours
+  nameWithType: EditViewModel.WorkHours
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours
+- uid: TCC_MVVM.Model.Enum.WorkHours
+  commentId: T:TCC_MVVM.Model.Enum.WorkHours
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.WorkHours.html
+  name: WorkHours
+  nameWithType: WorkHours
+  fullName: TCC_MVVM.Model.Enum.WorkHours
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_Mensagem
+  name: Mensagem
+  nameWithType: EditViewModel.Mensagem
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_AvailableRoles
+  name: AvailableRoles
+  nameWithType: EditViewModel.AvailableRoles
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles
+- uid: System.Collections.Generic.IEnumerable{TCC_MVVM.Model.Enum.UserRole}
+  commentId: T:System.Collections.Generic.IEnumerable{TCC_MVVM.Model.Enum.UserRole}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<UserRole>
+  nameWithType: IEnumerable<UserRole>
+  fullName: System.Collections.Generic.IEnumerable<TCC_MVVM.Model.Enum.UserRole>
+  nameWithType.vb: IEnumerable(Of UserRole)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TCC_MVVM.Model.Enum.UserRole)
+  name.vb: IEnumerable(Of UserRole)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: TCC_MVVM.Model.Enum.UserRole
+    name: UserRole
+    href: TCC_MVVM.Model.Enum.UserRole.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TCC_MVVM.Model.Enum.UserRole
+    name: UserRole
+    href: TCC_MVVM.Model.Enum.UserRole.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_AvailableWorkHours
+  name: AvailableWorkHours
+  nameWithType: EditViewModel.AvailableWorkHours
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours
+- uid: System.Collections.Generic.IEnumerable{TCC_MVVM.Model.Enum.WorkHours}
+  commentId: T:System.Collections.Generic.IEnumerable{TCC_MVVM.Model.Enum.WorkHours}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<WorkHours>
+  nameWithType: IEnumerable<WorkHours>
+  fullName: System.Collections.Generic.IEnumerable<TCC_MVVM.Model.Enum.WorkHours>
+  nameWithType.vb: IEnumerable(Of WorkHours)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TCC_MVVM.Model.Enum.WorkHours)
+  name.vb: IEnumerable(Of WorkHours)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    href: TCC_MVVM.Model.Enum.WorkHours.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    href: TCC_MVVM.Model.Enum.WorkHours.html
+  - name: )
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_EditCommand
+  name: EditCommand
+  nameWithType: EditViewModel.EditCommand
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.windows.input.icommand
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Windows
+    name: Windows
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows
+  - name: .
+  - uid: System.Windows.Input
+    name: Input
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.windows.input
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_MinimizeCommand
+  name: MinimizeCommand
+  nameWithType: EditViewModel.MinimizeCommand
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_CloseCommand
+  name: CloseCommand
+  nameWithType: EditViewModel.CloseCommand
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_MinimizeWindow
+  name: MinimizeWindow
+  nameWithType: EditViewModel.MinimizeWindow
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel_CloseWindow
+  name: CloseWindow
+  nameWithType: EditViewModel.CloseWindow
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor*
+  commentId: Overload:TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html#TCC_MVVM_MVVM_ViewModel_EditViewModel__ctor_TCC_MVVM_Model_UserModel_TCC_MVVM_Model_UserModel_
+  name: EditViewModel
+  nameWithType: EditViewModel.EditViewModel
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel.EditViewModel
+  nameWithType.vb: EditViewModel.New
+  fullName.vb: TCC_MVVM.MVVM.ViewModel.EditViewModel.New
+  name.vb: New
+- uid: TCC_MVVM.Model.UserModel
+  commentId: T:TCC_MVVM.Model.UserModel
+  parent: TCC_MVVM.Model
+  href: TCC_MVVM.Model.UserModel.html
+  name: UserModel
+  nameWithType: UserModel
+  fullName: TCC_MVVM.Model.UserModel
+- uid: TCC_MVVM.Model
+  commentId: N:TCC_MVVM.Model
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model
+  nameWithType: TCC_MVVM.Model
+  fullName: TCC_MVVM.Model
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html

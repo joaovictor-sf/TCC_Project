@@ -1,0 +1,265 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Model.Enum.WorkHours
+  commentId: T:TCC_MVVM.Model.Enum.WorkHours
+  id: WorkHours
+  parent: TCC_MVVM.Model.Enum
+  children:
+  - TCC_MVVM.Model.Enum.WorkHours.OITO_HORAS
+  - TCC_MVVM.Model.Enum.WorkHours.QUATRO_HORAS
+  - TCC_MVVM.Model.Enum.WorkHours.SEIS_HORAS
+  - TCC_MVVM.Model.Enum.WorkHours.TESTE_30_SEGUNDOS
+  langs:
+  - csharp
+  - vb
+  name: WorkHours
+  nameWithType: WorkHours
+  fullName: TCC_MVVM.Model.Enum.WorkHours
+  type: Enum
+  source:
+    remote:
+      path: Model/Enum/WorkHours.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: WorkHours
+    path: Model/Enum/WorkHours.cs
+    startLine: 5
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.Enum
+  summary: Define opções de carga horária disponíveis para um usuário.
+  example: []
+  syntax:
+    content: public enum WorkHours
+    content.vb: Public Enum WorkHours
+  extensionMethods:
+  - TCC_MVVM.Model.Enum.WorkHours.TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan
+- uid: TCC_MVVM.Model.Enum.WorkHours.TESTE_30_SEGUNDOS
+  commentId: F:TCC_MVVM.Model.Enum.WorkHours.TESTE_30_SEGUNDOS
+  id: TESTE_30_SEGUNDOS
+  parent: TCC_MVVM.Model.Enum.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: TESTE_30_SEGUNDOS
+  nameWithType: WorkHours.TESTE_30_SEGUNDOS
+  fullName: TCC_MVVM.Model.Enum.WorkHours.TESTE_30_SEGUNDOS
+  type: Field
+  source:
+    remote:
+      path: Model/Enum/WorkHours.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: TESTE_30_SEGUNDOS
+    path: Model/Enum/WorkHours.cs
+    startLine: 9
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.Enum
+  summary: Apenas para testes - duração de 30 segundos.
+  example: []
+  syntax:
+    content: TESTE_30_SEGUNDOS = 1
+    return:
+      type: TCC_MVVM.Model.Enum.WorkHours
+- uid: TCC_MVVM.Model.Enum.WorkHours.QUATRO_HORAS
+  commentId: F:TCC_MVVM.Model.Enum.WorkHours.QUATRO_HORAS
+  id: QUATRO_HORAS
+  parent: TCC_MVVM.Model.Enum.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: QUATRO_HORAS
+  nameWithType: WorkHours.QUATRO_HORAS
+  fullName: TCC_MVVM.Model.Enum.WorkHours.QUATRO_HORAS
+  type: Field
+  source:
+    remote:
+      path: Model/Enum/WorkHours.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: QUATRO_HORAS
+    path: Model/Enum/WorkHours.cs
+    startLine: 14
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.Enum
+  summary: Jornada de 4 horas diárias.
+  example: []
+  syntax:
+    content: QUATRO_HORAS = 4
+    return:
+      type: TCC_MVVM.Model.Enum.WorkHours
+- uid: TCC_MVVM.Model.Enum.WorkHours.SEIS_HORAS
+  commentId: F:TCC_MVVM.Model.Enum.WorkHours.SEIS_HORAS
+  id: SEIS_HORAS
+  parent: TCC_MVVM.Model.Enum.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: SEIS_HORAS
+  nameWithType: WorkHours.SEIS_HORAS
+  fullName: TCC_MVVM.Model.Enum.WorkHours.SEIS_HORAS
+  type: Field
+  source:
+    remote:
+      path: Model/Enum/WorkHours.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: SEIS_HORAS
+    path: Model/Enum/WorkHours.cs
+    startLine: 19
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.Enum
+  summary: Jornada de 6 horas diárias.
+  example: []
+  syntax:
+    content: SEIS_HORAS = 6
+    return:
+      type: TCC_MVVM.Model.Enum.WorkHours
+- uid: TCC_MVVM.Model.Enum.WorkHours.OITO_HORAS
+  commentId: F:TCC_MVVM.Model.Enum.WorkHours.OITO_HORAS
+  id: OITO_HORAS
+  parent: TCC_MVVM.Model.Enum.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: OITO_HORAS
+  nameWithType: WorkHours.OITO_HORAS
+  fullName: TCC_MVVM.Model.Enum.WorkHours.OITO_HORAS
+  type: Field
+  source:
+    remote:
+      path: Model/Enum/WorkHours.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: OITO_HORAS
+    path: Model/Enum/WorkHours.cs
+    startLine: 24
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model.Enum
+  summary: Jornada de 8 horas diárias.
+  example: []
+  syntax:
+    content: OITO_HORAS = 8
+    return:
+      type: TCC_MVVM.Model.Enum.WorkHours
+references:
+- uid: TCC_MVVM.Model.Enum
+  commentId: N:TCC_MVVM.Model.Enum
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model.Enum
+  nameWithType: TCC_MVVM.Model.Enum
+  fullName: TCC_MVVM.Model.Enum
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+- uid: TCC_MVVM.Model.Enum.WorkHours.TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan
+  commentId: M:TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+  parent: TCC_MVVM.Util.WorkHoursExtensions
+  definition: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+  href: TCC_MVVM.Util.WorkHoursExtensions.html#TCC_MVVM_Util_WorkHoursExtensions_ToTimeSpan_TCC_MVVM_Model_Enum_WorkHours_
+  name: ToTimeSpan(WorkHours)
+  nameWithType: WorkHoursExtensions.ToTimeSpan(WorkHours)
+  fullName: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+  spec.csharp:
+  - uid: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+    name: ToTimeSpan
+    href: TCC_MVVM.Util.WorkHoursExtensions.html#TCC_MVVM_Util_WorkHoursExtensions_ToTimeSpan_TCC_MVVM_Model_Enum_WorkHours_
+  - name: (
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    href: TCC_MVVM.Model.Enum.WorkHours.html
+  - name: )
+  spec.vb:
+  - uid: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+    name: ToTimeSpan
+    href: TCC_MVVM.Util.WorkHoursExtensions.html#TCC_MVVM_Util_WorkHoursExtensions_ToTimeSpan_TCC_MVVM_Model_Enum_WorkHours_
+  - name: (
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    href: TCC_MVVM.Model.Enum.WorkHours.html
+  - name: )
+- uid: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+  commentId: M:TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+  href: TCC_MVVM.Util.WorkHoursExtensions.html#TCC_MVVM_Util_WorkHoursExtensions_ToTimeSpan_TCC_MVVM_Model_Enum_WorkHours_
+  name: ToTimeSpan(WorkHours)
+  nameWithType: WorkHoursExtensions.ToTimeSpan(WorkHours)
+  fullName: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+  spec.csharp:
+  - uid: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+    name: ToTimeSpan
+    href: TCC_MVVM.Util.WorkHoursExtensions.html#TCC_MVVM_Util_WorkHoursExtensions_ToTimeSpan_TCC_MVVM_Model_Enum_WorkHours_
+  - name: (
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    href: TCC_MVVM.Model.Enum.WorkHours.html
+  - name: )
+  spec.vb:
+  - uid: TCC_MVVM.Util.WorkHoursExtensions.ToTimeSpan(TCC_MVVM.Model.Enum.WorkHours)
+    name: ToTimeSpan
+    href: TCC_MVVM.Util.WorkHoursExtensions.html#TCC_MVVM_Util_WorkHoursExtensions_ToTimeSpan_TCC_MVVM_Model_Enum_WorkHours_
+  - name: (
+  - uid: TCC_MVVM.Model.Enum.WorkHours
+    name: WorkHours
+    href: TCC_MVVM.Model.Enum.WorkHours.html
+  - name: )
+- uid: TCC_MVVM.Util.WorkHoursExtensions
+  commentId: T:TCC_MVVM.Util.WorkHoursExtensions
+  parent: TCC_MVVM.Util
+  href: TCC_MVVM.Util.WorkHoursExtensions.html
+  name: WorkHoursExtensions
+  nameWithType: WorkHoursExtensions
+  fullName: TCC_MVVM.Util.WorkHoursExtensions
+- uid: TCC_MVVM.Util
+  commentId: N:TCC_MVVM.Util
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Util
+  nameWithType: TCC_MVVM.Util
+  fullName: TCC_MVVM.Util
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Util
+    name: Util
+    href: TCC_MVVM.Util.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Util
+    name: Util
+    href: TCC_MVVM.Util.html
+- uid: TCC_MVVM.Model.Enum.WorkHours
+  commentId: T:TCC_MVVM.Model.Enum.WorkHours
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.WorkHours.html
+  name: WorkHours
+  nameWithType: WorkHours
+  fullName: TCC_MVVM.Model.Enum.WorkHours

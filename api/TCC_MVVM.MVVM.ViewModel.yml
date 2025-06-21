@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.MVVM.ViewModel
+  commentId: N:TCC_MVVM.MVVM.ViewModel
+  id: TCC_MVVM.MVVM.ViewModel
+  children:
+  - TCC_MVVM.MVVM.ViewModel.EditViewModel
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.MVVM.ViewModel
+  nameWithType: TCC_MVVM.MVVM.ViewModel
+  fullName: TCC_MVVM.MVVM.ViewModel
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.MVVM.ViewModel.EditViewModel
+  commentId: T:TCC_MVVM.MVVM.ViewModel.EditViewModel
+  href: TCC_MVVM.MVVM.ViewModel.EditViewModel.html
+  name: EditViewModel
+  nameWithType: EditViewModel
+  fullName: TCC_MVVM.MVVM.ViewModel.EditViewModel

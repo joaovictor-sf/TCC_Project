@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>O projeto | tcc-mvvm </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="O projeto | tcc-mvvm ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/joaovictor-sf/TCC_Project/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="tcc-mvvm">
+            tcc-mvvm
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="o-projeto">O projeto</h1>
+
+<p>O projeto é um sistema de analise e monitoramento de logs focado com o objetivo de criar uma aplicação de gerenciamento de funcionários em home office, onde o sistema irá monitorar os logs de acesso e saída dos funcionários, além de permitir o gerenciamento de tarefas e atividades.</p>
+<h1 id="do-to-list">DO TO LIST</h1>
+<ul>
+<li>[x] Criar aplicação basica de monitoramento</li>
+<li>[x] Criar o basico da UI da aplicação</li>
+<li>[x] Conectar o back ao front</li>
+<li>[x] Testar o upload dados utilizando o banco PostgreSQL</li>
+<li>[x] Criar executavel <!-- C:source\repos\TCC_WPF\TCC_WPF\bin\Release\net8.0-windows --></li>
+<li>[x] Monitorar a inatividade do usuario</li>
+<li>[x] Enviar os dados de inatividade para o banco</li>
+<li>[x] Testar o sistema de inatividade</li>
+<li>[x] Organizar o sistema para seguir o padrão MVVM</li>
+<li>[x] Sistema de login funcional</li>
+<li>[x] Sistema de Cadastro Funcional</li>
+<li>[x] Substuir o uso de Click por Command do Login</li>
+<li>[x] Substuir o uso de Click por Command do Cadastro</li>
+<li>[x] Fazer o botão de Login e Cadastro funcionar com o Enter</li>
+<li>[x] Mudar o nome da Role &quot;Funcionario&quot; para algo mais apropriado</li>
+<li>[x] Update do Design</li>
+<li>[x] Adicionar View com lista de usuários cadastrados</li>
+<li>[x] Mudar atributo de Role para Enum</li>
+<li>[x] Criar um Enum de horas de trabalho(WorkHours)(Ex: 8h, 6h, 4h, etc)</li>
+<li>[x] Criar um Boolean de Status de Usuário(isActive)</li>
+<li>[x] Implementar ao projeto principal</li>
+<li>[x] Adicionar a função de editar</li>
+<li>[x] Não permitir usuarios demitidos logarem</li>
+<li>[x] Adicionar de deminir usuários</li>
+<li>[x] Criar função de criar nova senha após o primeiro login do usuario</li>
+<li>[x] Atualizar a formatação dos emails validos no cadastro e edit</li>
+<li>[x] Restringir o acesso da Role Funcionario(User) a apenas a janela de monitoramento)</li>
+<li>[x] Melhorar a formadação dos dados
+<ul>
+<li>[x] Melhorar a formatação dos dados de tempo de ProcessLog
+<ul>
+<li>[x] Update UsageTime</li>
+<li>[x] Remove StartTime e Timestamp para maior clareza</li>
+</ul>
+</li>
+<li>[x] Melhorar a formatação dos dados de tempo de InactivityLog
+<ul>
+<li>[x] Muda TimeStamp para Date</li>
+<li>[x] Ao adicionar dados no mesmo dia, somar o tempo de inatividade ao invés de criar um novo registro</li>
+</ul>
+</li>
+<li>[x] Ajustar o Date de DailyWorkLogs</li>
+</ul>
+</li>
+<li>[x] Fazer o UserList atualizar após cadastro</li>
+<li>[x] Melhorar o design da janela de monitoramento
+<ul>
+<li>[x] Adicionar o restante do horário de trabalho do dia do usuário</li>
+<li>[x] Realizar um teste de 4 horas de trabalho para verificar se o horário é atualizado corretamente</li>
+<li>[x] Adicionar uma lista com os AppName que estão rodando no momento e serão monitorados</li>
+<li>[x] Melhorar o design em si</li>
+</ul>
+</li>
+<li>[x] Criar opção de Logout</li>
+<li>[x] Remover as MensageBoxs após o fim dos testes</li>
+<li>[ ] Criar comentários explicativos no código(Acho que o C# tem algo semelhante ao Javadoc do Java)
+<ul>
+<li>[x] Comentar o Infra e Util</li>
+<li>[x] Comentar o Model</li>
+<li>[x] Comentar o Service</li>
+<li>[ ] Comentar o MVVM</li>
+</ul>
+</li>
+</ul>
+<h1 id="lista-de-erros">LISTA DE ERROS:</h1>
+<ul>
+<li>(Eu acho) O sistema está respondendo como um outro dia no horário 21 por algum motivo</li>
+</ul>
+<h1 id="maybe">MAYBE</h1>
+<ul>
+<li>[ ] Enviar senha por email</li>
+<li>[ ] Editar o cadastro e o edit para avisar o porquê o usuário não poder ser cadastrado ou editado(ex: email já cadastrado, cpf já cadastrado, etc))</li>
+<li>[ ] Estudar e avaliar mais opções de monitoramento
+<ul>
+<li>[x] Inatividade</li>
+<li>[ ] Envio de screenshots</li>
+</ul>
+</li>
+<li>[ ] Mudar o nome username para cpf</li>
+<li>[ ] Decidir em como será implementado o sistema de beneficios da role Admin, que poderá acessar todas as janelas + funcionalidades exclusivas. Algumas ideias dessas funionalidades:
+<ul>
+<li>[x] Apenas o Admin poderá cadastrar outro Admin</li>
+<li>[ ] Criação de novas Roles</li>
+<li>[ ] Criação de novas WorkHours</li>
+<li>[ ] A capacidade de apagar completamente um usuário do banco de dados</li>
+<li>[x] Apenas o ADMIN tem acesso a crianção de funcionarios com certas Roles e WorkHours</li>
+<li>[ ] Apenas o ADMIN pode editar um usuario ADMIN</li>
+</ul>
+</li>
+<li>[ ] Adicionar o icone do sistema</li>
+<li>[ ] Conectar ao banco na nuvem</li>
+<li>[ ] [OPÇÃO A] Bloquear o botão de fechamento se o monitoramento estiver ativo</li>
+<li>[ ] [OPÇÃO B] Ao fechar a aplicação, verificar se o monitoramento está ativo e, se estiver, em vez de parar a aplicação, apenas fechar a janela e fazer a aplicação continuar rodando em segundo plano.(Necessário criar um icone na barra de tarefas para o usuário poder acessar a aplicação novament)e)</li>
+<li>[ ] Testar a aplicação em outros computadores</li>
+<li>[ ] Testar a aplicação em outros sistemas operacionais</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/joaovictor-sf/TCC_Project/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

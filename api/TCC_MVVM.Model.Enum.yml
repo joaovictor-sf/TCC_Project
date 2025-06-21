@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Model.Enum
+  commentId: N:TCC_MVVM.Model.Enum
+  id: TCC_MVVM.Model.Enum
+  children:
+  - TCC_MVVM.Model.Enum.UserRole
+  - TCC_MVVM.Model.Enum.WorkHours
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.Model.Enum
+  nameWithType: TCC_MVVM.Model.Enum
+  fullName: TCC_MVVM.Model.Enum
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.Model.Enum.UserRole
+  commentId: T:TCC_MVVM.Model.Enum.UserRole
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.UserRole.html
+  name: UserRole
+  nameWithType: UserRole
+  fullName: TCC_MVVM.Model.Enum.UserRole
+- uid: TCC_MVVM.Model.Enum.WorkHours
+  commentId: T:TCC_MVVM.Model.Enum.WorkHours
+  parent: TCC_MVVM.Model.Enum
+  href: TCC_MVVM.Model.Enum.WorkHours.html
+  name: WorkHours
+  nameWithType: WorkHours
+  fullName: TCC_MVVM.Model.Enum.WorkHours
+- uid: TCC_MVVM.Model.Enum
+  commentId: N:TCC_MVVM.Model.Enum
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model.Enum
+  nameWithType: TCC_MVVM.Model.Enum
+  fullName: TCC_MVVM.Model.Enum
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  - name: .
+  - uid: TCC_MVVM.Model.Enum
+    name: Enum
+    href: TCC_MVVM.Model.Enum.html

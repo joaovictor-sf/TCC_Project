@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Util
+  commentId: N:TCC_MVVM.Util
+  id: TCC_MVVM.Util
+  children:
+  - TCC_MVVM.Util.BoolToVisibilityConverter
+  - TCC_MVVM.Util.TempoRestanteOuMensagemConverter
+  - TCC_MVVM.Util.WorkHoursExtensions
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.Util
+  nameWithType: TCC_MVVM.Util
+  fullName: TCC_MVVM.Util
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.Util.BoolToVisibilityConverter
+  commentId: T:TCC_MVVM.Util.BoolToVisibilityConverter
+  href: TCC_MVVM.Util.BoolToVisibilityConverter.html
+  name: BoolToVisibilityConverter
+  nameWithType: BoolToVisibilityConverter
+  fullName: TCC_MVVM.Util.BoolToVisibilityConverter
+- uid: TCC_MVVM.Util.TempoRestanteOuMensagemConverter
+  commentId: T:TCC_MVVM.Util.TempoRestanteOuMensagemConverter
+  href: TCC_MVVM.Util.TempoRestanteOuMensagemConverter.html
+  name: TempoRestanteOuMensagemConverter
+  nameWithType: TempoRestanteOuMensagemConverter
+  fullName: TCC_MVVM.Util.TempoRestanteOuMensagemConverter
+- uid: TCC_MVVM.Util.WorkHoursExtensions
+  commentId: T:TCC_MVVM.Util.WorkHoursExtensions
+  parent: TCC_MVVM.Util
+  href: TCC_MVVM.Util.WorkHoursExtensions.html
+  name: WorkHoursExtensions
+  nameWithType: WorkHoursExtensions
+  fullName: TCC_MVVM.Util.WorkHoursExtensions
+- uid: TCC_MVVM.Util
+  commentId: N:TCC_MVVM.Util
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Util
+  nameWithType: TCC_MVVM.Util
+  fullName: TCC_MVVM.Util
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Util
+    name: Util
+    href: TCC_MVVM.Util.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Util
+    name: Util
+    href: TCC_MVVM.Util.html

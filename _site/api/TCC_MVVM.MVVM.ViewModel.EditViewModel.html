@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EditViewModel | tcc-mvvm </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EditViewModel | tcc-mvvm ">
+      
+      <meta name="description" content="ViewModel respons&#225;vel pela l&#243;gica de edi&#231;&#227;o de usu&#225;rios existentes.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/joaovictor-sf/TCC_Project/new/main/apiSpec/new?filename=TCC_MVVM_MVVM_ViewModel_EditViewModel.md&amp;value=---%0Auid%3A%20TCC_MVVM.MVVM.ViewModel.EditViewModel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="tcc-mvvm">
+            tcc-mvvm
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel">
+
+
+
+  <h1 id="TCC_MVVM_MVVM_ViewModel_EditViewModel" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel" class="text-break">
+Class EditViewModel  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="TCC_MVVM.html">TCC_MVVM</a>.<a class="xref" href="TCC_MVVM.MVVM.html">MVVM</a>.<a class="xref" href="TCC_MVVM.MVVM.ViewModel.html">ViewModel</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>TCC_MVVM.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>ViewModel responsável pela lógica de edição de usuários existentes.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class EditViewModel : ViewModelBase, INotifyPropertyChanged</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="TCC_MVVM.MVVM.Base.ViewModelBase.html">ViewModelBase</a></div>
+      <div><span class="xref">EditViewModel</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_PropertyChanged">ViewModelBase.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_OnPropertyChanged_System_String_">ViewModelBase.OnPropertyChanged(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="TCC_MVVM.MVVM.Base.ViewModelBase.html#TCC_MVVM_MVVM_Base_ViewModelBase_SetProperty__1___0____0_System_String_">ViewModelBase.SetProperty&lt;T&gt;(ref T, T, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel__ctor_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel__ctor_TCC_MVVM_Model_UserModel_TCC_MVVM_Model_UserModel_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.#ctor(TCC_MVVM.Model.UserModel,TCC_MVVM.Model.UserModel)">
+  EditViewModel(UserModel, UserModel)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inicializa o ViewModel com os dados do usuário editado e do usuário logado.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EditViewModel(UserModel userEditado, UserModel usuarioLogado)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userEditado</code> <a class="xref" href="TCC_MVVM.Model.UserModel.html">UserModel</a></dt>
+    <dd><p>Usuário a ser editado.</p>
+</dd>
+    <dt><code>usuarioLogado</code> <a class="xref" href="TCC_MVVM.Model.UserModel.html">UserModel</a></dt>
+    <dd><p>Usuário atualmente logado.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_AvailableRoles_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_AvailableRoles" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableRoles">
+  AvailableRoles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Cargos disponíveis para seleção de acordo com a permissão do usuário logado.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;UserRole&gt; AvailableRoles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="TCC_MVVM.Model.Enum.UserRole.html">UserRole</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_AvailableWorkHours_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_AvailableWorkHours" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.AvailableWorkHours">
+  AvailableWorkHours
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Cargas horárias disponíveis para seleção.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;WorkHours&gt; AvailableWorkHours { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="TCC_MVVM.Model.Enum.WorkHours.html">WorkHours</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_CloseCommand_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_CloseCommand" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseCommand">
+  CloseCommand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Comando para fechar a janela.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICommand CloseCommand { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_CloseWindow_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_CloseWindow" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.CloseWindow">
+  CloseWindow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ação executada para fechar a janela, definida pela view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action? CloseWindow { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_EditCommand_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_EditCommand" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.EditCommand">
+  EditCommand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Comando que executa a edição e salvamento dos dados.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICommand EditCommand { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Email_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Email*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Email" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Email">
+  Email
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>E-mail do usuário.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Email { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Mensagem_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Mensagem" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Mensagem">
+  Mensagem
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Mensagem de feedback exibida na interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Mensagem { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_MinimizeCommand_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_MinimizeCommand" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeCommand">
+  MinimizeCommand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Comando para minimizar a janela.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICommand MinimizeCommand { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_MinimizeWindow_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_MinimizeWindow" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.MinimizeWindow">
+  MinimizeWindow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ação executada para minimizar a janela, definida pela view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action? MinimizeWindow { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Nome_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Nome" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Nome">
+  Nome
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Nome do usuário.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Nome { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Role_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Role*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Role" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Role">
+  Role
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Papel (Role) do usuário no sistema.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserRole Role { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="TCC_MVVM.Model.Enum.UserRole.html">UserRole</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Sobrenome_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Sobrenome" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Sobrenome">
+  Sobrenome
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sobrenome do usuário.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Sobrenome { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Username_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Username*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_Username" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.Username">
+  Username
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Nome de usuário (username) para login.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Username { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="TCC_MVVM_MVVM_ViewModel_EditViewModel_WorkHours_" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours*"></a>
+
+  <h3 id="TCC_MVVM_MVVM_ViewModel_EditViewModel_WorkHours" data-uid="TCC_MVVM.MVVM.ViewModel.EditViewModel.WorkHours">
+  WorkHours
+  <a class="header-action link-secondary" title="View source" href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Carga horária de trabalho diária do usuário.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorkHours WorkHours { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="TCC_MVVM.Model.Enum.WorkHours.html">WorkHours</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/joaovictor-sf/TCC_Project/blob/main/MVVM/ViewModel/EditViewModel.cs/#L14" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

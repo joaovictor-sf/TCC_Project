@@ -1,0 +1,628 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.Model.ProcessLog
+  commentId: T:TCC_MVVM.Model.ProcessLog
+  id: ProcessLog
+  parent: TCC_MVVM.Model
+  children:
+  - TCC_MVVM.Model.ProcessLog.AppName
+  - TCC_MVVM.Model.ProcessLog.Date
+  - TCC_MVVM.Model.ProcessLog.Id
+  - TCC_MVVM.Model.ProcessLog.UsageTime
+  - TCC_MVVM.Model.ProcessLog.User
+  - TCC_MVVM.Model.ProcessLog.UserId
+  - TCC_MVVM.Model.ProcessLog.WindowTitle
+  langs:
+  - csharp
+  - vb
+  name: ProcessLog
+  nameWithType: ProcessLog
+  fullName: TCC_MVVM.Model.ProcessLog
+  type: Class
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: ProcessLog
+    path: Model/ProcessLog.cs
+    startLine: 7
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Representa um log de uso de uma aplicação por um usuário em um determinado dia.
+  example: []
+  syntax:
+    content: public class ProcessLog
+    content.vb: Public Class ProcessLog
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: TCC_MVVM.Model.ProcessLog.Id
+  commentId: P:TCC_MVVM.Model.ProcessLog.Id
+  id: Id
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ProcessLog.Id
+  fullName: TCC_MVVM.Model.ProcessLog.Id
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Id
+    path: Model/ProcessLog.cs
+    startLine: 12
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Identificador único do log.
+  example: []
+  syntax:
+    content: public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: TCC_MVVM.Model.ProcessLog.Id*
+- uid: TCC_MVVM.Model.ProcessLog.AppName
+  commentId: P:TCC_MVVM.Model.ProcessLog.AppName
+  id: AppName
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: AppName
+  nameWithType: ProcessLog.AppName
+  fullName: TCC_MVVM.Model.ProcessLog.AppName
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: AppName
+    path: Model/ProcessLog.cs
+    startLine: 17
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: 'Nome do processo da aplicação (ex: chrome, word).'
+  example: []
+  syntax:
+    content: public string AppName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AppName As String
+  overload: TCC_MVVM.Model.ProcessLog.AppName*
+- uid: TCC_MVVM.Model.ProcessLog.WindowTitle
+  commentId: P:TCC_MVVM.Model.ProcessLog.WindowTitle
+  id: WindowTitle
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: WindowTitle
+  nameWithType: ProcessLog.WindowTitle
+  fullName: TCC_MVVM.Model.ProcessLog.WindowTitle
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: WindowTitle
+    path: Model/ProcessLog.cs
+    startLine: 22
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Título da janela ativa da aplicação.
+  example: []
+  syntax:
+    content: public string WindowTitle { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property WindowTitle As String
+  overload: TCC_MVVM.Model.ProcessLog.WindowTitle*
+- uid: TCC_MVVM.Model.ProcessLog.UsageTime
+  commentId: P:TCC_MVVM.Model.ProcessLog.UsageTime
+  id: UsageTime
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: UsageTime
+  nameWithType: ProcessLog.UsageTime
+  fullName: TCC_MVVM.Model.ProcessLog.UsageTime
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: UsageTime
+    path: Model/ProcessLog.cs
+    startLine: 27
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Tempo total de uso da aplicação no dia.
+  example: []
+  syntax:
+    content: public TimeSpan UsageTime { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property UsageTime As TimeSpan
+  overload: TCC_MVVM.Model.ProcessLog.UsageTime*
+- uid: TCC_MVVM.Model.ProcessLog.Date
+  commentId: P:TCC_MVVM.Model.ProcessLog.Date
+  id: Date
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: Date
+  nameWithType: ProcessLog.Date
+  fullName: TCC_MVVM.Model.ProcessLog.Date
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: Date
+    path: Model/ProcessLog.cs
+    startLine: 32
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Data do registro (apenas data, sem hora).
+  example: []
+  syntax:
+    content: >-
+      [Column(TypeName = "date")]
+
+      public DateTime Date { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: >-
+      <Column(TypeName:="date")>
+
+      Public Property [Date] As Date
+  overload: TCC_MVVM.Model.ProcessLog.Date*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ColumnAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: TypeName
+      type: System.String
+      value: date
+- uid: TCC_MVVM.Model.ProcessLog.UserId
+  commentId: P:TCC_MVVM.Model.ProcessLog.UserId
+  id: UserId
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: UserId
+  nameWithType: ProcessLog.UserId
+  fullName: TCC_MVVM.Model.ProcessLog.UserId
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: UserId
+    path: Model/ProcessLog.cs
+    startLine: 38
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Identificador do usuário associado ao log.
+  example: []
+  syntax:
+    content: public int UserId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property UserId As Integer
+  overload: TCC_MVVM.Model.ProcessLog.UserId*
+- uid: TCC_MVVM.Model.ProcessLog.User
+  commentId: P:TCC_MVVM.Model.ProcessLog.User
+  id: User
+  parent: TCC_MVVM.Model.ProcessLog
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: ProcessLog.User
+  fullName: TCC_MVVM.Model.ProcessLog.User
+  type: Property
+  source:
+    remote:
+      path: Model/ProcessLog.cs
+      branch: main
+      repo: git@github.com:joaovictor-sf/TCC_Project.git
+    id: User
+    path: Model/ProcessLog.cs
+    startLine: 43
+  assemblies:
+  - TCC_MVVM
+  namespace: TCC_MVVM.Model
+  summary: Navegação para o usuário dono do log.
+  example: []
+  syntax:
+    content: public UserModel User { get; set; }
+    parameters: []
+    return:
+      type: TCC_MVVM.Model.UserModel
+    content.vb: Public Property User As UserModel
+  overload: TCC_MVVM.Model.ProcessLog.User*
+references:
+- uid: TCC_MVVM.Model
+  commentId: N:TCC_MVVM.Model
+  href: TCC_MVVM.html
+  name: TCC_MVVM.Model
+  nameWithType: TCC_MVVM.Model
+  fullName: TCC_MVVM.Model
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.Model
+    name: Model
+    href: TCC_MVVM.Model.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TCC_MVVM.Model.ProcessLog.Id*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.Id
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_Id
+  name: Id
+  nameWithType: ProcessLog.Id
+  fullName: TCC_MVVM.Model.ProcessLog.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: TCC_MVVM.Model.ProcessLog.AppName*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.AppName
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_AppName
+  name: AppName
+  nameWithType: ProcessLog.AppName
+  fullName: TCC_MVVM.Model.ProcessLog.AppName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TCC_MVVM.Model.ProcessLog.WindowTitle*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.WindowTitle
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_WindowTitle
+  name: WindowTitle
+  nameWithType: ProcessLog.WindowTitle
+  fullName: TCC_MVVM.Model.ProcessLog.WindowTitle
+- uid: TCC_MVVM.Model.ProcessLog.UsageTime*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.UsageTime
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_UsageTime
+  name: UsageTime
+  nameWithType: ProcessLog.UsageTime
+  fullName: TCC_MVVM.Model.ProcessLog.UsageTime
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: TCC_MVVM.Model.ProcessLog.Date*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.Date
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_Date
+  name: Date
+  nameWithType: ProcessLog.Date
+  fullName: TCC_MVVM.Model.ProcessLog.Date
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: TCC_MVVM.Model.ProcessLog.UserId*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.UserId
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_UserId
+  name: UserId
+  nameWithType: ProcessLog.UserId
+  fullName: TCC_MVVM.Model.ProcessLog.UserId
+- uid: TCC_MVVM.Model.ProcessLog.User*
+  commentId: Overload:TCC_MVVM.Model.ProcessLog.User
+  href: TCC_MVVM.Model.ProcessLog.html#TCC_MVVM_Model_ProcessLog_User
+  name: User
+  nameWithType: ProcessLog.User
+  fullName: TCC_MVVM.Model.ProcessLog.User
+- uid: TCC_MVVM.Model.UserModel
+  commentId: T:TCC_MVVM.Model.UserModel
+  parent: TCC_MVVM.Model
+  href: TCC_MVVM.Model.UserModel.html
+  name: UserModel
+  nameWithType: UserModel
+  fullName: TCC_MVVM.Model.UserModel

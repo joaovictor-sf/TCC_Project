@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: TCC_MVVM.MVVM.Base
+  commentId: N:TCC_MVVM.MVVM.Base
+  id: TCC_MVVM.MVVM.Base
+  children:
+  - TCC_MVVM.MVVM.Base.ViewModelBase
+  langs:
+  - csharp
+  - vb
+  name: TCC_MVVM.MVVM.Base
+  nameWithType: TCC_MVVM.MVVM.Base
+  fullName: TCC_MVVM.MVVM.Base
+  type: Namespace
+  assemblies:
+  - TCC_MVVM
+references:
+- uid: TCC_MVVM.MVVM.Base.ViewModelBase
+  commentId: T:TCC_MVVM.MVVM.Base.ViewModelBase
+  parent: TCC_MVVM.MVVM.Base
+  href: TCC_MVVM.MVVM.Base.ViewModelBase.html
+  name: ViewModelBase
+  nameWithType: ViewModelBase
+  fullName: TCC_MVVM.MVVM.Base.ViewModelBase
+- uid: TCC_MVVM.MVVM.Base
+  commentId: N:TCC_MVVM.MVVM.Base
+  href: TCC_MVVM.html
+  name: TCC_MVVM.MVVM.Base
+  nameWithType: TCC_MVVM.MVVM.Base
+  fullName: TCC_MVVM.MVVM.Base
+  spec.csharp:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.Base
+    name: Base
+    href: TCC_MVVM.MVVM.Base.html
+  spec.vb:
+  - uid: TCC_MVVM
+    name: TCC_MVVM
+    href: TCC_MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM
+    name: MVVM
+    href: TCC_MVVM.MVVM.html
+  - name: .
+  - uid: TCC_MVVM.MVVM.Base
+    name: Base
+    href: TCC_MVVM.MVVM.Base.html
